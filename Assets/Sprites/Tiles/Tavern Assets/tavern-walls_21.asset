@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: tavern-walls_21
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1243141799, guid: 1d60a5820f5154c4ca4c76fe4957be48, type: 3}
+  m_Sprite: {fileID: -906432351, guid: 1d60a5820f5154c4ca4c76fe4957be48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
