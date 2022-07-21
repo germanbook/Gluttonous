@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        // Player can not moving while dialogue is showing
+        if (Input.GetMouseButtonDown(0) && !GameManager.isDialogueShowing) {
             lastClickedPos = cam.ScreenToWorldPoint(Input.mousePosition);
             moving = true;
         }

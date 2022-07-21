@@ -114,6 +114,9 @@ public class DialogueManager : MonoBehaviour
                 dialogueD04.gameObject.SetActive(false);
                 dialogueE.gameObject.SetActive(false);
                 dialogueF.gameObject.SetActive(false);
+
+                // Set dialogue status to false;
+                GameManager.isDialogueShowing = false;
                 break;
 
             case "D2_Back":

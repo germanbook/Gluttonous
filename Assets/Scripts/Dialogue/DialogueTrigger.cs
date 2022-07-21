@@ -30,6 +30,9 @@ public class DialogueTrigger : MonoBehaviour
             {
                 // show dialogue here
                 dialogue.SetActive(true);
+
+                // Set dialogue status
+                GameManager.isDialogueShowing = true;
             }
         }
         else
