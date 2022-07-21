@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) {
             lastClickedPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        moving = true;
-
+            moving = true;
+        }
+        
         if (moving && (Vector2)transform.position != lastClickedPos)
         {
             float step = speed * Time.deltaTime;
@@ -27,9 +28,6 @@ public class PlayerController : MonoBehaviour
             moving = false;
         }
     }
-    private void Awake()
-    {
-        moving = false;
-    }
+    
 
 }
