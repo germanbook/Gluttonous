@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - D1_01
+  - D1_02
+  - D1_03
+  - D1_04
+  - D1_05
+  - D1_06
+  - D2_Back
+  - Button_Exit
+  - D3_Back
+  - D4_01
+  - D4_02
+  - D4_03
+  - D4_04
+  - D4_Back
+  - D4_SubOption_Back
+  - D5_Back
+  - D6_Back
   layers:
   - Default
   - TransparentFX
