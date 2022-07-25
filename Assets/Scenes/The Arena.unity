@@ -404,7 +404,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1308363878}
   - component: {fileID: 1308363877}
-  - component: {fileID: 1308363876}
   - component: {fileID: 1308363880}
   - component: {fileID: 1308363879}
   m_Layer: 6
@@ -414,22 +413,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1308363876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308363875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab433b0c7cdbf0847b3721c779cedd2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spear: {fileID: 5420917220481667750, guid: a383cab653b8ca041bd86d6ad6dd3298, type: 3}
-  armLaunchArea: {fileID: 804190908}
-  targetDummy: {fileID: 1325754408}
-  targetPosition: {x: 0, y: 0}
 --- !u!212 &1308363877
 SpriteRenderer:
   m_ObjectHideFlags: 0

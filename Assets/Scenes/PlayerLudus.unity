@@ -1868,6 +1868,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4a0e79eef6cc448a6e65f4b85e0ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &2062375444 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8263539445364075083, guid: b2cd153a184b47c47822e08ddb7454b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1560137072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2085423398 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9011413305199720267, guid: 66e61985548b61d4c9d27211f846d10b,
@@ -1961,6 +1967,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -179535884191603286, guid: dac59376f4af6294d876c97f7ff86c8b,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2062375444}
     - target: {fileID: 5153739129734942000, guid: dac59376f4af6294d876c97f7ff86c8b,
         type: 3}
       propertyPath: m_RootOrder
