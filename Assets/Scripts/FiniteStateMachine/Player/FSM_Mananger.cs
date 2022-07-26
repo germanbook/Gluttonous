@@ -6,8 +6,11 @@ using UnityEngine;
 /// <summary>
 /// Base Finite State Machine
 /// </summary>
-public class BaseFSM : MonoBehaviour
+public class FSM_Mananger : MonoBehaviour
 {
+    // Play character
+    public GameObject player;
+
     // Current state
     public IState currentState;
 
@@ -23,6 +26,9 @@ public class BaseFSM : MonoBehaviour
 
         // Default state: Idle
         TransitionState(StateType.Idle);
+
+        // TODO: Initialize the state of Play such as health
+        // ...
     }
 
     /// <summary>
@@ -39,22 +45,13 @@ public class BaseFSM : MonoBehaviour
         // Testing here
         // **
         // Q for idle
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            TransitionState(StateType.Idle);
-        }
-        // W for finding
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            TransitionState(StateType.Finding);
-        }
-        // E for attacking
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TransitionState(StateType.Attacking);
-        }
+        
         // **
         // Transition state to
+
+
+        // Find nearest target
+        FindTarget("Enemy");
         // ***************************************
     }
 
@@ -72,5 +69,31 @@ public class BaseFSM : MonoBehaviour
 
         // Call IdleState object OnEnter() function
         currentState.OnEnter();
+    }
+
+    // Find all enemies
+    private void FindTarget(string enemyTag)
+    {
+        // All enemies in the scene
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+
+        float minDistance = Mathf.Infinity;
+        // nearestEnemy
+        Transform nearestEnemy = null;
+
+        foreach (var enemy in enemies)
+        {
+            float tempDistance = Vector3.Distance(enemy.transform.position, player.gameObject.transform.position);
+
+            if (tempDistance < minDistance)
+            {
+                minDistance = tempDistance;
+                nearestEnemy = enemy.transform;
+            }
+
+        }
+
+        Debug.Log("Nearest enemy name: " + nearestEnemy.gameObject.name);
+        
     }
 }

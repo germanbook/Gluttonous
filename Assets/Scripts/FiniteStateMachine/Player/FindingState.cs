@@ -6,9 +6,9 @@ using UnityEngine;
 /// </summary>
 public class FindingState : IState
 {
-    private BaseFSM manager;
+    private FSM_Mananger manager;
 
-    public FindingState(BaseFSM manager)
+    public FindingState(FSM_Mananger manager)
     {
         this.manager = manager;
     }

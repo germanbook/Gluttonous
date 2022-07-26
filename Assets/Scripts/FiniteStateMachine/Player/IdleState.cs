@@ -7,9 +7,9 @@ using UnityEngine;
 /// </summary>
 public class IdleState : IState
 {
-    private BaseFSM manager;
+    private FSM_Mananger manager;
 
-    public IdleState(BaseFSM manager)
+    public IdleState(FSM_Mananger manager)
     {
         this.manager = manager;
     }
@@ -21,12 +21,15 @@ public class IdleState : IState
 
     public void OnExit()
     {
+        // TODO: Using manager to get play's state to
+        // exit the idle
+        // ex. manager.TransitionState();
         Debug.Log("Exit Idle State...");
     }
 
     public void OnUpdate()
     {
-        Debug.Log("Idle State...");
+        // Debug.Log("Idle State...");
     }
 
 }

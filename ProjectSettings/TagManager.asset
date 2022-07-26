@@ -21,6 +21,8 @@ TagManager:
   - D4_SubOption_Back
   - D5_Back
   - D6_Back
+  - D6_Back
+  - Enemy
   layers:
   - Default
   - TransparentFX

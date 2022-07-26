@@ -6,9 +6,9 @@ using UnityEngine;
 /// </summary>
 public class AttackingState : IState
 {
-    private BaseFSM manager;
+    private FSM_Mananger manager;
 
-    public AttackingState(BaseFSM manager)
+    public AttackingState(FSM_Mananger manager)
     {
         this.manager = manager;
     }
