@@ -50,8 +50,7 @@ public class FSM_Mananger : MonoBehaviour
         // Transition state to
 
 
-        // Find nearest target
-        FindTarget("Enemy");
+        
         // ***************************************
     }
 
@@ -71,29 +70,5 @@ public class FSM_Mananger : MonoBehaviour
         currentState.OnEnter();
     }
 
-    // Find all enemies
-    private void FindTarget(string enemyTag)
-    {
-        // All enemies in the scene
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-
-        float minDistance = Mathf.Infinity;
-        // nearestEnemy
-        Transform nearestEnemy = null;
-
-        foreach (var enemy in enemies)
-        {
-            float tempDistance = Vector3.Distance(enemy.transform.position, player.gameObject.transform.position);
-
-            if (tempDistance < minDistance)
-            {
-                minDistance = tempDistance;
-                nearestEnemy = enemy.transform;
-            }
-
-        }
-
-        Debug.Log("Nearest enemy name: " + nearestEnemy.gameObject.name);
-        
-    }
+    
 }
