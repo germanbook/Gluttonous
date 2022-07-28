@@ -11,6 +11,11 @@ public class FSM_Mananger : MonoBehaviour
     // Play character
     public GameObject player;
 
+    // Target player
+    public GameObject targetPlayer;
+
+    public Animator animator;
+
     // Current state
     public IState currentState;
 
@@ -23,9 +28,12 @@ public class FSM_Mananger : MonoBehaviour
         states.Add(StateType.Idle, new IdleState(this));
         states.Add(StateType.Finding, new FindingState(this));
         states.Add(StateType.Attacking, new AttackingState(this));
+        states.Add(StateType.Death, new DeathState(this));
 
         // Default state: Idle
         TransitionState(StateType.Idle);
+        
+        
 
         // TODO: Initialize the state of Play such as health
         // ...
@@ -39,23 +47,16 @@ public class FSM_Mananger : MonoBehaviour
         // Running current state's OnUpdate()
         currentState.OnUpdate();
 
-        // Do something here
-        // ***************************************
-        // if sth
-        // Testing here
-        // **
-        // Q for idle
-        
-        // **
-        // Transition state to
-
+        if(player.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
+        {
+            TransitionState(StateType.Death);
+        }
 
         
-        // ***************************************
     }
 
     // Swap states
-    private void TransitionState(StateType stateType)
+    public void TransitionState(StateType stateType)
     {
         // Exit current state if it's not null
         if (currentState != null)
@@ -70,5 +71,24 @@ public class FSM_Mananger : MonoBehaviour
         currentState.OnEnter();
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        // Testing
+        // this : player
+        if (collision.gameObject.tag == "Enemy" && this.gameObject.name == "GladOneGFX")
+        {
+            TransitionState(StateType.Attacking);
+            targetPlayer = collision.gameObject;
+        }
+
+    }
+
+
+    public void removeCharactor()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+
 }

@@ -15,7 +15,7 @@ public class AttackingState : IState
 
     public void OnEnter()
     {
-        Debug.Log("Enter Attacking State...");
+        manager.animator.SetInteger("stateInt", 2);
     }
 
     public void OnExit()
@@ -25,6 +25,9 @@ public class AttackingState : IState
 
     public void OnUpdate()
     {
-        Debug.Log("Attacking State...");
+        if (manager.targetPlayer != null)
+        {
+            manager.targetPlayer.GetComponent<PlayerStatus_Temp>().healthValue -= Time.deltaTime * 30;
+        }
     }
 }

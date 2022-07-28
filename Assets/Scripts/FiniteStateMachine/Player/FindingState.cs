@@ -15,7 +15,7 @@ public class FindingState : IState
 
     public void OnEnter()
     {
-        Debug.Log("Enter Finding State...");
+        manager.animator.SetInteger("stateInt", 1);
     }
 
     public void OnExit()

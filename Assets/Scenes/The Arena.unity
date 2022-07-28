@@ -135,12 +135,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6108675350845396272}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &213573057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8263539445364075081, guid: b2cd153a184b47c47822e08ddb7454b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8263539444557368192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412096987
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +421,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 1.6
   pickNextWaypointDist: 1.2
-  endReachedDistance: 1.6
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -468,7 +462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511887601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.17, y: 3.22, z: 0}
+  m_LocalPosition: {x: -0.88, y: 2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -546,7 +540,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 1.6
   pickNextWaypointDist: 1.3
-  endReachedDistance: 1.6
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -587,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882678786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.89, y: 2.49, z: -0.039541844}
+  m_LocalPosition: {x: -5, y: -0.03, z: -0.039541844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -665,7 +659,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 1.6
   pickNextWaypointDist: 1.3
-  endReachedDistance: 1.6
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -706,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017268639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44, y: -0.63, z: -0.039541844}
+  m_LocalPosition: {x: -3.22, y: 0.66, z: -0.039541844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -753,7 +747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166881359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.64, y: 3.14, z: 0}
+  m_LocalPosition: {x: -6.76, y: 3.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -798,7 +792,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 1.6
   pickNextWaypointDist: 1.2
-  endReachedDistance: 1.6
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -859,6 +853,7 @@ GameObject:
   - component: {fileID: 1245303698}
   - component: {fileID: 1245303702}
   - component: {fileID: 1245303703}
+  - component: {fileID: 1245303704}
   m_Layer: 6
   m_Name: GladTwoGFX
   m_TagString: Player
@@ -916,7 +911,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.09831619, y: 0.09253293}
-  m_Size: {x: 1.17, y: 1.94}
+  m_Size: {x: 0.89, y: 1.94}
   m_Direction: 0
 --- !u!212 &1245303700
 SpriteRenderer:
@@ -995,6 +990,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 0
+--- !u!114 &1245303704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245303696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d36208f49844d52921003a7bf1d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1245303696}
+  targetPlayer: {fileID: 0}
+  animator: {fileID: 1308363885}
 --- !u!1 &1308363875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,10 +1015,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1308363878}
   - component: {fileID: 1308363877}
-  - component: {fileID: 1308363880}
   - component: {fileID: 1308363882}
   - component: {fileID: 1308363883}
   - component: {fileID: 1308363884}
+  - component: {fileID: 1308363886}
+  - component: {fileID: 1308363885}
+  - component: {fileID: 1308363887}
   m_Layer: 6
   m_Name: GladOneGFX
   m_TagString: Player
@@ -1057,12 +1069,12 @@ SpriteRenderer:
   m_SortingLayerID: 889349177
   m_SortingLayer: 11
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ec207d813e95e7d49b6f2ab9d22725ec, type: 3}
-  m_Color: {r: 0.4343364, g: 0.90588236, b: 0.16470589, a: 1}
+  m_Sprite: {fileID: 1232201329, guid: 69f0b7b5dcf48484bbace01629c9cd61, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9, y: 1.4}
+  m_Size: {x: 0.17, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1076,29 +1088,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308363875}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.07, y: 0.06, z: 0}
+  m_LocalScale: {x: 6.017107, y: 6.017107, z: 6.017107}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1166881360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1308363880
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308363875}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.09831619, y: 0.09253293}
-  m_Size: {x: 1.17, y: 1.94}
-  m_Direction: 0
 --- !u!114 &1308363882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,6 +1141,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &1308363885
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308363875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c06ed3dadecfb41ee824aef8b65e94c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1308363886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308363875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d36208f49844d52921003a7bf1d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1308363875}
+  targetPlayer: {fileID: 0}
+  animator: {fileID: 1308363885}
+--- !u!70 &1308363887
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308363875}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000011920929, y: -0.000000059604645}
+  m_Size: {x: 0.29, y: 0.24}
+  m_Direction: 0
 --- !u!1 &1311646138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1206,7 @@ GameObject:
   - component: {fileID: 1311646140}
   - component: {fileID: 1311646144}
   - component: {fileID: 1311646145}
+  - component: {fileID: 1311646146}
   m_Layer: 6
   m_Name: GladThreeGFX
   m_TagString: Player
@@ -1295,6 +1343,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 0
+--- !u!114 &1311646146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311646138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d36208f49844d52921003a7bf1d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1311646138}
+  targetPlayer: {fileID: 0}
+  animator: {fileID: 1308363885}
 --- !u!1 &1357491605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1753,7 @@ GameObject:
   - component: {fileID: 1521259961}
   - component: {fileID: 1521259963}
   - component: {fileID: 1521259964}
+  - component: {fileID: 1521259965}
   m_Layer: 6
   m_Name: enermyGladThreeGFX
   m_TagString: Enemy
@@ -1727,7 +1791,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.96
+  m_Radius: 0.8
 --- !u!212 &1521259962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1805,6 +1869,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723ac27b99e14686a7750798a301146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1521259965
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521259959}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1548664536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2099,7 @@ GameObject:
   - component: {fileID: 1582385096}
   - component: {fileID: 1582385098}
   - component: {fileID: 1582385099}
+  - component: {fileID: 1582385100}
   m_Layer: 6
   m_Name: EnermyGladtwoGFX
   m_TagString: Enemy
@@ -2051,7 +2137,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.96
+  m_Radius: 0.85
 --- !u!212 &1582385097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2129,6 +2215,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723ac27b99e14686a7750798a301146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1582385100
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582385094}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1623248597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2336,7 @@ GameObject:
   - component: {fileID: 1631056052}
   - component: {fileID: 1631056053}
   - component: {fileID: 1631056054}
+  - component: {fileID: 1631056055}
   m_Layer: 6
   m_Name: EnermyGladOneGFX
   m_TagString: Enemy
@@ -2296,7 +2404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631056049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13000011, y: 0.029999971, z: 0.039541844}
+  m_LocalPosition: {x: 0.41, y: 0.029999971, z: 0.039541844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2318,7 +2426,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.96
+  m_Radius: 0.8
 --- !u!114 &1631056053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2344,6 +2452,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a723ac27b99e14686a7750798a301146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1631056055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631056049}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1777780651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,9 +2935,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 1.6
-  pickNextWaypointDist: 1.2
-  endReachedDistance: 1.6
+  slowdownDistance: 0.96
+  pickNextWaypointDist: 0.95
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -2849,7 +2978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880167202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.13, y: -0.65, z: 0}
+  m_LocalPosition: {x: -0.22, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2913,7 +3042,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 1.6
   pickNextWaypointDist: 1.3
-  endReachedDistance: 1.6
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -2954,7 +3083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921341227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.61, y: 3.17, z: -0.039541844}
+  m_LocalPosition: {x: -3.21, y: 3.18, z: -0.039541844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25401,7 +25530,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8263539444557368192}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213573057}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f188f2d8fdbef8840b0b781a359dee50, type: 3}
@@ -25413,7 +25542,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8263539444557368192}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213573057}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a4a0e79eef6cc448a6e65f4b85e0ee9, type: 3}
@@ -25425,19 +25554,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 8263539444557368192}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8263539444557368196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213573057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d36208f49844d52921003a7bf1d405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1308363875}
 --- !u!1001 &9011413306987446786
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public enum StateType
 
     Idle,
     Finding,
-    Attacking
+    Attacking,
+    Death
 
 }

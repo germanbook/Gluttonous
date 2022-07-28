@@ -16,7 +16,7 @@ public class IdleState : IState
 
     public void OnEnter()
     {
-        Debug.Log("Enter Idle State...");
+        manager.animator.SetInteger("stateInt", 0);
     }
 
     public void OnExit()

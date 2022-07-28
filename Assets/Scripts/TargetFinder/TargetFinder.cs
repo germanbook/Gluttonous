@@ -25,18 +25,14 @@ public class TargetFinder : MonoBehaviour
         if (nearestEnemy != null)
         {
             //Change target when it die
-            if (nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() == 0f)
+            if (nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
             {
-                nearestEnemy.gameObject.SetActive(false);
-                Debug.Log("This is: " + this.gameObject.name + " Switch target");
+                
                 FindTarget();
             }
         }
         
 
-        
-
-        Debug.Log("This is: " + this.gameObject.name + " Current target: + " + nearestEnemy.gameObject.name);
     }
 
 
@@ -75,9 +71,22 @@ public class TargetFinder : MonoBehaviour
 
         }
 
-        SetTarget(nearestEnemy);
 
-        Debug.Log("Nearest enemy name: " + nearestEnemy.gameObject.name);
+        if (enemies.Length != 0)
+        {
+            SetTarget(nearestEnemy);
+            if (this.gameObject.tag == "Player")
+            {
+                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+            }
+        }
+        else
+        {
+            if (this.gameObject.tag == "Player")
+            {
+                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
+            }
+        }
 
     }
 

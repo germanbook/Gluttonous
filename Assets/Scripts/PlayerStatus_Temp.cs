@@ -11,7 +11,7 @@ public class PlayerStatus_Temp : MonoBehaviour
     /// </summary>
 
     // Health value
-    [SerializeField]private float healthValue;
+    public float healthValue;
 
 
 
@@ -24,7 +24,10 @@ public class PlayerStatus_Temp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (healthValue <= 0f && this.gameObject.tag != "Player")
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
