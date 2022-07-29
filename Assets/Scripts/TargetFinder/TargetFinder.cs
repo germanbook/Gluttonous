@@ -27,11 +27,11 @@ public class TargetFinder : MonoBehaviour
             //Change target when it die
             if (nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
             {
-                
+                nearestEnemy = null;
                 FindTarget();
             }
+
         }
-        
 
     }
 
@@ -80,10 +80,11 @@ public class TargetFinder : MonoBehaviour
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
             }
         }
-        else
+        if (enemies.Length == 0)
         {
-            if (this.gameObject.tag == "Player")
+            if (this.gameObject.tag == "Player" && this.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() > 0f)
             {
+                Debug.Log("problem...");
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
             }
         }

@@ -46,7 +46,6 @@ public class FSM_Mananger : MonoBehaviour
     {
         // Running current state's OnUpdate()
         currentState.OnUpdate();
-
         if(player.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
         {
             TransitionState(StateType.Death);

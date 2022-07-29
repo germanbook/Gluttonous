@@ -24,7 +24,7 @@ public class IdleState : IState
         // TODO: Using manager to get play's state to
         // exit the idle
         // ex. manager.TransitionState();
-        Debug.Log("Exit Idle State...");
+        
     }
 
     public void OnUpdate()

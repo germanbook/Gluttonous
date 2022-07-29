@@ -20,7 +20,7 @@ public class AttackingState : IState
 
     public void OnExit()
     {
-        Debug.Log("Exit Attacking State...");
+        
     }
 
     public void OnUpdate()

@@ -20,11 +20,11 @@ public class FindingState : IState
 
     public void OnExit()
     {
-        Debug.Log("Exit Finding State...");
+        
     }
 
     public void OnUpdate()
     {
-        Debug.Log("Finding State...");
+        
     }
 }
