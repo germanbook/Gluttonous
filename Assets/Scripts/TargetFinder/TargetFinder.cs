@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetFinder : MonoBehaviour
 {
@@ -13,15 +14,19 @@ public class TargetFinder : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 0;
+        
+        
+    }
 
+    private void Start()
+    {
         // Finding target
         Invoke("FindTarget", 0.2f);
-        
     }
 
     private void Update()
     {
-
         if (nearestEnemy != null)
         {
             //Change target when it die
