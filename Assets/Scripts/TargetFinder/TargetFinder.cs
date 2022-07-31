@@ -13,9 +13,9 @@ public class TargetFinder : MonoBehaviour
 
     private void Awake()
     {
-        
+
         // Finding target
-        FindTarget();
+        Invoke("FindTarget", 0.2f);
         
     }
 
@@ -84,7 +84,6 @@ public class TargetFinder : MonoBehaviour
         {
             if (this.gameObject.tag == "Player" && this.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() > 0f)
             {
-                Debug.Log("problem...");
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
             }
         }
