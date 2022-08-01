@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus_Temp : MonoBehaviour
 {
@@ -13,21 +14,35 @@ public class PlayerStatus_Temp : MonoBehaviour
     // Health value
     public float healthValue;
 
+    // Player life bar lifevalue
+    public Image playerLifeBarValue;
+    // Player life bar state
+    public Image playerLifeBarState;
+    // Idle
+    public Sprite idleStateImage;
+    // Finding
+    public Sprite findStateImage;
+    // Attack
+    public Sprite attackStateImage;
+
+    // If this gladiator dead or live
+    public bool isAlive;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         healthValue = 100f;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (healthValue <= 0f && this.gameObject.tag != "Player")
-        {
-            this.gameObject.SetActive(false);
-        }
+        // Update life bar value
+        LifeBarValue();
     }
 
 
@@ -35,6 +50,19 @@ public class PlayerStatus_Temp : MonoBehaviour
     public float getHealthValue()
     {
         return healthValue;
+    }
+
+    // Player's over head life bar
+    public void LifeBarValue()
+    {
+        if (healthValue > 0)
+        {
+            playerLifeBarValue.fillAmount = healthValue / 100;
+        }
+        else
+        {
+            playerLifeBarValue.fillAmount = 0;
+        }
     }
     
 }

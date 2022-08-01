@@ -16,6 +16,8 @@ public class FindingState : IState
     public void OnEnter()
     {
         manager.animator.SetInteger("stateInt", 1);
+        manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
+            = manager.GetComponent<PlayerStatus_Temp>().findStateImage;
     }
 
     public void OnExit()

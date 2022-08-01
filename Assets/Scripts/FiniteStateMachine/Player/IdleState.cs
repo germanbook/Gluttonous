@@ -17,6 +17,8 @@ public class IdleState : IState
     public void OnEnter()
     {
         manager.animator.SetInteger("stateInt", 0);
+        manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
+            = manager.GetComponent<PlayerStatus_Temp>().idleStateImage;
     }
 
     public void OnExit()

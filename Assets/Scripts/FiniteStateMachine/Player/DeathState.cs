@@ -15,6 +15,7 @@ public class DeathState : IState
 
     public void OnEnter()
     {
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isAlive = false;
         manager.animator.SetInteger("stateInt", 3);
     }
 

@@ -12,7 +12,7 @@ public class FSM_Mananger : MonoBehaviour
     public GameObject player;
 
     // Target player
-    public GameObject targetPlayer;
+    [HideInInspector]public GameObject targetPlayer;
 
     public Animator animator;
 
@@ -72,14 +72,12 @@ public class FSM_Mananger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        // Testing
-        // this : player
-        if (collision.gameObject.tag == "Enemy" && this.gameObject.name == "GladOneGFX")
+        if (this.gameObject.tag != collision.gameObject.tag)
         {
             TransitionState(StateType.Attacking);
             targetPlayer = collision.gameObject;
         }
+        
 
     }
 

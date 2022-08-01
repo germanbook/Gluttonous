@@ -14,7 +14,7 @@ public class TargetFinder : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 0;
+        
         
         
     }
@@ -80,14 +80,11 @@ public class TargetFinder : MonoBehaviour
         if (enemies.Length != 0)
         {
             SetTarget(nearestEnemy);
-            if (this.gameObject.tag == "Player")
-            {
-                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-            }
+            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
         }
         if (enemies.Length == 0)
         {
-            if (this.gameObject.tag == "Player" && this.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() > 0f)
+            if (this.gameObject.GetComponent<PlayerStatus_Temp>().isAlive)
             {
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
             }

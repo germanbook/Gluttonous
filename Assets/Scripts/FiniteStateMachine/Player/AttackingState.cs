@@ -16,6 +16,8 @@ public class AttackingState : IState
     public void OnEnter()
     {
         manager.animator.SetInteger("stateInt", 2);
+        manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
+            = manager.GetComponent<PlayerStatus_Temp>().attackStateImage;
     }
 
     public void OnExit()
@@ -27,7 +29,7 @@ public class AttackingState : IState
     {
         if (manager.targetPlayer != null)
         {
-            manager.targetPlayer.GetComponent<PlayerStatus_Temp>().healthValue -= Time.deltaTime * 30;
+            manager.gameObject.GetComponent<GladiatorAttack>().PlayerAttackding(manager.targetPlayer);
         }
     }
 }
