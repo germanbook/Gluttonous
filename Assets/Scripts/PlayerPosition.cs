@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 /// <summary>
@@ -24,10 +25,14 @@ public class PlayerPosition : MonoBehaviour
         timeCount += Time.deltaTime;
 
         // If charactor stucks for 3 seconds
-        if (timeCount > 2 && transform.position.x == oldPosition && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true)
+        if (timeCount > 2 && transform.position.x == oldPosition
+            && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true)
         {
+            Debug.Log("Stuck....");
             // Some reason the collision can not trigger, just manually do it
-            this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<CircleCollider2D>());
+            this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
+                this.gameObject.transform.parent.gameObject.
+                GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
             timeCount = 0f;
             
         }

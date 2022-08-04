@@ -22,10 +22,6 @@ public class TargetFinder : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this.gameObject.name == "EnermyGladOneGFX")
-        {
-            Debug.Log("Enemy: " + nearestEnemy.name);
-        }
 
         //Change target when it die
         if ( ( this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
