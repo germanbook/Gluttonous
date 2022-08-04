@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatsPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Canvas statsPanel;
+    bool statsPanelDisplayed = false;
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == false)
+        {
+            statsPanelDisplayed = true;
+            statsPanel.enabled = statsPanelDisplayed;
+        }
+        else if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == true)
+        {
+            statsPanelDisplayed = false;
+            statsPanel.enabled = statsPanelDisplayed;
+        }
+    }
+    private void Start()
+    {
+        statsPanel = GameObject.Find("Gladiator").GetComponentInChildren<Canvas>();
+        statsPanel.enabled = statsPanelDisplayed;
     }
 }
