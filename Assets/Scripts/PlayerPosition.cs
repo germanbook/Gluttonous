@@ -10,6 +10,9 @@ public class PlayerPosition : MonoBehaviour
 
     private float oldPosition;
 
+    // Timer
+    private float timeCount = 0f;
+
 
     private void Start()
     {
@@ -18,6 +21,17 @@ public class PlayerPosition : MonoBehaviour
 
     private void Update()
     {
+        timeCount += Time.deltaTime;
+
+        // If charactor stucks for 3 seconds
+        if (timeCount > 2 && transform.position.x == oldPosition && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true)
+        {
+            // Some reason the collision can not trigger, just manually do it
+            this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<CircleCollider2D>());
+            timeCount = 0f;
+            
+        }
+
         // Moving of right
         if (transform.position.x > oldPosition)
         {

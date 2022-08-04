@@ -31,6 +31,9 @@ public class PlayerStatus_Temp : MonoBehaviour
     // IF in attacking state
     public bool isAttacking;
 
+    //
+    public bool isFinding;
+
 
 
 
@@ -40,6 +43,7 @@ public class PlayerStatus_Temp : MonoBehaviour
         healthValue = 100f;
         isAlive = true;
         isAttacking = false;
+        isFinding = false;
     }
 
     // Update is called once per frame

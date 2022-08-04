@@ -22,6 +22,10 @@ public class TargetFinder : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (this.gameObject.name == "EnermyGladOneGFX")
+        {
+            Debug.Log("Enemy: " + nearestEnemy.name);
+        }
 
         //Change target when it die
         if ( ( this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
@@ -106,7 +110,7 @@ public class TargetFinder : MonoBehaviour
     }
 
     // Set target's destination
-    private void SetTarget(Transform targetTransform)
+    public void SetTarget(Transform targetTransform)
     {
         // Set target to A* pathfinding
         this.gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = targetTransform;

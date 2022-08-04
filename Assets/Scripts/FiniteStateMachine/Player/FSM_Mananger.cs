@@ -67,10 +67,12 @@ public class FSM_Mananger : MonoBehaviour
         currentState.OnEnter();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (this.gameObject.tag != collision.gameObject.tag
-            && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name )
+            && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name ==
+            collision.gameObject.name )
         {
             TransitionState(StateType.Attacking);
             targetPlayer = collision.gameObject;

@@ -18,11 +18,12 @@ public class FindingState : IState
         manager.animator.SetInteger("stateInt", 1);
         manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
             = manager.GetComponent<PlayerStatus_Temp>().findStateImage;
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isFinding = true;
     }
 
     public void OnExit()
     {
-        
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isFinding = false;
     }
 
     public void OnUpdate()
