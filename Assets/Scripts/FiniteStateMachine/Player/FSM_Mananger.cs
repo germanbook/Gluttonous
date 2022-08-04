@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 /// <summary>
@@ -8,11 +9,9 @@ using UnityEngine;
 /// </summary>
 public class FSM_Mananger : MonoBehaviour
 {
-    // Play character
-    public GameObject player;
 
     // Target player
-    [HideInInspector]public GameObject targetPlayer;
+    public GameObject targetPlayer;
 
     public Animator animator;
 
@@ -42,16 +41,14 @@ public class FSM_Mananger : MonoBehaviour
     /// <summary>
     /// State swap trigger here
     /// </summary>
-    private void Update()
+    private void FixedUpdate()
     {
         // Running current state's OnUpdate()
         currentState.OnUpdate();
-        if(player.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
+        if(this.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
         {
             TransitionState(StateType.Death);
         }
-
-        
     }
 
     // Swap states
@@ -70,21 +67,32 @@ public class FSM_Mananger : MonoBehaviour
         currentState.OnEnter();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.gameObject.tag != collision.gameObject.tag)
+        if (this.gameObject.tag != collision.gameObject.tag
+            && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name )
         {
             TransitionState(StateType.Attacking);
             targetPlayer = collision.gameObject;
         }
-        
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (targetPlayer.gameObject.name == collision.gameObject.name)
+        {
+            this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = false;
+        }
     }
 
 
     public void removeCharactor()
     {
         this.gameObject.SetActive(false);
+        this.transform.parent.gameObject.SetActive(false);
+        
+        this.gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = null;
+        
     }
 
 

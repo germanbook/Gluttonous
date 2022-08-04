@@ -18,10 +18,19 @@ public class AttackingState : IState
         manager.animator.SetInteger("stateInt", 2);
         manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
             = manager.GetComponent<PlayerStatus_Temp>().attackStateImage;
+
+        // Freeze location when enter attacking state
+        manager.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+
+        // Is attacking 
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = true;
+        
     }
 
     public void OnExit()
     {
+        // Is attacking 
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = false;
         
     }
 

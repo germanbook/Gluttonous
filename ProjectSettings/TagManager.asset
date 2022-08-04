@@ -24,6 +24,7 @@ TagManager:
   - D6_Back
   - Enemy
   - PlayerTest
+  - ArenaCenter
   layers:
   - Default
   - TransparentFX

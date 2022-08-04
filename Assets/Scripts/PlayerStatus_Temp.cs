@@ -28,6 +28,9 @@ public class PlayerStatus_Temp : MonoBehaviour
     // If this gladiator dead or live
     public bool isAlive;
 
+    // IF in attacking state
+    public bool isAttacking;
+
 
 
 
@@ -36,6 +39,7 @@ public class PlayerStatus_Temp : MonoBehaviour
     {
         healthValue = 100f;
         isAlive = true;
+        isAttacking = false;
     }
 
     // Update is called once per frame
