@@ -6,7 +6,7 @@ public class VendorNPCInitiator : MonoBehaviour
 {
     [Header("VendorCue")]
     [SerializeField] private GameObject VendorCue;
-    [Header("Dialogue1")]
+    [Header("VendorDialogue1")]
     [SerializeField] private GameObject VendorDialogue1;
 
     private bool playerInRange;
