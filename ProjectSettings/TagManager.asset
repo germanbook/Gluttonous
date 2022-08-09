@@ -25,6 +25,7 @@ TagManager:
   - Enemy
   - PlayerTest
   - ArenaCenter
+  - Gladiator
   layers:
   - Default
   - TransparentFX

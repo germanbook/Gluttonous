@@ -7,16 +7,16 @@ using Kryz.CharacterStats;
 public class StatsPanel : MonoBehaviour
 {
     Canvas statsPanel;
-    bool statsPanelDisplayed = false;
+    public bool statsPanelDisplayed = false;
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == false)
         {
             statsPanelDisplayed = true;
             statsPanel.enabled = statsPanelDisplayed;
         }
-        else if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == true)
+        else
         {
             statsPanelDisplayed = false;
             statsPanel.enabled = statsPanelDisplayed;
@@ -24,7 +24,7 @@ public class StatsPanel : MonoBehaviour
     }
     private void Start()
     {
-        statsPanel = GameObject.Find("Gladiator").GetComponentInChildren<Canvas>();
+        statsPanel = this.gameObject.GetComponentInChildren<Canvas>();
         statsPanel.enabled = statsPanelDisplayed;
      
     }
