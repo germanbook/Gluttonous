@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Kryz.CharacterStats;
 
 public class StatsPanel : MonoBehaviour
 {
@@ -25,5 +26,6 @@ public class StatsPanel : MonoBehaviour
     {
         statsPanel = GameObject.Find("Gladiator").GetComponentInChildren<Canvas>();
         statsPanel.enabled = statsPanelDisplayed;
+     
     }
 }
