@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
         // Set to false by default
         isDialogueShowing = false;
 
-        Time.timeScale = 0;
     }
 
     private void Update()
