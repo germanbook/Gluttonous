@@ -8583,6 +8583,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerLanista
       objectReference: {fileID: 0}
+    - target: {fileID: 5153739129734942005, guid: dac59376f4af6294d876c97f7ff86c8b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -179535884191603286, guid: dac59376f4af6294d876c97f7ff86c8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dac59376f4af6294d876c97f7ff86c8b, type: 3}
