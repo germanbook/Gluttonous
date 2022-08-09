@@ -21,6 +21,10 @@ TagManager:
   - D4_SubOption_Back
   - D5_Back
   - D6_Back
+  - D2_Threax
+  - D2_Samnites
+  - D2_Myrmilo
+  - D2_Retiarius
   layers:
   - Default
   - TransparentFX

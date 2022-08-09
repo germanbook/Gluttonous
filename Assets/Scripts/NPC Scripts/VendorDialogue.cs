@@ -30,28 +30,47 @@ public class VendorDialogue : MonoBehaviour
     {
         switch (button.gameObject.tag)
         {
-            case "Yes":
-                // YES
-                // VendorDialogue2
-                VendorDialogue1.gameObject.SetActive(false);
-                VendorDialogue2.SetActive(true);
+            case "D1_01":
+                // No thanks
+                VendorDialogue1.SetActive(false);
+                // Set dialogue status to false;
+                GameManager.isDialogueShowing = false;
                 break;
             
           
-            case "No Thanks":
-
+            case "D1_02":
+                // Yes
                 VendorDialogue1.gameObject.SetActive(false);
-               VendorDialogue2.gameObject.SetActive(false);
+                VendorDialogue2.gameObject.SetActive(true);
+                break;
 
+            case "D2_Threax":
+                // Threax gladiator
+                
+                break;
+
+            case "D2_Samnites":
+                // Samnites gladiator
+
+                break;
+
+            case "D2_Myrmilo":
+                // Myrmilo gladiator
+
+                break;
+
+            case "D2_Retiarius":
+                // Retiarius gladiator
+
+                break;
+
+            case "D2_Back":
+                // No thanks
+                VendorDialogue2.SetActive(false);
                 // Set dialogue status to false;
                 GameManager.isDialogueShowing = false;
                 break;
 
-            case "GoBack":
-                // Back from VendorDialogue2
-                VendorDialogue2.gameObject.SetActive(false);
-                VendorDialogue1.gameObject.SetActive(true);
-                break;
 
 
 

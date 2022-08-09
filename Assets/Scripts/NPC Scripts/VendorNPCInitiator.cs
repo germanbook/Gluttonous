@@ -26,7 +26,7 @@ public class VendorNPCInitiator : MonoBehaviour
             // Show the visual cue
             VendorCue.SetActive(true);
             // Click mouse key to show dialogue
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
             {
                 // show dialogue here
                 VendorDialogue1.SetActive(true);
