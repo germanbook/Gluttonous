@@ -25,6 +25,15 @@ TagManager:
   - D2_Samnites
   - D2_Myrmilo
   - D2_Retiarius
+  - Gladiator
+  - Enemy
+  - CurrencyValue
+  - VendorNPC
+  - PlayerGladiatorsStore
+  - GladiatorHireFailOK
+  - GladiatorHireSucessOK
+  - VendorDialogue
+  - ArenaSceneManager
   layers:
   - Default
   - TransparentFX

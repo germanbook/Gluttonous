@@ -13,8 +13,17 @@ public class TargetFinder : MonoBehaviour
 
     public Transform tempTarget;
 
+    public GameObject arenaSceneManager;
+
+    private bool isWon;
+
+    private int originalCurrency;
+
     private void Start()
     {
+        originalCurrency = GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue;
+        isWon = false;
+        arenaSceneManager = GameObject.FindGameObjectWithTag("ArenaSceneManager");
         nearestEnemy = this.transform;
         // Finding target
         Invoke("FindTarget", 0.2f);
@@ -22,11 +31,11 @@ public class TargetFinder : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        
         //Change target when it die
-        if ( ( this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
+        if ((this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
             && this.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true)
-            || ( nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+            || (nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
                  && nearestEnemy.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.name != this.gameObject.name)
             )
         {
@@ -34,6 +43,12 @@ public class TargetFinder : MonoBehaviour
             nearestEnemy = tempTarget;
             FindTarget();
         }
+
+        if (isWon)
+        {
+            increaseGold();
+        }
+
 
     }
 
@@ -81,8 +96,12 @@ public class TargetFinder : MonoBehaviour
 
             if (nearestEnemy != tempTarget)
             {
-                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-                SetTarget(nearestEnemy);
+                if (arenaSceneManager.GetComponent<ArenaSceneManager>().isPause == false)
+                {
+                    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                    SetTarget(nearestEnemy);
+                }
+                    
             }
             else
             if (nearestEnemy == tempTarget)
@@ -99,7 +118,9 @@ public class TargetFinder : MonoBehaviour
             {
                 SetTarget(this.gameObject.transform );
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
-                //SetTarget(GameObject.FindGameObjectWithTag("ArenaCenter").transform);
+
+                isWon = true;
+
             }
         }
 
@@ -108,7 +129,18 @@ public class TargetFinder : MonoBehaviour
     // Set target's destination
     public void SetTarget(Transform targetTransform)
     {
+
         // Set target to A* pathfinding
         this.gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = targetTransform;
+
+    }
+
+    void increaseGold()
+    {
+        if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 50)
+        {
+            GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
+        }
+        
     }
 }

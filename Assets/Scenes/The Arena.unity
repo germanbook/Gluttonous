@@ -255,6 +255,7 @@ Transform:
   - {fileID: 8263539444557368203}
   - {fileID: 2067725672}
   - {fileID: 21466851}
+  - {fileID: 1270509614}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -677,6 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41421bc242fee400191efb500d338256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arenaSceneManager: {fileID: 1793272922}
 --- !u!1 &341437987
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!212 &396984122
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1158,6 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &398603952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,6 +2193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &563964845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3093,6 +3098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!212 &792105393
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3873,7 +3879,7 @@ GameObject:
   - component: {fileID: 1004792893}
   m_Layer: 5
   m_Name: CurrencyValue
-  m_TagString: Untagged
+  m_TagString: CurrencyValue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4976,6 +4982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!212 &1189021413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5348,6 +5355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!212 &1267775380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5400,6 +5408,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1270509613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270509614}
+  - component: {fileID: 1270509615}
+  m_Layer: 0
+  m_Name: PlayerGladiatorsStore
+  m_TagString: PlayerGladiatorsStore
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1270509614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270509613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 50368449}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270509615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270509613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98eaf656d4023428ab719df93d4df280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterSamnites: 0
+  counterThraex: 0
+  counterMyrmilo: 0
+  counterRetiarius: 0
 --- !u!1 &1308363875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,6 +5563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &1308363883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5876,6 +5933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &1336535167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,6 +6363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &1384083198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7654,6 +7713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!50 &1631056055
 Rigidbody2D:
   serializedVersion: 4
@@ -8106,7 +8166,7 @@ GameObject:
   - component: {fileID: 1793272923}
   m_Layer: 0
   m_Name: SceneManager
-  m_TagString: Untagged
+  m_TagString: ArenaSceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8123,6 +8183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b328c114b55084a85a08ba1579edd004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPause: 0
 --- !u!4 &1793272924
 Transform:
   m_ObjectHideFlags: 0
@@ -9326,6 +9387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!212 &2016148928
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9668,6 +9730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  arenaSceneManager: {fileID: 0}
 --- !u!114 &2119495759
 MonoBehaviour:
   m_ObjectHideFlags: 0

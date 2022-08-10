@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class VendorDialogue : MonoBehaviour
 {
 
-    [SerializeField] GameObject VendorDialogue1;
-    [SerializeField] GameObject VendorDialogue2;
-    
+    public GameObject VendorDialogue1;
+    public GameObject VendorDialogue2;
+
+    GameObject vendorNPC;
 
 
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class VendorDialogue : MonoBehaviour
     {
       
         VendorDialogue2.SetActive(false);
-        
+        vendorNPC = GameObject.FindGameObjectWithTag("VendorNPC");
     }
 
     // Update is called once per frame
@@ -46,22 +47,26 @@ public class VendorDialogue : MonoBehaviour
 
             case "D2_Threax":
                 // Threax gladiator
-                
+                VendorDialogue2.gameObject.SetActive(false);
+                vendorNPC.gameObject.GetComponent<GaladiatorHire>().gladiatorHire(button.gameObject.tag);
                 break;
 
             case "D2_Samnites":
                 // Samnites gladiator
-
+                VendorDialogue2.gameObject.SetActive(false);
+                vendorNPC.gameObject.GetComponent<GaladiatorHire>().gladiatorHire(button.gameObject.tag);
                 break;
 
             case "D2_Myrmilo":
                 // Myrmilo gladiator
-
+                VendorDialogue2.gameObject.SetActive(false);
+                vendorNPC.gameObject.GetComponent<GaladiatorHire>().gladiatorHire(button.gameObject.tag);
                 break;
 
             case "D2_Retiarius":
                 // Retiarius gladiator
-
+                VendorDialogue2.gameObject.SetActive(false);
+                vendorNPC.gameObject.GetComponent<GaladiatorHire>().gladiatorHire(button.gameObject.tag);
                 break;
 
             case "D2_Back":

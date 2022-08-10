@@ -9,9 +9,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class ButtonsController : MonoBehaviour
 {
+    public GameObject arenaSceneManager;
+
     public void BeginCombat()
     {
-        Time.timeScale = 1;
+        arenaSceneManager.GetComponent<ArenaSceneManager>().isPause = false;
     }
 
     public void ResetCombat()

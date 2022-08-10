@@ -19,16 +19,32 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // For currency test
-        if(Input.GetKeyDown(KeyCode.C))
+        // L: Ludus scene
+        if(Input.GetKeyDown(KeyCode.L))
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (SceneManager.GetActiveScene().buildIndex != 0)
             {
                 SceneManager.LoadScene(0);
             }
 
-            if (SceneManager.GetActiveScene().buildIndex == 0)
+        }
+
+        // A: Arena scene
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 1)
             {
                 SceneManager.LoadScene(1);
+            }
+
+        }
+
+        // T: Tavern scene
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 2)
+            {
+                SceneManager.LoadScene(2);
             }
 
         }

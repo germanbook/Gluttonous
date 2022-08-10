@@ -230,6 +230,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 890044999333811187, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3759761923608048516, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_RootOrder
@@ -248,12 +253,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.77
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -298,7 +303,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_Name
-      value: Gladiator (1)
+      value: GladiatorThraex
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -373,6 +383,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3360841145665104678, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_text
+      value: Samnites
+      objectReference: {fileID: 0}
     - target: {fileID: 3759761923608048516, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_RootOrder
@@ -391,17 +406,17 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.81
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.38
+      value: -1.12
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -441,7 +456,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_Name
-      value: Gladiator (2)
+      value: GladiatorSamnites
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -1513,6 +1533,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83ee9020a6389844aa5649a30e55109, type: 3}
+--- !u!1 &936410038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936410040}
+  - component: {fileID: 936410039}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &936410039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936410038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248cc850192a746bc84b21b95180926e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  galadiatorSamnites: {fileID: 708701354}
+  galadiatorThraex: {fileID: 518865020}
+  galadiatorMyrmilo: {fileID: 1967661314}
+  galadiatorRetiarius: {fileID: 1124426343}
+--- !u!4 &936410040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936410038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.866001, y: 1.2560005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &960295705 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6108675350824524754, guid: 624e879e0d5b2dd4297a68d5e758718d,
@@ -1601,6 +1669,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3360841145665104678, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_text
+      value: Retiarius
+      objectReference: {fileID: 0}
     - target: {fileID: 3759761923608048516, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1619,12 +1692,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.91
+      value: 7.62
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -1669,7 +1742,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_Name
-      value: Gladiator (4)
+      value: GladiatorRetiarius
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -1832,149 +1910,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8263539445364075085, guid: b2cd153a184b47c47822e08ddb7454b8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2cd153a184b47c47822e08ddb7454b8, type: 3}
---- !u!1 &1840220143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1894604969}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1840220144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840220143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e197dc3e2498462886cfc30c6a543fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  destinationPosition: {fileID: 345112911}
---- !u!114 &1840220145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840220143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f84189ef18eca7419cdbd115db167b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statsPanelDisplayed: 0
---- !u!61 &1840220146
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840220143}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.5, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!1001 &1894604969
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3759761923608048516, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4689548232569535131, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 2062375444}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_Name
-      value: Gladiator (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Gladiator
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 41746e6ab71382c41a6377b6298c146a, type: 3}
 --- !u!1 &1967501423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5153739129734942005, guid: dac59376f4af6294d876c97f7ff86c8b,
@@ -2007,6 +1942,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3360841145665104678, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_text
+      value: Myrmilo
+      objectReference: {fileID: 0}
     - target: {fileID: 3759761923608048516, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_RootOrder
@@ -2025,17 +1965,17 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.84
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
@@ -2075,7 +2015,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}
       propertyPath: m_Name
-      value: Gladiator (3)
+      value: GladiatorMyrmilo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356789, guid: 41746e6ab71382c41a6377b6298c146a,
         type: 3}

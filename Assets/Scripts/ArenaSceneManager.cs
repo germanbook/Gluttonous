@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ArenaSceneManager : MonoBehaviour
 {
+    public bool isPause;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        Time.timeScale = 0;
+        isPause = true;
     }
 
     // Update is called once per frame

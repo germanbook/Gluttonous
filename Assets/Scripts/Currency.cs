@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Currency : MonoBehaviour
 {
     public static Currency instance;
-    [SerializeField]private int currencyValue;
+    public int currencyValue;
     public Text currencyText;
 
     private void Awake()
