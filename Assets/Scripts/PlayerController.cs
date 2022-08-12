@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     bool moving;
 
-    [SerializeField]
+
     Camera cam;
     private void Update()
     {
@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
             moving = false;
         }
     }
-    
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
 
 }
