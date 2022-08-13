@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     bool moving;
 
-
+    //Main camera assigned variable
     Camera cam;
     private void Update()
     {
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        //Assigns camera to variable
         cam = Camera.main;
     }
 
