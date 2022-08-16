@@ -43,7 +43,7 @@ public class AttackingState : IState
         timeCount += Time.deltaTime;
         
         // for 1 second
-        if (timeCount > 2)
+        if (timeCount > 1)
         {
             if (manager.targetPlayer != null)
             {
