@@ -8,6 +8,10 @@ public class AttackingState : IState
 {
     private FSM_Mananger manager;
 
+
+    // Timer
+    private float timeCount = 0f;
+
     public AttackingState(FSM_Mananger manager)
     {
         this.manager = manager;
@@ -36,9 +40,18 @@ public class AttackingState : IState
 
     public void OnUpdate()
     {
-        if (manager.targetPlayer != null)
+        timeCount += Time.deltaTime;
+        
+        // for 1 second
+        if (timeCount > 2)
         {
-            manager.gameObject.GetComponent<GladiatorAttack>().PlayerAttackding(manager.targetPlayer);
+            if (manager.targetPlayer != null)
+            {
+                manager.gameObject.GetComponent<GladiatorAttack>().PlayerAttackding(manager.targetPlayer);
+            }
+            timeCount = 0f;
         }
+
+        
     }
 }
