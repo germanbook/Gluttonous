@@ -20,7 +20,7 @@ public class GaladiatorHire : MonoBehaviour
     [SerializeField] GameObject hireFailDialogue;
     [SerializeField] Text gladiatorCounter;
 
-    private void Awake()
+    private void Start()
     {
         // currency
         currency = GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue;
