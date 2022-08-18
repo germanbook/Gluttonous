@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 /// <summary>
 /// Attacking State
 /// </summary>
@@ -9,9 +10,6 @@ public class AttackingState : IState
     private FSM_Mananger manager;
 
 
-    // Timer
-    private float timeCount = 0f;
-
     public AttackingState(FSM_Mananger manager)
     {
         this.manager = manager;
@@ -19,6 +17,7 @@ public class AttackingState : IState
 
     public void OnEnter()
     {
+
         manager.animator.SetInteger("stateInt", 2);
         manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
             = manager.GetComponent<PlayerStatus_Temp>().attackStateImage;
@@ -40,18 +39,23 @@ public class AttackingState : IState
 
     public void OnUpdate()
     {
-        timeCount += Time.deltaTime;
         
-        // for 1 second
-        if (timeCount > 1)
+        switch (manager.gameObject.name)
         {
-            if (manager.targetPlayer != null)
-            {
-                manager.gameObject.GetComponent<GladiatorAttack>().PlayerAttackding(manager.targetPlayer);
-            }
-            timeCount = 0f;
+            
+            case "Samnites":
+                manager.gameObject.GetComponent<SamnitesSkillManager>().GetOpponent(manager.targetPlayer);
+                break;
+            case "Retiarius":
+                manager.gameObject.GetComponent<RetiariusSkillManager>().GetOpponent(manager.targetPlayer);
+                break;
+            case "Murmillo":
+                manager.gameObject.GetComponent<MurmilloSkillManager>().GetOpponent(manager.targetPlayer);
+                break;
+            case "Thraex":
+                manager.gameObject.GetComponent<ThraexSkillManager>().GetOpponent(manager.targetPlayer);
+                break;
         }
 
-        
     }
 }

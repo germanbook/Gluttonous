@@ -147,7 +147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &146752222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,9 +602,9 @@ GameObject:
   - component: {fileID: 398603950}
   - component: {fileID: 398603949}
   - component: {fileID: 398603948}
-  - component: {fileID: 398603947}
   - component: {fileID: 398603946}
   - component: {fileID: 398603945}
+  - component: {fileID: 398603954}
   m_Layer: 0
   m_Name: Retiarius
   m_TagString: Enemy
@@ -656,20 +656,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &398603947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398603943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &398603948
 Animator:
   serializedVersion: 4
@@ -813,6 +799,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &398603954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398603943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eb7ec52a35644bca28fa1ccf12c6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
 --- !u!114 &408555785 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472437492226057648, guid: 3faba8f8ba20643a69d776c74b767570,
@@ -1211,7 +1210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &450079311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,9 +1483,9 @@ GameObject:
   - component: {fileID: 563964843}
   - component: {fileID: 563964842}
   - component: {fileID: 563964841}
-  - component: {fileID: 563964840}
   - component: {fileID: 563964839}
   - component: {fileID: 563964838}
+  - component: {fileID: 563964847}
   m_Layer: 0
   m_Name: Murmillo
   m_TagString: Enemy
@@ -1538,20 +1537,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &563964840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563964836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &563964841
 Animator:
   serializedVersion: 4
@@ -1695,6 +1680,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &563964847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563964836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c530b59a171eb4199bc4e74a418fb538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
 --- !u!1 &580604127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1166881360
 Transform:
   m_ObjectHideFlags: 0
@@ -2946,9 +2944,9 @@ GameObject:
   - component: {fileID: 1189021410}
   - component: {fileID: 1189021409}
   - component: {fileID: 1189021408}
-  - component: {fileID: 1189021407}
   - component: {fileID: 1189021406}
   - component: {fileID: 1189021405}
+  - component: {fileID: 1189021414}
   m_Layer: 0
   m_Name: Murmillo
   m_TagString: Player
@@ -3000,20 +2998,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &1189021407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189021403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &1189021408
 Animator:
   serializedVersion: 4
@@ -3157,6 +3141,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1189021414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189021403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c530b59a171eb4199bc4e74a418fb538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
 --- !u!1001 &1211214654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3321,9 +3318,9 @@ GameObject:
   - component: {fileID: 1267775377}
   - component: {fileID: 1267775376}
   - component: {fileID: 1267775375}
-  - component: {fileID: 1267775374}
   - component: {fileID: 1267775373}
   - component: {fileID: 1267775372}
+  - component: {fileID: 1267775381}
   m_Layer: 0
   m_Name: Retiarius
   m_TagString: Player
@@ -3375,20 +3372,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &1267775374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267775370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &1267775375
 Animator:
   serializedVersion: 4
@@ -3532,6 +3515,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1267775381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267775370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eb7ec52a35644bca28fa1ccf12c6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
 --- !u!1 &1308363875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,9 +3543,9 @@ GameObject:
   - component: {fileID: 1308363884}
   - component: {fileID: 1308363886}
   - component: {fileID: 1308363885}
-  - component: {fileID: 1308363888}
   - component: {fileID: 1308363889}
   - component: {fileID: 1308363890}
+  - component: {fileID: 1308363891}
   m_Layer: 0
   m_Name: Samnites
   m_TagString: Player
@@ -3716,20 +3712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 1308363885}
---- !u!114 &1308363888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308363875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!58 &1308363889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3758,6 +3740,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd3a91233c8e4c0484a83300abf3098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1308363891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308363875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538491e84be3408cbe5d8d69b134f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
 --- !u!1 &1357491605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,9 +3974,9 @@ GameObject:
   - component: {fileID: 1384083196}
   - component: {fileID: 1384083195}
   - component: {fileID: 1384083194}
-  - component: {fileID: 1384083193}
   - component: {fileID: 1384083192}
   - component: {fileID: 1384083191}
+  - component: {fileID: 1384083200}
   m_Layer: 0
   m_Name: Thraex
   m_TagString: Enemy
@@ -4033,20 +4028,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &1384083193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384083189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &1384083194
 Animator:
   serializedVersion: 4
@@ -4190,6 +4171,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1384083200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384083189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e0ebc7974ab4d3ab77609c0ec43ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 24176cc8fe80a4a9f8b1ed5ac34a4aa6, type: 2}
 --- !u!1 &1442503358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,9 +5119,9 @@ GameObject:
   - component: {fileID: 1631056055}
   - component: {fileID: 1631056058}
   - component: {fileID: 1631056057}
-  - component: {fileID: 1631056056}
   - component: {fileID: 1631056059}
   - component: {fileID: 1631056060}
+  - component: {fileID: 1631056061}
   m_Layer: 0
   m_Name: Samnites
   m_TagString: Enemy
@@ -5260,20 +5254,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1631056056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631056049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &1631056057
 Animator:
   serializedVersion: 4
@@ -5336,6 +5316,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd3a91233c8e4c0484a83300abf3098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1631056061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631056049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538491e84be3408cbe5d8d69b134f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
 --- !u!1 &1646910698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5744,7 +5737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1819353600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6728,9 +6721,9 @@ GameObject:
   - component: {fileID: 2016148925}
   - component: {fileID: 2016148924}
   - component: {fileID: 2016148923}
-  - component: {fileID: 2016148922}
   - component: {fileID: 2016148921}
   - component: {fileID: 2016148920}
+  - component: {fileID: 2016148929}
   m_Layer: 0
   m_Name: Thraex
   m_TagString: Player
@@ -6782,20 +6775,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.71
---- !u!114 &2016148922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016148918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970bb18bd481c4f728c15ee78ae6b68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 0
-  attackDamage: 10
 --- !u!95 &2016148923
 Animator:
   serializedVersion: 4
@@ -6939,6 +6918,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2016148929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016148918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e0ebc7974ab4d3ab77609c0ec43ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 24176cc8fe80a4a9f8b1ed5ac34a4aa6, type: 2}
 --- !u!1 &2080661671
 GameObject:
   m_ObjectHideFlags: 0

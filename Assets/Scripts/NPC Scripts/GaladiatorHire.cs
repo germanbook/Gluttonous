@@ -20,7 +20,7 @@ public class GaladiatorHire : MonoBehaviour
     [SerializeField] GameObject hireFailDialogue;
     [SerializeField] Text gladiatorCounter;
 
-    private void Awake()
+    private void Start()
     {
         // currency
         currency = GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue;
@@ -71,6 +71,8 @@ public class GaladiatorHire : MonoBehaviour
     // Check if player have enough balance to hiring a gladiator
     bool checkBalance(string gladiatorTag)
     {
+        Debug.Log("Currency:" + currency);
+
         switch (gladiatorTag)
         {
             case "D2_Threax":
