@@ -93,7 +93,7 @@ public class SamnitesSkillManager : MonoBehaviour
 
                 break;
 
-            case "Thraex":
+            case "Threax":
                 Debug.Log("I'm S attacking T");
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {

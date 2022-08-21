@@ -102,7 +102,7 @@ public class RetiariusSkillManager : MonoBehaviour
 
                 break;
 
-            case "Thraex":
+            case "Threax":
                 Debug.Log("I'm R attacking T");
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {

@@ -92,7 +92,7 @@ public class ThraexSkillManager : MonoBehaviour
 
                 break;
 
-            case "Thraex":
+            case "Threax":
                 Debug.Log("I'm T attacking T");
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {

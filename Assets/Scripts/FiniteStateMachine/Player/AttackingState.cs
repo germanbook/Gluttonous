@@ -52,7 +52,7 @@ public class AttackingState : IState
             case "Murmillo":
                 manager.gameObject.GetComponent<MurmilloSkillManager>().GetOpponent(manager.targetPlayer);
                 break;
-            case "Thraex":
+            case "Threax":
                 manager.gameObject.GetComponent<ThraexSkillManager>().GetOpponent(manager.targetPlayer);
                 break;
         }

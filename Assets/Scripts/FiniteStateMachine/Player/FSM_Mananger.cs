@@ -81,7 +81,9 @@ public class FSM_Mananger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (targetPlayer.gameObject.name == collision.gameObject.name)
+
+        if (targetPlayer.gameObject.name == collision.gameObject.name
+            && targetPlayer.gameObject.tag == collision.gameObject.tag)
         {
             this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = false;
         }

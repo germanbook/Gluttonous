@@ -98,7 +98,7 @@ public class MurmilloSkillManager : MonoBehaviour
 
                 break;
 
-            case "Thraex":
+            case "Threax":
                 Debug.Log("I'm M attacking T");
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {

@@ -35,6 +35,10 @@ public class PlayerPosition : MonoBehaviour
                 this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
                     this.gameObject.transform.parent.gameObject.
                     GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
+
+                this.gameObject.transform.parent.gameObject.
+                    GetComponent<AIDestinationSetter>().target.gameObject.
+                    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
                 timeCount = 0f;
             }
             
@@ -44,27 +48,29 @@ public class PlayerPosition : MonoBehaviour
         // Moving of right
         if (transform.position.x > oldPosition)
         {
-            if (this.gameObject.tag == "Enemy")
-            {
-                this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else
-            {
-                this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //if (this.gameObject.tag == "Enemy")
+            //{
+            //    this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            //}
+            //else
+            //{
+            //    this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //}
         }
 
         // Moving of lift
         if (transform.position.x < oldPosition)
         {
-            if (this.gameObject.tag == "Player")
-            {
-                this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else
-            {
-                this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            //if (this.gameObject.tag == "Player")
+            //{
+            //    this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            //}
+            //else
+            //{
+            //    this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //}
         }
 
         // update the old position with the new position
