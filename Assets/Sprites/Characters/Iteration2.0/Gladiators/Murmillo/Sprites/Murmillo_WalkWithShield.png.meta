@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac8373e0b99f9ed4b9d271884d55f4ce
+guid: 66153ac16c6f6aa4fafdaf07a39f0370
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Murmillo_Attack_0
+      name: Murmillo_WalkWithShield_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 16
-        width: 60
+        x: 7
+        y: 12
+        width: 101
         height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9889f7c8fbe6d9d4298d3deb6dd2614c
-      internalID: -635495354
+      spriteID: 5f9a927d785721049b1ab9463a105077
+      internalID: 2094296504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Murmillo_Attack_1
+      name: Murmillo_WalkWithShield_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 16
-        width: 100
+        x: 136
+        y: 12
+        width: 92
         height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b6d1b02a800f04aab5806dc3b7e540
-      internalID: -1931246917
+      spriteID: 6f9ed21b8346f644589af9a1e0fbeb74
+      internalID: 1555498753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Murmillo_Attack_2
+      name: Murmillo_WalkWithShield_2
       rect:
         serializedVersion: 2
-        x: 280
-        y: 16
-        width: 96
+        x: 253
+        y: 12
+        width: 99
         height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,8 +172,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea8b8722b1a232c4e813c3a6e2653c5b
-      internalID: -232453483
+      spriteID: b2ad1f0ca98440349a6f1a2ecf467ab3
+      internalID: -1603733692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Murmillo_WalkWithShield_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 11
+        width: 92
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7da8a538ace34244ad48811d5841eaf
+      internalID: 543294765
       vertices: []
       indices: 
       edges: []
@@ -189,9 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Murmillo_Attack_2: -232453483
-      Murmillo_Attack_0: -635495354
-      Murmillo_Attack_1: -1931246917
+      Murmillo_WalkWithShield_1: 1555498753
+      Murmillo_WalkWithShield_0: 2094296504
+      Murmillo_WalkWithShield_3: 543294765
+      Murmillo_WalkWithShield_2: -1603733692
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
