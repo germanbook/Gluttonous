@@ -285,6 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
+  isThrowNet: 0
+  ProjectPrefab: {fileID: 4640735521411889770, guid: 0552f1785991bce4b843e53d8a162d45,
+    type: 3}
+  LaunchOffset: {fileID: 1876856307}
 --- !u!114 &69886651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &333509473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
+  isThrowNet: 0
+  ProjectPrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
 --- !u!114 &429961374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,7 +2834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260056139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -2.509747, z: 0.292799}
+  m_LocalPosition: {x: 4.81, y: -2.509747, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4187,7 +4194,17 @@ PrefabInstance:
     - target: {fileID: 4492364328459278629, guid: ae9a729aa00b4df49a41dd796c58018a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225284532226309161, guid: ae9a729aa00b4df49a41dd796c58018a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225284532226309161, guid: ae9a729aa00b4df49a41dd796c58018a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.189
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: ae9a729aa00b4df49a41dd796c58018a,
         type: 3}
@@ -4279,7 +4296,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4492364328459278629, guid: ae9a729aa00b4df49a41dd796c58018a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ae9a729aa00b4df49a41dd796c58018a, type: 3}
 --- !u!1001 &1620032871
 PrefabInstance:
@@ -4865,7 +4883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1744975205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5405,6 +5423,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1876856307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6225284532226309161, guid: ae9a729aa00b4df49a41dd796c58018a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1597506892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1889978035
 GameObject:
   m_ObjectHideFlags: 0

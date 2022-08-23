@@ -18,6 +18,9 @@ public class FSM_Mananger : MonoBehaviour
     // Current state
     public IState currentState;
 
+    // Throw net
+    bool isThrowNet;
+
     // Dictionary mapping state to key and value
     private Dictionary<StateType, IState> states = new Dictionary<StateType, IState>();
 
@@ -28,6 +31,7 @@ public class FSM_Mananger : MonoBehaviour
         states.Add(StateType.Finding, new FindingState(this));
         states.Add(StateType.Attacking, new AttackingState(this));
         states.Add(StateType.Death, new DeathState(this));
+        states.Add(StateType.ThrowNet, new ThrowNetState(this));
 
         // Default state: Idle
         TransitionState(StateType.Idle);
@@ -69,7 +73,8 @@ public class FSM_Mananger : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.gameObject.tag != collision.gameObject.tag
+        if (collision.gameObject.tag != "Net"
+            && this.gameObject.tag != collision.gameObject.tag
             && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
             && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name ==
             collision.gameObject.name )
@@ -98,6 +103,7 @@ public class FSM_Mananger : MonoBehaviour
         this.gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = null;
         
     }
+
 
 
 }

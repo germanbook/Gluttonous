@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RetiariusSkillManager : MonoBehaviour
 {
-    [SerializeField] SkillData skillData;
+    public SkillData skillData;
     GameObject opponent;
 
     // Attack and Skill timer
@@ -18,7 +18,10 @@ public class RetiariusSkillManager : MonoBehaviour
     float roundTimer;
 
     // throw net
-    bool isThrowNet;
+    public bool isThrowNet;
+    public GameObject ProjectPrefab;
+    public Transform LaunchOffset;
+
 
 
     void Start()
@@ -44,6 +47,7 @@ public class RetiariusSkillManager : MonoBehaviour
             // Timer
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;
+            skillTimer += Time.deltaTime;
 
             // Attack
             if (attackTimer > skillData.attackCooldown && isThrowNet == false)
@@ -52,13 +56,15 @@ public class RetiariusSkillManager : MonoBehaviour
                 attackTimer = 0f;
             }
 
-            // Testing...
-            // Throw net three seconds after this round begins
-            if (skillTimer > skillData.skillCooldown && roundTimer > 3)
-            {
-                SkillAttack();
-                skillTimer = 0f;
-            }
+            //// Testing...
+            //// Throw net three seconds after this round begins
+            //if (skillTimer > skillData.skillCooldown && roundTimer > 3)
+            //{
+            //    SkillAttack();
+            //    skillTimer = 0f;
+            //}
+
+            
 
         }
     }
@@ -115,16 +121,22 @@ public class RetiariusSkillManager : MonoBehaviour
     }
 
     // Throw net
-    void SkillAttack()
+    public void SkillAttack(Transform nearestEnemy)
     {
-        isThrowNet = true;
-    }
 
-    // Call this function when net animation finish
-    // Call from animation event
-    void SkillAttackFinish()
-    {
+        // instantialize net object
+        Instantiate(ProjectPrefab, LaunchOffset.position, transform.rotation).transform.SetParent(this.transform);
         isThrowNet = false;
+
+        if (nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
+
+            &&
+
+            nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+        {
+            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+        }
+
     }
 
     public void ReceiveAttackDamage(string attacker, float damage)

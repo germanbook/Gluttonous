@@ -14,17 +14,23 @@ public class PlayerPosition : MonoBehaviour
     // Timer
     private float timeCount = 0f;
 
+    // Net'd
+    public bool isNetted;
+
 
     private void Start()
     {
         oldPosition = this.gameObject.transform.position.x;
+        isNetted = false;
     }
 
     private void Update()
     {
 
         // If charactor stucks for 3 seconds
-        if (transform.position.x == oldPosition && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true)
+        if (transform.position.x == oldPosition
+            && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true
+            && isNetted == false)
         {
             
             timeCount += Time.deltaTime;

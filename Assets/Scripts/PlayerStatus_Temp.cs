@@ -51,6 +51,7 @@ public class PlayerStatus_Temp : MonoBehaviour
     {
         // Update life bar value
         LifeBarValue();
+        
     }
 
 
