@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Murmillo_Block
+  m_Name: Samnite_Block
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 662547128, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
+      value: {fileID: 1770991471, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
     - time: 0.033333335
-      value: {fileID: 1235095036, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
+      value: {fileID: 1732168058, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
     - time: 0.083333336
-      value: {fileID: -361701694, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
+      value: {fileID: 982605836, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 662547128, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
-    - {fileID: 1235095036, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
-    - {fileID: -361701694, guid: c0be910b44369f64b8faf75dee218af9, type: 3}
+    - {fileID: 1770991471, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
+    - {fileID: 1732168058, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
+    - {fileID: 982605836, guid: 7333175d24ba7134e93925c9d0268228, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
