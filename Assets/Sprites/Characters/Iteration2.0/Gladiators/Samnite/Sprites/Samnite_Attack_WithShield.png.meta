@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d399d0c8441cbb7438de602b3999e44b
+guid: c75b0ea7b5111f04596679b456897b42
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Samnite_Walk_0
+      name: Samnite_Attack_WithShield_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 16
-        width: 96
-        height: 72
+        x: 16
+        y: 8
+        width: 95
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4b4f720e0afdf04a9da0b68caf81937
-      internalID: -1927239498
+      spriteID: d1ac232a9f48e294f9d0359df3c60f3b
+      internalID: -1100745300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samnite_Walk_1
+      name: Samnite_Attack_WithShield_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
-        width: 92
-        height: 76
+        x: 139
+        y: 8
+        width: 117
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7a927d3b306064b9896b82872f7e1b
-      internalID: -759738178
+      spriteID: e14a1f5ee05b1e343bb08c6a17989c93
+      internalID: -1089789330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samnite_Walk_2
+      name: Samnite_Attack_WithShield_2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 16
-        width: 68
-        height: 72
+        x: 261
+        y: 8
+        width: 119
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,29 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2826a36ced628a24a9e4a36922894850
-      internalID: -1238827724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samnite_Walk_3
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 16
-        width: 92
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 914c08f2d7023df44ad10cda7fe0aa1f
-      internalID: 779976251
+      spriteID: 1f43b3fa760eb114eaf2a7cceae30cb1
+      internalID: -1904433886
       vertices: []
       indices: 
       edges: []
@@ -210,10 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Samnite_Walk_1: -759738178
-      Samnite_Walk_3: 779976251
-      Samnite_Walk_0: -1927239498
-      Samnite_Walk_2: -1238827724
+      Samnite_Attack_WithShield_1: -1089789330
+      Samnite_Attack_WithShield_2: -1904433886
+      Samnite_Attack_WithShield_0: -1100745300
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
