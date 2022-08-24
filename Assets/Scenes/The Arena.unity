@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 20623886}
   - component: {fileID: 20623885}
   m_Layer: 5
-  m_Name: Murmilo
+  m_Name: Myrmilo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 384072421}
   - component: {fileID: 384072420}
   m_Layer: 5
-  m_Name: NumberOF
+  m_Name: samniteCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2401,7 +2401,7 @@ GameObject:
   - component: {fileID: 500758197}
   - component: {fileID: 500758196}
   m_Layer: 5
-  m_Name: NumberOF
+  m_Name: threaxCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 802723546}
   - component: {fileID: 802723545}
   m_Layer: 5
-  m_Name: NumberOF
+  m_Name: myrmiloCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7635,7 +7635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Murmilo
+  m_text: Myrmilo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11133,7 +11133,7 @@ GameObject:
   - component: {fileID: 2016458869}
   - component: {fileID: 2016458868}
   m_Layer: 5
-  m_Name: NumberOF
+  m_Name: retiariusCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
