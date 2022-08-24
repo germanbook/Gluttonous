@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3365ffc244d47a741a7b1869a2a72828
+guid: 527d0526a44a5a74c8f64dead1341b91
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Threax_Death_0
+      name: Threax_Attack 1_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 20
-        width: 84
+        x: 16
+        y: 12
+        width: 109
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17671fe187fb81140acbbc988a6c8caa
-      internalID: 501843973
+      spriteID: 8c7bd2b69c3e66c4a9726606f841272e
+      internalID: 1579770116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Threax_Death_1
+      name: Threax_Attack 1_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 20
-        width: 80
+        x: 144
+        y: 12
+        width: 109
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dd83305bf363b843aa089f171f8226b
-      internalID: 794094279
+      spriteID: 877a705832ebd61428e0c12192d2b8a0
+      internalID: 1498132848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Threax_Death_2
+      name: Threax_Attack 1_2
       rect:
         serializedVersion: 2
-        x: 280
-        y: 20
-        width: 84
+        x: 272
+        y: 12
+        width: 109
         height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,29 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec3270a097912ec489455a1d4d3d05b2
-      internalID: 1759701579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Threax_Death_3
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 20
-        width: 100
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f657ecb6b3a2564da3db03d99a1ad59
-      internalID: 1379691431
+      spriteID: 11c8ab9b112279647b66568035c9c70a
+      internalID: 1627006140
       vertices: []
       indices: 
       edges: []
@@ -210,10 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Threax_Death_0: 501843973
-      Threax_Death_2: 1759701579
-      Threax_Death_3: 1379691431
-      Threax_Death_1: 794094279
+      Threax_Attack 1_1: 1498132848
+      Threax_Attack 1_0: 1579770116
+      Threax_Attack 1_2: 1627006140
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
