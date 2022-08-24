@@ -8184,8 +8184,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1515753943}
-  - component: {fileID: 1515753942}
-  - component: {fileID: 1515753941}
   m_Layer: 0
   m_Name: GladiatorSelector
   m_TagString: Untagged
@@ -8193,42 +8191,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1515753941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515753940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98eaf656d4023428ab719df93d4df280, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counterSamnites: 0
-  counterThraex: 0
-  counterMyrmilo: 0
-  counterRetiarius: 0
---- !u!114 &1515753942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515753940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a804183aa43e3c447b2d9eaadc93d429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  galadiatorSamnites: {fileID: 8932825987460356789, guid: 7b69fc7bdf8223747beb0c4c9b156c06,
-    type: 3}
-  galadiatorThraex: {fileID: 8932825987460356789, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
-    type: 3}
-  galadiatorMyrmilo: {fileID: 8932825987460356789, guid: 43cc66b2be6ac7241a094008dbe95d15,
-    type: 3}
-  galadiatorRetiarius: {fileID: 8932825987460356789, guid: ae9a729aa00b4df49a41dd796c58018a,
-    type: 3}
 --- !u!4 &1515753943
 Transform:
   m_ObjectHideFlags: 0
@@ -10302,7 +10264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -278918975, guid: 42721646ad7b32d428d6d5c4404486f2, type: 3}
+  m_Sprite: {fileID: -1231956112, guid: 4128a9171686cfd4680aa099b6949716, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
