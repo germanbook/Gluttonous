@@ -1,20 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class NumberOFGladiators : MonoBehaviour
+public class numberOFGladiators : MonoBehaviour
 {
-    public int counterSamnites;
-    public int counterThraex;
-    public int counterMyrmilo;
-    public int counterRetiarius;
 
     private GameObject playerGladiatorsStore;
 
-    // Show number of gladiators stored in the ChoiceUI
-    public void numberOFGladiators(string gladiatortag)
+    [SerializeField] GameObject ChoiceUI;
+    [SerializeField] Text threaxCounter;
+    [SerializeField] Text samniteCounter;
+    [SerializeField] Text myrmiloCounter;
+    [SerializeField] Text retiariusCounter;
+
+
+    private void Start()
     {
-        if (checkBalance(gladiatortag))
+      
+        // gladiator store
+        playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
+
+        
+    }
+
+
+
+    // Show number of gladiators stored in the ChoiceUI
+    public void numberOFGladiators(string gladiatorTag)
+    {
+        if (checkBalance(gladiatorTag))
         {
             switch (gladiatorTag)
             {
