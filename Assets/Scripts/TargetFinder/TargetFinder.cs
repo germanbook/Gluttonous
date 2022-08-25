@@ -121,7 +121,8 @@ public class TargetFinder : MonoBehaviour
         }
 
 
-        if (this.gameObject.name == "Retiarius")
+        if (this.gameObject.name == "Retiarius"
+            && nearestEnemy.gameObject.activeSelf == true)
         {
             AttackThrowNetAnimationStart();
         }
@@ -204,10 +205,28 @@ public class TargetFinder : MonoBehaviour
                             
                         }
                     }
-                    else
+
+                    if(this.gameObject.name != "Retiarius")
                     {
-                        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-                        SetTarget(nearestEnemy);
+                        if (nearestEnemy.gameObject.name == "Retiarius")
+                        {
+                            if (nearestEnemy.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                            {
+                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                                SetTarget(nearestEnemy);
+                            }
+                            else
+                            {
+                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
+                                SetTarget(this.transform);
+                            }
+                        }
+                        else
+                        {
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                            SetTarget(nearestEnemy);
+                        }
+                            
 
                     }
 

@@ -14,9 +14,6 @@ public class NetBehaviour : MonoBehaviour
     float netTimer;
     bool isNetTimerStart;
 
-    // Net'd target original speed
-    float targetOriginalSpeed;
-
     private void Start()
     {
         netTimer = 0f;
@@ -41,10 +38,8 @@ public class NetBehaviour : MonoBehaviour
 
         if (netTimer > 2f)
         {
-            target.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed = targetOriginalSpeed;
             target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
             Destroy(this.gameObject);
-            Debug.Log("speed back" + targetOriginalSpeed);
         }
 
         if (target.gameObject.activeSelf == false)
@@ -70,10 +65,8 @@ public class NetBehaviour : MonoBehaviour
                     && GameObject.ReferenceEquals(collision.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject,
                     this.transform.parent.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject))
                     {
-                        Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                        
                         isNetTimerStart = true;
-                        targetOriginalSpeed = target.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed;
-                        target.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed = 0f;
                         target.gameObject.GetComponent<PlayerPosition>().isNetted = true;
                         this.transform.SetParent(null);
                     }

@@ -122,11 +122,12 @@ public class RetiariusSkillManager : MonoBehaviour
     // Throw net
     public void SkillAttack(Transform nearestEnemy)
     {
+        isThrowNet = false;
         if (nearestEnemy.gameObject.activeSelf == true)
         {
             // instantialize net object
             Instantiate(ProjectPrefab, LaunchOffset.position, transform.rotation).transform.SetParent(this.transform);
-            isThrowNet = false;
+            
 
             if ((GameObject.ReferenceEquals(nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
                 &&

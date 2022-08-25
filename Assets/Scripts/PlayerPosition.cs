@@ -23,11 +23,22 @@ public class PlayerPosition : MonoBehaviour
     {
         oldPosition = this.gameObject.transform.position.x;
         isNetted = false;
+
     }
 
     private void Update()
     {
+        if (isNetted)
+        {
+            this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = false;
+        }
+        else
+        {
+            this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+        }
         
+
+
         // If charactor stucks for 0.5 seconds
         if (transform.position.x == oldPosition
             && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true
@@ -39,41 +50,41 @@ public class PlayerPosition : MonoBehaviour
             {
                 Debug.Log(this.gameObject.name  + " Stuck....");
 
-                switch (this.gameObject.name)
-                {
-                    case "Samnites":
-                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                            this.gameObject.GetComponent<SamnitesSkillManager>().skillData.speedValue;
+                //switch (this.gameObject.name)
+                //{
+                //    case "Samnites":
+                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                //            this.gameObject.GetComponent<SamnitesSkillManager>().skillData.speedValue;
 
-                        break;
+                //        break;
 
-                    case "Retiarius":
-                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                            this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
+                //    case "Retiarius":
+                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                //            this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
 
-                        break;
+                //        break;
 
-                    case "Murmillo":
-                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                            this.gameObject.GetComponent<MurmilloSkillManager>().skillData.speedValue;
+                //    case "Murmillo":
+                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                //            this.gameObject.GetComponent<MurmilloSkillManager>().skillData.speedValue;
 
-                        break;
+                //        break;
 
-                    case "Threax":
-                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                            this.gameObject.GetComponent<ThraexSkillManager>().skillData.speedValue;
+                //    case "Threax":
+                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                //            this.gameObject.GetComponent<ThraexSkillManager>().skillData.speedValue;
 
-                        break;
-                }
+                //        break;
+                //}
 
                 // Some reason the collision can not trigger, just manually do it
-                //this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
-                //    this.gameObject.transform.parent.gameObject.
-                //    GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
+                this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
+                    this.gameObject.transform.parent.gameObject.
+                    GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
 
-                //this.gameObject.transform.parent.gameObject.
-                //    GetComponent<AIDestinationSetter>().target.gameObject.
-                //    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+                this.gameObject.transform.parent.gameObject.
+                    GetComponent<AIDestinationSetter>().target.gameObject.
+                    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
                 timeCount = 0f;
             }
 
