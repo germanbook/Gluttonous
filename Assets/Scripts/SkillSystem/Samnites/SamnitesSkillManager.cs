@@ -6,7 +6,7 @@ using UnityEngine;
 public class SamnitesSkillManager : MonoBehaviour
 {
 
-    [SerializeField] SkillData skillData;
+    public SkillData skillData;
     GameObject opponent;
 
     // Attack and Skill timer
@@ -64,7 +64,7 @@ public class SamnitesSkillManager : MonoBehaviour
         switch (opponent.gameObject.name)
         {
             case "Samnites":
-                Debug.Log("I'm S attacking S");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject.name,skillData.attackDamage);
@@ -74,7 +74,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 break;
 
             case "Retiarius":
-                Debug.Log("I'm S attacking R");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -84,7 +84,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 break;
 
             case "Murmillo":
-                Debug.Log("I'm S attacking M");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -94,7 +94,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 break;
 
             case "Threax":
-                Debug.Log("I'm S attacking T");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -116,7 +116,17 @@ public class SamnitesSkillManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("I'm S, Attack blocked!");
+
+            if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+            {
+                Debug.Log("I'm S, Attack blocked!");
+                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+            }
+            else
+            {
+                Debug.Log("I'm netted, cant block");
+            }
+            
         }
     }
 
@@ -130,5 +140,38 @@ public class SamnitesSkillManager : MonoBehaviour
         }
     }
 
+    // calling by block animation
+    public void blockFinished()
+    {
+        Debug.Log("block finished");
+        this.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking = false;
+
+        if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
+        {
+            Debug.Log("Back to attack");
+            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Net" &&
+            GameObject.ReferenceEquals(collision.gameObject.GetComponent<NetBehaviour>().target.gameObject, this.gameObject))
+        {
+            this.gameObject.GetComponent<PlayerPosition>().isNetted = true;
+            collision.gameObject.GetComponent<NetBehaviour>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+            collision.gameObject.GetComponent<NetBehaviour>().StartNetTimer();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Net" &&
+            GameObject.ReferenceEquals(collision.gameObject.GetComponent<NetBehaviour>().target.gameObject, this.gameObject))
+        {
+            this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+        }
+    }
 
 }

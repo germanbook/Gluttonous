@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ThraexSkillManager : MonoBehaviour
 {
-    [SerializeField] SkillData skillData;
+    public SkillData skillData;
 
     GameObject opponent;
 
@@ -63,7 +63,7 @@ public class ThraexSkillManager : MonoBehaviour
         switch (opponent.gameObject.name)
         {
             case "Samnites":
-                Debug.Log("I'm T attacking S");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -73,7 +73,7 @@ public class ThraexSkillManager : MonoBehaviour
                 break;
 
             case "Retiarius":
-                Debug.Log("I'm T attacking R");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -83,7 +83,7 @@ public class ThraexSkillManager : MonoBehaviour
                 break;
 
             case "Murmillo":
-                Debug.Log("I'm T attacking M");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -93,7 +93,7 @@ public class ThraexSkillManager : MonoBehaviour
                 break;
 
             case "Threax":
-                Debug.Log("I'm T attacking T");
+                
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
@@ -107,5 +107,24 @@ public class ThraexSkillManager : MonoBehaviour
     public void ReceiveAttackDamage(string attacker, float damage)
     {
         this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Net" &&
+            GameObject.ReferenceEquals(collision.gameObject.GetComponent<NetBehaviour>().target.gameObject, this.gameObject))
+        {
+            this.gameObject.GetComponent<PlayerPosition>().isNetted = true;
+            collision.gameObject.GetComponent<NetBehaviour>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+            collision.gameObject.GetComponent<NetBehaviour>().StartNetTimer();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Net" &&
+            GameObject.ReferenceEquals(collision.gameObject.GetComponent<NetBehaviour>().target.gameObject, this.gameObject))
+        {
+            this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+        }
     }
 }

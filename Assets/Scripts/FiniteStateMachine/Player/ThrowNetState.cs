@@ -18,11 +18,12 @@ public class ThrowNetState : IState
     public void OnEnter()
     {
         manager.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet = true;
+        
         manager.animator.SetInteger("stateInt", 4);
         // Freeze location when enter attacking state
         manager.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed = 0f;
 
-        Debug.Log("Throw net");
+
     }
 
     public void OnExit()

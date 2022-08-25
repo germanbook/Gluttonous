@@ -13,6 +13,7 @@ public enum StateType
     Finding,
     Attacking,
     Death,
-    ThrowNet
+    ThrowNet,
+    Block
 
 }

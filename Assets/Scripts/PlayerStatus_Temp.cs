@@ -34,6 +34,9 @@ public class PlayerStatus_Temp : MonoBehaviour
     //
     public bool isFinding;
 
+    // block
+    public bool isBlocking;
+
 
 
 
@@ -44,6 +47,7 @@ public class PlayerStatus_Temp : MonoBehaviour
         isAlive = true;
         isAttacking = false;
         isFinding = false;
+        isBlocking = false;
     }
 
     // Update is called once per frame

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Pathfinding;
 using UnityEngine;
 
@@ -26,28 +27,56 @@ public class PlayerPosition : MonoBehaviour
 
     private void Update()
     {
-
-        // If charactor stucks for 3 seconds
+        
+        // If charactor stucks for 0.5 seconds
         if (transform.position.x == oldPosition
             && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true
             && isNetted == false)
         {
             
             timeCount += Time.deltaTime;
-            if (timeCount > 2)
+            if (timeCount > 0.5f)
             {
-                Debug.Log("Stuck....");
-                // Some reason the collision can not trigger, just manually do it
-                this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
-                    this.gameObject.transform.parent.gameObject.
-                    GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
+                Debug.Log(this.gameObject.name  + " Stuck....");
 
-                this.gameObject.transform.parent.gameObject.
-                    GetComponent<AIDestinationSetter>().target.gameObject.
-                    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+                switch (this.gameObject.name)
+                {
+                    case "Samnites":
+                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                            this.gameObject.GetComponent<SamnitesSkillManager>().skillData.speedValue;
+
+                        break;
+
+                    case "Retiarius":
+                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                            this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
+
+                        break;
+
+                    case "Murmillo":
+                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                            this.gameObject.GetComponent<MurmilloSkillManager>().skillData.speedValue;
+
+                        break;
+
+                    case "Threax":
+                        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                            this.gameObject.GetComponent<ThraexSkillManager>().skillData.speedValue;
+
+                        break;
+                }
+
+                // Some reason the collision can not trigger, just manually do it
+                //this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
+                //    this.gameObject.transform.parent.gameObject.
+                //    GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
+
+                //this.gameObject.transform.parent.gameObject.
+                //    GetComponent<AIDestinationSetter>().target.gameObject.
+                //    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
                 timeCount = 0f;
             }
-            
+
             
         }
 

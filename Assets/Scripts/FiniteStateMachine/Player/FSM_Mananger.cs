@@ -32,6 +32,7 @@ public class FSM_Mananger : MonoBehaviour
         states.Add(StateType.Attacking, new AttackingState(this));
         states.Add(StateType.Death, new DeathState(this));
         states.Add(StateType.ThrowNet, new ThrowNetState(this));
+        states.Add(StateType.Block, new BlockState(this));
 
         // Default state: Idle
         TransitionState(StateType.Idle);
@@ -73,6 +74,8 @@ public class FSM_Mananger : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if(this.gameObject.GetComponent<TargetFinder>().arenaSceneManager.gameObject.GetComponent<ArenaSceneManager>().isPause == false)
+
         if (collision.gameObject.tag != "Net"
             && this.gameObject.tag != collision.gameObject.tag
             && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
@@ -87,9 +90,9 @@ public class FSM_Mananger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (targetPlayer.gameObject.name == collision.gameObject.name
-            && targetPlayer.gameObject.tag == collision.gameObject.tag)
+        if (GameObject.ReferenceEquals(targetPlayer.gameObject, collision.gameObject))
         {
+            
             this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = false;
         }
     }

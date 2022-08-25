@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class TargetFinder : MonoBehaviour
 {
@@ -22,23 +23,36 @@ public class TargetFinder : MonoBehaviour
     // this distance if for throw net
     float distance;
 
+    // For Retiarius use only!
     // Attack and Skill timer
     float skillTimer;
+    // ======================
 
 
     private void Start()
     {
+
         originalCurrency = GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue;
         isWon = false;
         arenaSceneManager = GameObject.FindGameObjectWithTag("ArenaSceneManager");
         nearestEnemy = this.transform;
         // Finding target
         Invoke("FindTarget", 0.2f);
+
         if (this.gameObject.name == "Retiarius")
         {
+            // Retiarius vs Retiarius
+            if (this.gameObject.tag == "Player")
+            {
+                skillTimer = this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown;
+            }
+            else
+            {
+                skillTimer = 3f;
+            }
 
-            skillTimer = this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown;
         }
+        
             
     }
 
@@ -67,15 +81,37 @@ public class TargetFinder : MonoBehaviour
             //    }
             //}
 
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             if (this.gameObject.name == "Retiarius")
             {
-                FindTarget();
+                if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false
+                    && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+                {
+                    nearestEnemy = tempTarget;
+                    FindTarget();
+                }
+                
             }
             else
             {
-                nearestEnemy = tempTarget;
-                FindTarget();
+                if (this.gameObject.name == "Murmillo" || this.gameObject.name == "Samnites")
+                {
+                    if (this.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false)
+                    {
+                        nearestEnemy = tempTarget;
+                        FindTarget();
+                    }
+                }
+                else
+                {
+                    nearestEnemy = tempTarget;
+                    FindTarget();
+                }
+
+                
             }
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
         }
 
@@ -122,6 +158,8 @@ public class TargetFinder : MonoBehaviour
             if (tempDistance < minDistance
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
+                && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
+                
                 )
             {
                 minDistance = tempDistance;
@@ -141,19 +179,36 @@ public class TargetFinder : MonoBehaviour
 
                     if (this.gameObject.name == "Retiarius")
                     {
-                        if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                        if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false
+                            && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
                         {
-                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                            if (nearestEnemy.gameObject.name == "Retiarius")
+                            {
+                                if (nearestEnemy.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                                {
+                                    
+                                    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                                    SetTarget(nearestEnemy);
+                                }
+                            }
+                            else
+                            {
+                                
+                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                                SetTarget(nearestEnemy);
+                            }
+                            
                         }
                     }
                     else
                     {
                         this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-                        
+                        SetTarget(nearestEnemy);
+
                     }
 
 
-                    SetTarget(nearestEnemy);
+                    
                 }
                     
             }
@@ -202,23 +257,31 @@ public class TargetFinder : MonoBehaviour
     public void AttackThrowNetAnimationStart()
     {
 
-        if (skillTimer >= this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown)
+        if (nearestEnemy != tempTarget && arenaSceneManager.GetComponent<ArenaSceneManager>().isPause == false)
         {
-            if (nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
+
+
+            if (skillTimer >= this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown
+                && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
             {
-                distance = (nearestEnemy.position - this.gameObject.transform.position).magnitude;
-
-                if (distance < 10)
+                if (GameObject.ReferenceEquals(nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject))
                 {
-                    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.ThrowNet);
+
+                    distance = (nearestEnemy.position - this.gameObject.transform.position).magnitude;
+
+                    if (distance < 10)
+                    {
+
+                        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.ThrowNet);
 
 
-                    skillTimer = 0f;
+                        skillTimer = 0f;
 
+                    }
                 }
-            }
 
-            
+
+            }
         }
 
 
