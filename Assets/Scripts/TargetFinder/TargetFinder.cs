@@ -159,7 +159,11 @@ public class TargetFinder : MonoBehaviour
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
-                
+                ||
+                tempDistance < minDistance
+                && enemy.gameObject.GetComponent<TargetFinder>().nearestEnemy == this.gameObject.transform
+                && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
+                && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
                 )
             {
                 minDistance = tempDistance;
