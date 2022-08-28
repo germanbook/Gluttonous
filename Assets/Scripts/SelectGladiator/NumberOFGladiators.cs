@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class numberOFGladiators : MonoBehaviour
 {
 
-    private GameObject playerGladiatorsStore;
+    public GameObject playerGladiatorsStore;
 
     [SerializeField] GameObject ChoiceUI;
     [SerializeField] Text threaxCounter;
@@ -16,7 +16,7 @@ public class numberOFGladiators : MonoBehaviour
     [SerializeField] Text retiariusCounter;
 
 
-    private void Start()
+    public void Start()
     {
       
         // gladiator store
