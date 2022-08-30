@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class NetBehaviour : MonoBehaviour
 {
@@ -12,31 +14,54 @@ public class NetBehaviour : MonoBehaviour
 
     // Net timer
     float netTimer;
+    float netEffectTimer;
     bool isNetTimerStart;
 
     private void Start()
     {
-        netTimer = 0f;
+
         isNetTimerStart = false;
 
         target = this.transform.parent.gameObject.GetComponent<TargetFinder>().nearestEnemy.transform;
-        //this.transform.SetParent(null);
+
+ 
+        switch (target.gameObject.name)
+        {
+            case "Samnites":
+                netEffectTimer = target.gameObject.GetComponent<SamnitesSkillManager>().skillData.netAttackEffect;
+                break;
+
+            case "Retiarius":
+                netEffectTimer = target.gameObject.GetComponent<RetiariusSkillManager>().skillData.netAttackEffect;
+                break;
+
+            case "Murmillo":
+                netEffectTimer = target.gameObject.GetComponent<MurmilloSkillManager>().skillData.netAttackEffect;
+                break;
+
+            case "Threax":
+                netEffectTimer = target.gameObject.GetComponent<ThraexSkillManager>().skillData.netAttackEffect;
+                break;
+        }
+
+        Debug.Log("Effect timer: "+netEffectTimer);
     }
 
     void Update()
     {
-        if (isNetTimerStart)
-        {
-            netTimer += Time.deltaTime;
-            
-        }
+        
 
         this.transform.position = Vector2.MoveTowards(this.transform.position,
             new Vector2(target.position.x,
             target.position.y),
             Time.deltaTime * Speed);
+        if (isNetTimerStart)
+        {
+            netTimer += Time.deltaTime;
 
-        if (netTimer > 2f)
+        }
+
+        if (netTimer >= (netEffectTimer-1))
         {
             target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
             Destroy(this.gameObject);
@@ -61,15 +86,30 @@ public class NetBehaviour : MonoBehaviour
                 {
                     Debug.Log("collision name: " + collision.gameObject.name);
 
-                    if (GameObject.ReferenceEquals(collision.gameObject, target.gameObject)
-                    && GameObject.ReferenceEquals(collision.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject,
-                    this.transform.parent.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject))
+                    if (collision.gameObject.name == "Threax")
                     {
-                        
-                        isNetTimerStart = true;
-                        target.gameObject.GetComponent<PlayerPosition>().isNetted = true;
-                        this.transform.SetParent(null);
+                        collision.gameObject.GetComponent<ThraexSkillManager>().dodgeNet();
+                        if (collision.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet == false)
+                        {
+                            if (GameObject.ReferenceEquals(collision.gameObject, target.gameObject)
+                                && GameObject.ReferenceEquals(collision.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject,
+                                this.transform.parent.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject))
+                            {
+
+                                isNetTimerStart = true;
+                                target.gameObject.GetComponent<PlayerPosition>().isNetted = true;
+                                this.transform.SetParent(null);
+                            }
+
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                        }
                     }
+
+
+                    
                 }
             }
         }

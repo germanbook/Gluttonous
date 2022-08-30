@@ -44,49 +44,75 @@ public class PlayerPosition : MonoBehaviour
             && this.gameObject.GetComponent<PlayerStatus_Temp>().isFinding == true
             && isNetted == false)
         {
-            
-            timeCount += Time.deltaTime;
-            if (timeCount > 0.5f)
+
+            if (this.gameObject.name == "Threax")
             {
-                Debug.Log(this.gameObject.name  + " Stuck....");
+                if (this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false)
+                {
+                    timeCount += Time.deltaTime;
+                    if (timeCount > 0.5f)
+                    {
+                        Debug.Log(this.gameObject.name + " Stuck....");
 
-                //switch (this.gameObject.name)
-                //{
-                //    case "Samnites":
-                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                //            this.gameObject.GetComponent<SamnitesSkillManager>().skillData.speedValue;
+                        // Some reason the collision can not trigger, just manually do it
+                        this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
+                            this.gameObject.transform.parent.gameObject.
+                            GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
 
-                //        break;
-
-                //    case "Retiarius":
-                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                //            this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
-
-                //        break;
-
-                //    case "Murmillo":
-                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                //            this.gameObject.GetComponent<MurmilloSkillManager>().skillData.speedValue;
-
-                //        break;
-
-                //    case "Threax":
-                //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
-                //            this.gameObject.GetComponent<ThraexSkillManager>().skillData.speedValue;
-
-                //        break;
-                //}
-
-                // Some reason the collision can not trigger, just manually do it
-                this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
-                    this.gameObject.transform.parent.gameObject.
-                    GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
-
-                this.gameObject.transform.parent.gameObject.
-                    GetComponent<AIDestinationSetter>().target.gameObject.
-                    GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
-                timeCount = 0f;
+                        this.gameObject.transform.parent.gameObject.
+                            GetComponent<AIDestinationSetter>().target.gameObject.
+                            GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+                        timeCount = 0f;
+                    }
+                }
             }
+            else
+            {
+                timeCount += Time.deltaTime;
+                if (timeCount > 0.5f)
+                {
+                    Debug.Log(this.gameObject.name + " Stuck....");
+
+                    //switch (this.gameObject.name)
+                    //{
+                    //    case "Samnites":
+                    //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                    //            this.gameObject.GetComponent<SamnitesSkillManager>().skillData.speedValue;
+
+                    //        break;
+
+                    //    case "Retiarius":
+                    //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                    //            this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
+
+                    //        break;
+
+                    //    case "Murmillo":
+                    //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                    //            this.gameObject.GetComponent<MurmilloSkillManager>().skillData.speedValue;
+
+                    //        break;
+
+                    //    case "Threax":
+                    //        this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
+                    //            this.gameObject.GetComponent<ThraexSkillManager>().skillData.speedValue;
+
+                    //        break;
+                    //}
+
+                    // Some reason the collision can not trigger, just manually do it
+                    this.gameObject.GetComponent<FSM_Mananger>().OnTriggerEnter2D(
+                        this.gameObject.transform.parent.gameObject.
+                        GetComponent<AIDestinationSetter>().target.GetComponent<CircleCollider2D>());
+
+                    this.gameObject.transform.parent.gameObject.
+                        GetComponent<AIDestinationSetter>().target.gameObject.
+                        GetComponent<FSM_Mananger>().OnTriggerEnter2D(this.gameObject.GetComponent<CircleCollider2D>());
+                    timeCount = 0f;
+                }
+            }
+
+            
 
             
         }

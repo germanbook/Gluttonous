@@ -103,9 +103,15 @@ public class TargetFinder : MonoBehaviour
                     }
                 }
                 else
+                if(this.gameObject.name == "Threax")
                 {
-                    nearestEnemy = tempTarget;
-                    FindTarget();
+
+                    if (this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false)
+                    {
+                        nearestEnemy = tempTarget;
+                        FindTarget();
+                    }
+                    
                 }
 
                 
@@ -215,11 +221,11 @@ public class TargetFinder : MonoBehaviour
                                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
                                 SetTarget(nearestEnemy);
                             }
-                            else
-                            {
-                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
-                                SetTarget(this.transform);
-                            }
+                            //else
+                            //{
+                            //    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
+                            //    SetTarget(this.transform);
+                            //}
                         }
                         else
                         {

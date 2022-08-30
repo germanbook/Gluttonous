@@ -68,7 +68,7 @@ public class MurmilloSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
                 }
 
@@ -88,7 +88,7 @@ public class MurmilloSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
                 }
 
@@ -106,7 +106,7 @@ public class MurmilloSkillManager : MonoBehaviour
         }
     }
 
-    public void ReceiveAttackDamage(string attacker, float damage)
+    public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
         // 50% chace to block attack if not net'd
         // >>
@@ -124,6 +124,7 @@ public class MurmilloSkillManager : MonoBehaviour
                 {
                     Debug.Log("I'm M, Attack blocked!");
                     this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+
                 }
                 else
                 {
@@ -144,7 +145,12 @@ public class MurmilloSkillManager : MonoBehaviour
 
     public void ReceiveSkillDamage(string attacker, float damage)
     {
-
+        // Curved knife damage
+        if (attacker == "Threax")
+        {
+            Debug.Log("Dameged by curved knife");
+            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+        }
     }
 
     // calling by block animation

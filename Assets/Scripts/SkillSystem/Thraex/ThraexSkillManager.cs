@@ -40,6 +40,7 @@ public class ThraexSkillManager : MonoBehaviour
             // Timer
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;
+            skillTimer += Time.deltaTime;
 
             // Attack
             if (attackTimer > skillData.attackCooldown)
@@ -66,8 +67,23 @@ public class ThraexSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
+                    // if opponent is blocking
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+                    {
+
+                        if (skillTimer > skillData.skillCooldown)
+                        {
+                            // perform side attack
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+
+                            opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+
+                            skillTimer = 0f;
+                        }
+                        
+                    }
                 }
 
                 break;
@@ -86,7 +102,23 @@ public class ThraexSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+
+                    // if opponent is blocking
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+                    {
+
+                        if (skillTimer > skillData.skillCooldown)
+                        {
+                            // perform side attack
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+
+                            opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+
+                            skillTimer = 0f;
+                        }
+
+                    }
 
                 }
 
@@ -125,6 +157,42 @@ public class ThraexSkillManager : MonoBehaviour
             GameObject.ReferenceEquals(collision.gameObject.GetComponent<NetBehaviour>().target.gameObject, this.gameObject))
         {
             this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+        }
+    }
+
+    // calling by side attack animation
+    public void sideAttackFinished()
+    {
+        Debug.Log("side attack finished");
+        
+        if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
+            ||
+            this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
+        {
+            Debug.Log("Thraex back to attack");
+            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+        }
+        this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking = false;
+    }
+
+    public void dodgeNet()
+    {
+        // 50% chace to dodge net
+        if (Random.Range(1, 11) > 5)
+        {
+            // dodged
+            Debug.Log(">>>>>>>>>>>>>I'm dodged the net>>>>>>>>>>>>");
+            this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = true;
+        }
+        else
+        {
+            // dodge fail
+            Debug.Log(">>>>>>>>>>>>>Dodge net failed!>>>>>>>>>>>>");
+            this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
         }
     }
 }

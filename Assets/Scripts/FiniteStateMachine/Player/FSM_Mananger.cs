@@ -33,6 +33,7 @@ public class FSM_Mananger : MonoBehaviour
         states.Add(StateType.Death, new DeathState(this));
         states.Add(StateType.ThrowNet, new ThrowNetState(this));
         states.Add(StateType.Block, new BlockState(this));
+        states.Add(StateType.SideAttack, new SideAttackState(this));
 
         // Default state: Idle
         TransitionState(StateType.Idle);

@@ -18,7 +18,6 @@ public class SamnitesSkillManager : MonoBehaviour
     /// </summary>
     float roundTimer;
 
-
     void Start()
     {
         // set timer equals to cooldown time
@@ -48,9 +47,8 @@ public class SamnitesSkillManager : MonoBehaviour
                 attackTimer = 0f;
             }
 
-            // 
-
         }
+
     }
 
     public void GetOpponent(GameObject opponent)
@@ -67,7 +65,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject.name,skillData.attackDamage);
+                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject,skillData.attackDamage);
 
                 }
 
@@ -87,7 +85,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
                 }
 
@@ -106,7 +104,7 @@ public class SamnitesSkillManager : MonoBehaviour
     }
 
     // parameters: attacker's name and attack damage
-    public void ReceiveAttackDamage(string attacker, float damage)
+    public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
         // 50% chace to block attack
         if (Random.Range(1, 11) > 5)
@@ -121,6 +119,7 @@ public class SamnitesSkillManager : MonoBehaviour
             {
                 Debug.Log("I'm S, Attack blocked!");
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+
             }
             else
             {
@@ -138,6 +137,14 @@ public class SamnitesSkillManager : MonoBehaviour
         {
 
         }
+
+        // Curved knife damage
+        if (attacker == "Threax")
+        {
+            Debug.Log("Dameged by curved knife");
+            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+        }
+        
     }
 
     // calling by block animation

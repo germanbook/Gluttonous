@@ -13,17 +13,6 @@ public enum weaponType
 }
 
 /// <summary>
-/// effect by the net attack
-/// </summary>
-public enum netAttackEffect
-{
-    TwoSecond,
-    FourSecond,
-    Forever,
-    Dodge
-}
-
-/// <summary>
 /// armor type
 /// </summary>
 public enum armorType
@@ -53,7 +42,7 @@ public class SkillData : ScriptableObject
     [SerializeField] weaponType weaponType;
     [SerializeField] armorType armorType;
     [SerializeField] public float speedValue;
-    [SerializeField] netAttackEffect netAttackEffect;
+    [SerializeField] public float netAttackEffect;
     [SerializeField] shieldType shieldType;
     [SerializeField] bool hasNet;
 
