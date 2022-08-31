@@ -15,6 +15,7 @@ public enum StateType
     Death,
     ThrowNet,
     Block,
-    SideAttack
+    SideAttack,
+    DodgeNet
 
 }

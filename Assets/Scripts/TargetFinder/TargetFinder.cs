@@ -106,7 +106,8 @@ public class TargetFinder : MonoBehaviour
                 if(this.gameObject.name == "Threax")
                 {
 
-                    if (this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false)
+                    if (this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false
+                        && this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet == false)
                     {
                         nearestEnemy = tempTarget;
                         FindTarget();
@@ -117,7 +118,18 @@ public class TargetFinder : MonoBehaviour
                 
             }
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            if (this.gameObject.name == "Retiarius")
+            {
+                if (nearestEnemy.gameObject.name == "Retiarius")
+                {
+                    this.gameObject.GetComponent<CircleCollider2D>().radius = 0.71f;
+                }
 
+                if (nearestEnemy.gameObject.name != "Retiarius")
+                {
+                    this.gameObject.GetComponent<CircleCollider2D>().radius = 1.5f;
+                }
+            }
 
         }
 
@@ -257,8 +269,11 @@ public class TargetFinder : MonoBehaviour
                 SetTarget(this.gameObject.transform );
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
 
-                isWon = true;
+            }
 
+            if (this.gameObject.tag != "Enemy")
+            {
+                isWon = true;
             }
         }
 
@@ -298,7 +313,7 @@ public class TargetFinder : MonoBehaviour
 
                     distance = (nearestEnemy.position - this.gameObject.transform.position).magnitude;
 
-                    if (distance < 10)
+                    if (distance < 5)
                     {
 
                         this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.ThrowNet);

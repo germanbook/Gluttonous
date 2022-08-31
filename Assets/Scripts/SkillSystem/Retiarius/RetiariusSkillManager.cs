@@ -78,8 +78,9 @@ public class RetiariusSkillManager : MonoBehaviour
         switch (opponent.gameObject.name)
         {
             case "Samnites":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
                 {
                     opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
@@ -89,7 +90,8 @@ public class RetiariusSkillManager : MonoBehaviour
 
             case "Retiarius":
                 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
                 {
                     opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
 
@@ -99,7 +101,8 @@ public class RetiariusSkillManager : MonoBehaviour
 
             case "Murmillo":
                 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
                 {
                     opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
@@ -109,7 +112,8 @@ public class RetiariusSkillManager : MonoBehaviour
 
             case "Threax":
                 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
                 {
                     opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
 
@@ -134,7 +138,7 @@ public class RetiariusSkillManager : MonoBehaviour
                 nearestEnemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 ||
                 (GameObject.ReferenceEquals(nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
-                && nearestEnemy.gameObject.name == "Retiarius" && (nearestEnemy.gameObject.transform.position - this.gameObject.transform.position).magnitude < 4)
+                && nearestEnemy.gameObject.name == "Retiarius" && (nearestEnemy.gameObject.transform.position - this.gameObject.transform.position).magnitude < 1.5)
                 )
             {
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);

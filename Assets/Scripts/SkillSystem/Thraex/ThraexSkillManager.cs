@@ -186,7 +186,7 @@ public class ThraexSkillManager : MonoBehaviour
         {
             // dodged
             Debug.Log(">>>>>>>>>>>>>I'm dodged the net>>>>>>>>>>>>");
-            this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = true;
+            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.DodgeNet);
         }
         else
         {
@@ -194,5 +194,10 @@ public class ThraexSkillManager : MonoBehaviour
             Debug.Log(">>>>>>>>>>>>>Dodge net failed!>>>>>>>>>>>>");
             this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
         }
+    }
+
+    public void dodgeNetFinished()
+    {
+        this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
     }
 }

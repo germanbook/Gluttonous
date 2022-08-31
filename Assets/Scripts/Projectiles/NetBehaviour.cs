@@ -51,10 +51,8 @@ public class NetBehaviour : MonoBehaviour
     {
         
 
-        this.transform.position = Vector2.MoveTowards(this.transform.position,
-            new Vector2(target.position.x,
-            target.position.y),
-            Time.deltaTime * Speed);
+        this.transform.position = Vector2.MoveTowards(this.transform.position,new Vector2(target.position.x,target.position.y),Time.deltaTime * Speed);
+
         if (isNetTimerStart)
         {
             netTimer += Time.deltaTime;
@@ -63,7 +61,11 @@ public class NetBehaviour : MonoBehaviour
 
         if (netTimer >= (netEffectTimer-1))
         {
-            target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+            if (target != this.gameObject.transform)
+            {
+                target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+            }
+            
             Destroy(this.gameObject);
         }
 
@@ -71,6 +73,7 @@ public class NetBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
         
     }
 
@@ -104,7 +107,9 @@ public class NetBehaviour : MonoBehaviour
                         }
                         else
                         {
-                            Destroy(this.gameObject);
+                            isNetTimerStart = true;
+                            netEffectTimer = 2f;
+                            target = this.gameObject.transform;
                         }
                     }
 

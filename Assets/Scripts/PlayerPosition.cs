@@ -31,10 +31,12 @@ public class PlayerPosition : MonoBehaviour
         if (isNetted)
         {
             this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = false;
+            
         }
         else
         {
             this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+            
         }
         
 

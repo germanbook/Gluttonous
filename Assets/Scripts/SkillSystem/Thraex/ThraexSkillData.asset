@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponType: 2
   armorType: 2
   speedValue: 1
-  netAttackEffect: 3
+  netAttackEffect: 5
   shieldType: 1
   hasNet: 0
   attackDamage: 12

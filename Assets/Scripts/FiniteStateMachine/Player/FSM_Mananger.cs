@@ -21,6 +21,9 @@ public class FSM_Mananger : MonoBehaviour
     // Throw net
     bool isThrowNet;
 
+    //
+    float distance;
+
     // Dictionary mapping state to key and value
     private Dictionary<StateType, IState> states = new Dictionary<StateType, IState>();
 
@@ -34,6 +37,7 @@ public class FSM_Mananger : MonoBehaviour
         states.Add(StateType.ThrowNet, new ThrowNetState(this));
         states.Add(StateType.Block, new BlockState(this));
         states.Add(StateType.SideAttack, new SideAttackState(this));
+        states.Add(StateType.DodgeNet, new DodgeNetState(this));
 
         // Default state: Idle
         TransitionState(StateType.Idle);
@@ -75,17 +79,35 @@ public class FSM_Mananger : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(this.gameObject.GetComponent<TargetFinder>().arenaSceneManager.gameObject.GetComponent<ArenaSceneManager>().isPause == false)
-
-        if (collision.gameObject.tag != "Net"
-            && this.gameObject.tag != collision.gameObject.tag
-            && collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
-            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name ==
-            collision.gameObject.name )
+        
+        if (this.gameObject.GetComponent<TargetFinder>().arenaSceneManager.gameObject.GetComponent<ArenaSceneManager>().isPause == false)
         {
-            TransitionState(StateType.Attacking);
-            targetPlayer = collision.gameObject;
+
+            if (collision.gameObject.tag != "Net"
+            && this.gameObject.tag != collision.gameObject.tag
+            && GameObject.ReferenceEquals(collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
+            && GameObject.ReferenceEquals(this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, collision.gameObject)
+            )
+            {
+                Debug.Log("<<<<<<<<<" + collision.gameObject.name);
+
+                if (collision.gameObject.name == "Retiarius")
+                {
+                    distance = (collision.gameObject.transform.position - this.gameObject.transform.position).magnitude;
+                    if (distance < 2)
+                    {
+                        TransitionState(StateType.Attacking);
+                        targetPlayer = collision.gameObject;
+                    }
+                }
+                else
+                {
+                    TransitionState(StateType.Attacking);
+                    targetPlayer = collision.gameObject;
+                }
+            }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

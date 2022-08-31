@@ -58,7 +58,10 @@ public class SamnitesSkillManager : MonoBehaviour
 
     void Attack()
     {
-
+        if (opponent.gameObject.name == "Retiarius")
+        {
+            
+        }
         switch (opponent.gameObject.name)
         {
             case "Samnites":
@@ -106,6 +109,7 @@ public class SamnitesSkillManager : MonoBehaviour
     // parameters: attacker's name and attack damage
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
+        Debug.Log("receive damage out ranged>>>>>>>>>>>>>>>>");
         // 50% chace to block attack
         if (Random.Range(1, 11) > 5)
         {
