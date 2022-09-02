@@ -1,65 +1,65 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.UI;
 
-public class numberOFGladiators : MonoBehaviour
-{
+//public class numberOFGladiators : MonoBehaviour
+//{
 
-    public GameObject playerGladiatorsStore;
+    //public GameObject playerGladiatorsStore;
 
-    [SerializeField] GameObject ChoiceUI;
-    [SerializeField] Text threaxCounter;
-    [SerializeField] Text samniteCounter;
-    [SerializeField] Text myrmiloCounter;
-    [SerializeField] Text retiariusCounter;
+ //   [SerializeField] GameObject ChoiceUI;
+ //   [SerializeField] Text threaxCounter;
+ //   [SerializeField] Text samniteCounter;
+ //   [SerializeField] Text myrmiloCounter;
+ //   [SerializeField] Text retiariusCounter;
 
 
-    public void Start()
-    {
+    //public void Start()
+ //   {
       
         // gladiator store
-        playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
+    //    playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
         
-    }
+   // }
 
 
 
     // Show number of gladiators stored in the ChoiceUI
-    public void numberOFGladiators(string gladiatorTag)
-    {
-        if (checkBalance(gladiatorTag))
-        {
-            switch (gladiatorTag)
-            {
-                case "D2_Threax":
+    //public void numberOFGladiators(string gladiatorTag)
+//    {
+        //if (checkBalance(gladiatorTag))
+   //     {
+            //switch (gladiatorTag)
+     //       {
+                //case "D2_Threax":
 
-                    ChoiceUI.SetActive(true);
-                    threaxCounter.text = "Threax: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex);
-                    break;
+                   // ChoiceUI.SetActive(true);
+                   // threaxCounter.text = "Threax: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex);
+                   // break;
 
-                case "D2_Samnites":
+               // case "D2_Samnites":
 
-                    ChoiceUI.SetActive(true);
-                    samniteCounter.text = "Samnites: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterSamnites);
-                    break;
+                    //ChoiceUI.SetActive(true);
+                   // samniteCounter.text = "Samnites: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterSamnites);
+                   // break;
 
-                case "D2_Myrmilo":
+               // case "D2_Myrmilo":
 
-                    ChoiceUI.SetActive(true);
-                    myrmiloCounter.text = "Murmilo: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo);
-                    break;
+                  //  ChoiceUI.SetActive(true);
+                  //  myrmiloCounter.text = "Murmilo: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo);
+                  //  break;
 
-                case "D2_Retiarius":
+               // case "D2_Retiarius":
 
-                    ChoiceUI.SetActive(true);
-                    retiariusCounter.text = "Retiarius: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius);
-                    break;
-            }
-        }
-    }
+                  //  ChoiceUI.SetActive(true);
+                  //  retiariusCounter.text = "Retiarius: " + Convert.ToString(playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius);
+                  //  break;
+  //          }
+  //      }
+  //  }
 
     
-}
+//}
