@@ -69,21 +69,31 @@ public class ThraexSkillManager : MonoBehaviour
                 {
                     opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
-                    // if opponent is blocking
-                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+                    if (skillTimer > skillData.skillCooldown)
                     {
+                        // perform side attack
+                        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
 
-                        if (skillTimer > skillData.skillCooldown)
-                        {
-                            // perform side attack
-                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+                        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
 
-                            opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
-
-                            skillTimer = 0f;
-                        }
-                        
+                        skillTimer = 0f;
                     }
+
+                    //// if opponent is blocking
+                    //if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+                    //{
+
+                    //    if (skillTimer > skillData.skillCooldown)
+                    //    {
+                    //        // perform side attack
+                    //        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+
+                    //        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+
+                    //        skillTimer = 0f;
+                    //    }
+                        
+                    //}
                 }
 
                 break;
@@ -181,23 +191,13 @@ public class ThraexSkillManager : MonoBehaviour
 
     public void dodgeNet()
     {
-        // 50% chace to dodge net
-        if (Random.Range(1, 11) > 5)
-        {
-            // dodged
-            Debug.Log(">>>>>>>>>>>>>I'm dodged the net>>>>>>>>>>>>");
-            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.DodgeNet);
-        }
-        else
-        {
-            // dodge fail
-            Debug.Log(">>>>>>>>>>>>>Dodge net failed!>>>>>>>>>>>>");
-            this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
-        }
+        Debug.Log(">>>>>>>>>>>>>I'm dodged the net>>>>>>>>>>>>");
+        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.DodgeNet);
     }
 
     public void dodgeNetFinished()
     {
         this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
+        this.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
     }
 }

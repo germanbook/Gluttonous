@@ -109,28 +109,35 @@ public class SamnitesSkillManager : MonoBehaviour
     // parameters: attacker's name and attack damage
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
-        Debug.Log("receive damage out ranged>>>>>>>>>>>>>>>>");
-        // 50% chace to block attack
-        if (Random.Range(1, 11) > 5)
+        if (attacker.gameObject.name != "Threax")
         {
-            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
-            Debug.Log("I'm S, block failed!");
-        }
-        else
-        {
-
-            if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+            Debug.Log("receive damage out ranged>>>>>>>>>>>>>>>>");
+            // 30% chace to block attack
+            if (Random.Range(1, 11) > 7)
             {
-                Debug.Log("I'm S, Attack blocked!");
-                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
-
+                this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+                Debug.Log("I'm S, block failed!");
             }
             else
             {
-                Debug.Log("I'm netted, cant block");
+
+                if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+                {
+                    Debug.Log("I'm S, Attack blocked!");
+                    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+
+                }
+                else
+                {
+                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+                    Debug.Log("I'm netted, cant block");
+                }
+
             }
-            
         }
+
+        
+        
     }
 
     public void ReceiveSkillDamage(string attacker, float damage)

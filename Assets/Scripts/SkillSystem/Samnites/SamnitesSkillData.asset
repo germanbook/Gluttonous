@@ -18,7 +18,7 @@ MonoBehaviour:
   netAttackEffect: 4
   shieldType: 1
   hasNet: 0
-  attackDamage: 12
+  attackDamage: 20
   skillDamage: 0
   attackCooldown: 1
   skillCooldown: 0

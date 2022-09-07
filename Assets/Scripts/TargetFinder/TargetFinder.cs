@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,9 @@ public class TargetFinder : MonoBehaviour
     public Transform nearestEnemy;
 
     public Transform tempTarget;
+
+    // Throw net bait enemy
+    public Transform baitEnemy;
 
     public GameObject arenaSceneManager;
 
@@ -41,15 +45,15 @@ public class TargetFinder : MonoBehaviour
 
         if (this.gameObject.name == "Retiarius")
         {
-            // Retiarius vs Retiarius
-            if (this.gameObject.tag == "Player")
-            {
-                skillTimer = this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown;
-            }
-            else
-            {
-                skillTimer = 3f;
-            }
+            //// Retiarius vs Retiarius
+            //if (this.gameObject.tag == "Player")
+            //{
+            skillTimer = this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown;
+            //}
+            //else
+            //{
+            //    skillTimer = 3f;
+            //}
 
         }
         
@@ -60,6 +64,15 @@ public class TargetFinder : MonoBehaviour
     {
         skillTimer += Time.deltaTime;
 
+        if (nearestEnemy != null)
+        {
+            if (nearestEnemy.gameObject.activeSelf == false)
+            {
+                nearestEnemy = tempTarget;
+                FindTarget();
+            }
+        }
+
         //Change target when it die
         if ((this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
             && this.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true)
@@ -67,19 +80,6 @@ public class TargetFinder : MonoBehaviour
                  && nearestEnemy.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.name != this.gameObject.name)
             )
         {
-            //if (this.gameObject.name != "Retiarius")
-            //{
-            //    nearestEnemy = tempTarget;
-            //    FindTarget();
-            //}
-            //else
-            //{
-            //    if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
-            //    {
-            //        nearestEnemy = tempTarget;
-            //        FindTarget();
-            //    }
-            //}
 
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             if (this.gameObject.name == "Retiarius")
@@ -178,11 +178,13 @@ public class TargetFinder : MonoBehaviour
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == false
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
+                && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false
                 ||
                 tempDistance < minDistance
                 && enemy.gameObject.GetComponent<TargetFinder>().nearestEnemy == this.gameObject.transform
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
+                && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false
                 )
             {
                 minDistance = tempDistance;
@@ -202,29 +204,63 @@ public class TargetFinder : MonoBehaviour
 
                     if (this.gameObject.name == "Retiarius")
                     {
+                        // Enemy Retiarius
+                        // Set bait
+                        if (this.gameObject.tag == "Enemy")
+                        {
+                            for (int i = 0; i < enemies.Length; i++)
+                            {
+                                // find player threax as bait
+                                if (enemies[i].gameObject.name == "Threax"
+                                    && enemies[i].gameObject.tag == "Player")
+                                {
+
+                                    if (enemies[i].gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet == false)
+                                    {
+                                        baitEnemy = enemies[i].gameObject.transform;
+                                        enemies[i].gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
+                                    }
+
+                                }
+                            }
+                        }
+
                         if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false
                             && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
                         {
-                            if (nearestEnemy.gameObject.name == "Retiarius")
+                            if (this.gameObject.tag == "Player")
                             {
-                                if (nearestEnemy.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                                for (int i = 0; i < enemies.Length; i++)
                                 {
-                                    
-                                    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-                                    SetTarget(nearestEnemy);
+                                    if (enemies[i].gameObject.name == "Murmillo"
+                                        && enemies[i].gameObject.tag == "Enemy")
+                                    {
+                                        nearestEnemy = enemies[i].gameObject.transform;
+                                    }
                                 }
+
                             }
-                            else
-                            {
-                                
-                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
-                                SetTarget(nearestEnemy);
-                            }
-                            
+
                         }
+
+                        //if (nearestEnemy.gameObject.name == "Retiarius")
+                        //{
+                        //    if (nearestEnemy.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                        //    {
+                        //        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                        //        SetTarget(nearestEnemy);
+                        //    }
+
+                        //}
+                        
+
+                        
+
+                        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                        SetTarget(nearestEnemy);
                     }
 
-                    if(this.gameObject.name != "Retiarius")
+                    if (this.gameObject.name == "Samnites")
                     {
                         if (nearestEnemy.gameObject.name == "Retiarius")
                         {
@@ -233,23 +269,90 @@ public class TargetFinder : MonoBehaviour
                                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
                                 SetTarget(nearestEnemy);
                             }
-                            //else
-                            //{
-                            //    this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
-                            //    SetTarget(this.transform);
-                            //}
+
                         }
                         else
                         {
+                            if (this.gameObject.tag == "Player")
+                            {
+                      
+                                for (int i = 0; i < enemies.Length; i++)
+                                {
+                                    if (enemies[i].gameObject.name == "Retiarius"
+                                        && enemies[i].gameObject.tag == "Enemy")
+                                    {
+                                        nearestEnemy = enemies[i].gameObject.transform;
+                                    }
+                                }
+                            }
+                            
                             this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
                             SetTarget(nearestEnemy);
                         }
-                            
+                    }
+
+                    if (this.gameObject.name == "Murmillo")
+                    {
+                        if (nearestEnemy.gameObject.name == "Retiarius")
+                        {
+                            if (nearestEnemy.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                            {
+                                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                                SetTarget(nearestEnemy);
+                            }
+
+                        }
+                        else
+                        {
+                            if (this.gameObject.tag == "Enemy")
+                            {
+
+                                for (int i = 0; i < enemies.Length; i++)
+                                {
+                                    if (enemies[i].gameObject.name == "Retiarius"
+                                        && enemies[i].gameObject.tag == "Player")
+                                    {
+                                        nearestEnemy = enemies[i].gameObject.transform;
+                                    }
+                                }
+                            }
+
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                            SetTarget(nearestEnemy);
+                        }
 
                     }
 
+                    if (this.gameObject.name == "Threax")
+                    {
+                        if (nearestEnemy.gameObject.name == "Retiarius")
+                        {
+                            if (this.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet == true)
+                            {
+                                for (int i=0; i<enemies.Length; i++)
+                                {
+                                    if (enemies[i].gameObject.name == "Samnites"
+                                        && enemies[i].gameObject.tag == "Enemy")
+                                    {
+                                        nearestEnemy = enemies[i].gameObject.transform;
+                                    }
+                                }
 
-                    
+                            }
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                            SetTarget(nearestEnemy);
+
+                        }
+                        else
+                        {
+
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Finding);
+                            SetTarget(nearestEnemy);
+                        }
+                    }
+
+
+
                 }
                     
             }
@@ -304,7 +407,6 @@ public class TargetFinder : MonoBehaviour
         if (nearestEnemy != tempTarget && arenaSceneManager.GetComponent<ArenaSceneManager>().isPause == false)
         {
 
-
             if (skillTimer >= this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown
                 && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
             {
@@ -336,6 +438,7 @@ public class TargetFinder : MonoBehaviour
     {
         this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed =
             this.gameObject.GetComponent<RetiariusSkillManager>().skillData.speedValue;
+
         this.gameObject.GetComponent<RetiariusSkillManager>().SkillAttack(nearestEnemy);
     }
 }

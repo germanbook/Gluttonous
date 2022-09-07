@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   armorType: 1
-  speedValue: 1.2
+  speedValue: 1.8
   netAttackEffect: 5
   shieldType: 0
   hasNet: 1
-  attackDamage: 15
+  attackDamage: 40
   skillDamage: 5
   attackCooldown: 2
   skillCooldown: 10

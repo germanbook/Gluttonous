@@ -234,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3200006, y: -2.15, z: 0.292799}
+  m_LocalPosition: {x: -5.01, y: -3.27, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -377,6 +377,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &69886656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!95 &69886658 stripped
 Animator:
@@ -724,12 +726,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 43cc66b2be6ac7241a094008dbe95d15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.027318716
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 43cc66b2be6ac7241a094008dbe95d15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.019747257
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 43cc66b2be6ac7241a094008dbe95d15,
         type: 3}
@@ -1114,7 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333509472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.05, y: -0.79, z: 0.292799}
+  m_LocalPosition: {x: 5.09, y: -1.82, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1580,6 +1582,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &429961379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!114 &543801335 stripped
 MonoBehaviour:
@@ -1837,7 +1841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548543493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.42, y: 0, z: 0.292799}
+  m_LocalPosition: {x: -3.85, y: -3.44, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1877,12 +1881,12 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
@@ -2691,7 +2695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1031284631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,7 +2788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031284630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.93, y: -3.68, z: 0.292799}
+  m_LocalPosition: {x: 4.93, y: -3.43, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3058,6 +3062,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &1091141288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3072,6 +3077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!4 &1155308124 stripped
 Transform:
@@ -3240,6 +3246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!114 &1176316169
 MonoBehaviour:
@@ -3265,6 +3272,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &1176316170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3366,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1260056140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3459,7 +3467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260056139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.24, y: -3.3200002, z: 0.292799}
+  m_LocalPosition: {x: -6.04, y: -0.71, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4725,6 +4733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!114 &1580201861
 MonoBehaviour:
@@ -4750,6 +4759,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &1580201862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,7 +4983,7 @@ PrefabInstance:
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
@@ -5371,6 +5381,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &1664300977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5385,6 +5396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!95 &1664300978 stripped
 Animator:
@@ -5410,7 +5422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1698554090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5463,7 +5475,7 @@ MonoBehaviour:
   slowdownDistance: 1
   pickNextWaypointDist: 1.2
   endReachedDistance: 1.5
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
@@ -5503,7 +5515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698554089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.67, y: -0.07, z: 0.292799}
+  m_LocalPosition: {x: 5.12, y: 0.02, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5553,7 +5565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1744975205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5646,7 +5658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744975204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.14, y: -1.1500001, z: 0.292799}
+  m_LocalPosition: {x: -3.64, y: -2.19, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6210,7 +6222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889978035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.47, y: -2.52, z: 0.292799}
+  m_LocalPosition: {x: 7.48, y: -1.26, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6754,6 +6766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!114 &2009520840
 MonoBehaviour:
@@ -6779,6 +6792,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &2009520841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7235,6 +7249,7 @@ MonoBehaviour:
   isBlocking: 0
   isSideAttacking: 0
   isDodgeNet: 0
+  hasDodgedNet: 0
 --- !u!114 &2099845496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7249,6 +7264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearestEnemy: {fileID: 2080661672}
   tempTarget: {fileID: 2080661672}
+  baitEnemy: {fileID: 0}
   arenaSceneManager: {fileID: 0}
 --- !u!1001 &2405923837160928266
 PrefabInstance:

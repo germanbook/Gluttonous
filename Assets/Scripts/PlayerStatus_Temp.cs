@@ -42,6 +42,7 @@ public class PlayerStatus_Temp : MonoBehaviour
 
     // Thraex dodge net
     public bool isDodgeNet;
+    public bool hasDodgedNet;
 
 
 
@@ -56,6 +57,7 @@ public class PlayerStatus_Temp : MonoBehaviour
         isBlocking = false;
         isSideAttacking = false;
         isDodgeNet = false;
+        hasDodgedNet = false;
     }
 
     // Update is called once per frame

@@ -22,9 +22,17 @@ public class NetBehaviour : MonoBehaviour
 
         isNetTimerStart = false;
 
-        target = this.transform.parent.gameObject.GetComponent<TargetFinder>().nearestEnemy.transform;
+        if (this.transform.parent.gameObject.GetComponent<TargetFinder>().baitEnemy != null)
+        {
+            target = this.transform.parent.gameObject.GetComponent<TargetFinder>().baitEnemy.transform;
+            this.transform.parent.gameObject.GetComponent<TargetFinder>().baitEnemy = null;
+        }
+        else
+        {
+            target = this.transform.parent.gameObject.GetComponent<TargetFinder>().nearestEnemy.transform;
+        }
 
- 
+    
         switch (target.gameObject.name)
         {
             case "Samnites":
