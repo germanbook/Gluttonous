@@ -10,8 +10,8 @@ public class ThraexSkillManager : MonoBehaviour
     GameObject opponent;
 
     // Attack and Skill timer
-    float attackTimer;
-    float skillTimer;
+    public float attackTimer;
+    public float skillTimer;
 
     /// <summary>
     /// Gladiator's timeline for this round
@@ -37,19 +37,11 @@ public class ThraexSkillManager : MonoBehaviour
     {
         if (this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking && opponent != null)
         {
+            Debug.Log("skill manager timer: " + skillTimer);
             // Timer
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;
             skillTimer += Time.deltaTime;
-
-            // Attack
-            if (attackTimer > skillData.attackCooldown)
-            {
-                Attack();
-                attackTimer = 0f;
-            }
-
-            // 
 
         }
     }
@@ -63,40 +55,24 @@ public class ThraexSkillManager : MonoBehaviour
     {
         switch (opponent.gameObject.name)
         {
-            case "Samnites":
+            //case "Samnites":
                 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+            //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+            //    {
 
-                    if (skillTimer > skillData.skillCooldown)
-                    {
-                        // perform side attack
-                        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+            //        if (skillTimer > skillData.skillCooldown)
+            //        {
+            //            // perform side attack
+            //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
 
-                        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
+            //            opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
 
-                        skillTimer = 0f;
-                    }
+            //            skillTimer = 0f;
+            //        }
 
-                    //// if opponent is blocking
-                    //if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
-                    //{
+            //    }
 
-                    //    if (skillTimer > skillData.skillCooldown)
-                    //    {
-                    //        // perform side attack
-                    //        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
-
-                    //        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
-
-                    //        skillTimer = 0f;
-                    //    }
-                        
-                    //}
-                }
-
-                break;
+            //    break;
 
             case "Retiarius":
                 
@@ -108,31 +84,33 @@ public class ThraexSkillManager : MonoBehaviour
 
                 break;
 
-            case "Murmillo":
+            //case "Murmillo":
                 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+            //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+            //    {
+            //        // if opponent is blocking
+            //        if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+            //        {
 
-                    // if opponent is blocking
-                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
-                    {
+            //            if (skillTimer > skillData.skillCooldown)
+            //            {
+            //                // perform side attack
+            //                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
 
-                        if (skillTimer > skillData.skillCooldown)
-                        {
-                            // perform side attack
-                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+            //                opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
 
-                            opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+            //                skillTimer = 0f;
+            //            }
 
-                            skillTimer = 0f;
-                        }
+            //        }
+            //        else
+            //        {
+            //            opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+            //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+            //        }
+            //    }
 
-                    }
-
-                }
-
-                break;
+            //    break;
 
             case "Threax":
                 
@@ -171,23 +149,23 @@ public class ThraexSkillManager : MonoBehaviour
     }
 
     // calling by side attack animation
-    public void sideAttackFinished()
-    {
-        Debug.Log("side attack finished");
+    //public void sideAttackFinished()
+    //{
+    //    Debug.Log("side attack finished");
         
-        if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
-            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
-            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
-            ||
-            this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true
-            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
-            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
-        {
-            Debug.Log("Thraex back to attack");
-            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
-        }
-        this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking = false;
-    }
+    //    if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+    //        && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+    //        GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
+    //        ||
+    //        this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true
+    //        && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+    //        GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
+    //    {
+    //        Debug.Log("Thraex back to attack");
+    //        this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+    //    }
+    //    this.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking = false;
+    //}
 
     public void dodgeNet()
     {
@@ -199,5 +177,39 @@ public class ThraexSkillManager : MonoBehaviour
     {
         this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
         this.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
+    }
+
+
+    // Link this function to the end of the attacking Animation
+    // to synchronize the animation and the attack
+    public void ThraexAttacking()
+    {
+        Attack();
+    }
+
+    public void ThraexSideAttacking()
+    {
+        switch (opponent.gameObject.name)
+        {
+            case "Samnites":
+
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                {
+
+                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
+
+                }
+
+                break;
+
+            case "Murmillo":
+
+                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                {
+                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+                }
+
+                break;
+        }
     }
 }

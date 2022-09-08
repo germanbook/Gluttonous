@@ -10,8 +10,8 @@ public class SamnitesSkillManager : MonoBehaviour
     GameObject opponent;
 
     // Attack and Skill timer
-    float attackTimer;
-    float skillTimer;
+    public float attackTimer;
+    public float skillTimer;
 
     /// <summary>
     /// Gladiator's timeline for this round
@@ -40,12 +40,12 @@ public class SamnitesSkillManager : MonoBehaviour
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;
 
-            // Attack
-            if (attackTimer > skillData.attackCooldown)
-            {
-                Attack();
-                attackTimer = 0f;
-            }
+            //// Attack
+            //if (attackTimer > skillData.attackCooldown)
+            //{
+            //    Attack();
+            //    attackTimer = 0f;
+            //}
 
         }
 
@@ -109,9 +109,9 @@ public class SamnitesSkillManager : MonoBehaviour
     // parameters: attacker's name and attack damage
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
+        // Can't block Threax's side attack
         if (attacker.gameObject.name != "Threax")
         {
-            Debug.Log("receive damage out ranged>>>>>>>>>>>>>>>>");
             // 30% chace to block attack
             if (Random.Range(1, 11) > 7)
             {
@@ -166,6 +166,10 @@ public class SamnitesSkillManager : MonoBehaviour
 
         if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
             && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name
+            || (this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == "Samnites"
+            || this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == "Murmillo")
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
             GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
         {
             Debug.Log("Back to attack");
@@ -190,6 +194,13 @@ public class SamnitesSkillManager : MonoBehaviour
         {
             this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
         }
+    }
+
+    // Link this function to the end of the attacking Animation
+    // to synchronize the animation and the attack
+    public void SamnitesAttacking()
+    {
+        Attack();
     }
 
 }

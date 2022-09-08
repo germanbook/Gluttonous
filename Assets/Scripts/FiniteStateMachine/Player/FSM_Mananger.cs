@@ -89,7 +89,7 @@ public class FSM_Mananger : MonoBehaviour
             && GameObject.ReferenceEquals(this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, collision.gameObject)
             )
             {
-                Debug.Log("<<<<<<<<<" + collision.gameObject.name);
+                
 
                 if (collision.gameObject.name == "Retiarius")
                 {
@@ -102,8 +102,22 @@ public class FSM_Mananger : MonoBehaviour
                 }
                 else
                 {
-                    TransitionState(StateType.Attacking);
-                    targetPlayer = collision.gameObject;
+                    if (this.gameObject.name == "Threax"
+                        && collision.gameObject.name == "Murmillo"
+                        ||
+                        this.gameObject.name == "Threax"
+                        && collision.gameObject.name == "Samnites")
+                    {
+                        TransitionState(StateType.SideAttack);
+                        targetPlayer = collision.gameObject;
+                    }
+                    else
+                    {
+                        TransitionState(StateType.Attacking);
+                        targetPlayer = collision.gameObject;
+                    }
+
+                    
                 }
             }
         }

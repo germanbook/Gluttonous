@@ -21,4 +21,4 @@ MonoBehaviour:
   attackDamage: 15
   skillDamage: 35
   attackCooldown: 1
-  skillCooldown: 0
+  skillCooldown: 1

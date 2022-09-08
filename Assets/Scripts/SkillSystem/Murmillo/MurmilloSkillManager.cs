@@ -10,8 +10,8 @@ public class MurmilloSkillManager : MonoBehaviour
     GameObject opponent;
 
     // Attack and Skill timer
-    float attackTimer;
-    float skillTimer;
+    public float attackTimer;
+    public float skillTimer;
 
     /// <summary>
     /// Gladiator's timeline for this round
@@ -42,12 +42,12 @@ public class MurmilloSkillManager : MonoBehaviour
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;
 
-            // Attack
-            if (attackTimer > skillData.attackCooldown)
-            {
-                Attack();
-                attackTimer = 0f;
-            }
+            //// Attack
+            //if (attackTimer > skillData.attackCooldown)
+            //{
+            //    Attack();
+            //    attackTimer = 0f;
+            //}
 
             // 
 
@@ -108,11 +108,12 @@ public class MurmilloSkillManager : MonoBehaviour
 
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
-        // 50% chace to block attack if not net'd
-        // >>
-        if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+        Debug.Log("+++++++++++++++++++++++++++++++++++++");
+        // Can't block Threax's side attack
+        if (attacker.gameObject.name != "Threax")
         {
-            if (Random.Range(1, 11) > 5)
+            // 30% chace to block attack
+            if (Random.Range(1, 11) > 7)
             {
                 this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
                 Debug.Log("I'm M, block failed!");
@@ -128,16 +129,47 @@ public class MurmilloSkillManager : MonoBehaviour
                 }
                 else
                 {
+                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
                     Debug.Log("I'm netted, cant block");
                 }
 
             }
+            
         }
-        else
-        {
-            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
-            Debug.Log("I'm M, netted!");
-        }
+
+
+
+        // 50% chace to block attack if not net'd
+        // >>
+        //if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+        //{
+        //    if (Random.Range(1, 11) > 5)
+        //    {
+        //        this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+        //        Debug.Log("I'm M, block failed!");
+        //    }
+        //    else
+        //    {
+
+        //        if (this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
+        //        {
+        //            Debug.Log("I'm M, Attack blocked!");
+        //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+
+        //        }
+        //        else
+        //        {
+        //            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+        //            Debug.Log("I'm netted, cant block");
+        //        }
+
+        //    }
+        //}
+        //else
+        //{
+        //    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+        //    Debug.Log("I'm M, netted!");
+        //}
         //>>
 
 
@@ -161,7 +193,11 @@ public class MurmilloSkillManager : MonoBehaviour
 
         if (this.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
             && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
-            GetComponent<TargetFinder>().nearestEnemy.gameObject.name  == this.gameObject.name)
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name  == this.gameObject.name
+            || (this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == "Samnites"
+            || this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.name == "Murmillo")
+            && this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject.
+            GetComponent<TargetFinder>().nearestEnemy.gameObject.name == this.gameObject.name)
         {
 
             this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
@@ -186,5 +222,20 @@ public class MurmilloSkillManager : MonoBehaviour
             this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
         }
     }
+
+    // Link this function to the end of the attacking Animation
+    // to synchronize the animation and the attack
+    public void MurmilloAttacking()
+    {
+        //// Attack
+        //if (attackTimer > skillData.attackCooldown)
+        //{
+        //    Attack();
+        //    attackTimer = 0f;
+        //}
+        Attack();
+        
+    }
+
 
 }

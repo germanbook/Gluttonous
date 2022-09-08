@@ -9,8 +9,8 @@ public class RetiariusSkillManager : MonoBehaviour
     GameObject opponent;
 
     // Attack and Skill timer
-    float attackTimer;
-    float skillTimer;
+    public float attackTimer;
+    public float skillTimer;
 
     /// <summary>
     /// Gladiator's timeline for this round
@@ -48,12 +48,12 @@ public class RetiariusSkillManager : MonoBehaviour
             attackTimer += Time.deltaTime;
             skillTimer += Time.deltaTime;
 
-            // Attack
-            if (attackTimer > skillData.attackCooldown && isThrowNet == false)
-            {
-                Attack();
-                attackTimer = 0f;
-            }
+            //// Attack
+            //if (attackTimer > skillData.attackCooldown && isThrowNet == false)
+            //{
+            //    Attack();
+            //    attackTimer = 0f;
+            //}
 
             //// Testing...
             //// Throw net three seconds after this round begins
@@ -187,5 +187,12 @@ public class RetiariusSkillManager : MonoBehaviour
         {
             this.gameObject.GetComponent<PlayerPosition>().isNetted = false;
         }
+    }
+
+    // Link this function to the end of the attacking Animation
+    // to synchronize the animation and the attack
+    public void RetiariusAttacking()
+    {
+        Attack();
     }
 }
