@@ -69,6 +69,7 @@ public class PlayerStatus_Temp : MonoBehaviour
         // Update life bar value
         LifeBarValue();
 
+        //toggle on or off the gladiator state icons 
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (playerLifeBarState.enabled == false)
