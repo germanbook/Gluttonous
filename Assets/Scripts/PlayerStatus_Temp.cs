@@ -45,7 +45,10 @@ public class PlayerStatus_Temp : MonoBehaviour
     public bool hasDodgedNet;
 
 
-
+    public void Awake()
+    {
+        playerLifeBarState.enabled = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -65,9 +68,18 @@ public class PlayerStatus_Temp : MonoBehaviour
     {
         // Update life bar value
         LifeBarValue();
-        
-    }
 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (playerLifeBarState.enabled == false)
+            {
+                playerLifeBarState.enabled = true;
+            } else
+            {
+                playerLifeBarState.enabled = false;
+            }
+        }
+    }
 
     // Get health value of this player/enemy object
     public float getHealthValue()
