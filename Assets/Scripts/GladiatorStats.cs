@@ -8,6 +8,11 @@ public class GladiatorStats : MonoBehaviour
     /// <summary>
 	/// For galadiator moving in Ludus
 	/// </summary>
+    ///
+
+    public Animator animator;
+
+    private float oldPosition;
 
     private bool isClicked;
 
@@ -22,6 +27,8 @@ public class GladiatorStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        oldPosition = this.gameObject.transform.position.x;
+
         isClicked = false;
         gladiatorInitialPosition = this.gameObject.transform.position;
     }
@@ -35,6 +42,7 @@ public class GladiatorStats : MonoBehaviour
             {
                 float step = speed * Time.deltaTime;
                 this.transform.position = Vector2.MoveTowards(this.transform.position, destinationPosition.transform.position, step);
+                
 
             }
             else
@@ -43,14 +51,40 @@ public class GladiatorStats : MonoBehaviour
                 this.transform.position = Vector2.MoveTowards(this.transform.position, gladiatorInitialPosition, step);
                 this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = true;
                 this.gameObject.GetComponent<StatsPanel>().OnMouseDown();
+               
             }
 
             
+
+            if (clickedObject.name != this.gameObject.name)
+            {
+                animator.SetInteger("stateInt", 0);
+            }
         }
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    CastRay();
-        //}
+
+        // Standing
+        if (transform.position.x == oldPosition)
+        {
+            // idle
+            animator.SetInteger("stateInt", 0);
+        }
+
+            // Moving of right
+            if (transform.position.x > oldPosition)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            animator.SetInteger("stateInt", 1);
+        }
+
+        // Moving of lift
+        if (transform.position.x < oldPosition)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            animator.SetInteger("stateInt", 1);
+        }
+
+        // update the old position with the new position
+        oldPosition = transform.position.x;
 
     }
 
