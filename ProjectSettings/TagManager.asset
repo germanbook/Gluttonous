@@ -34,6 +34,7 @@ TagManager:
   - GladiatorHireSucessOK
   - VendorDialogue
   - ArenaSceneManager
+  - Net
   layers:
   - Default
   - TransparentFX

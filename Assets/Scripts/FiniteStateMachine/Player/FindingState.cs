@@ -28,6 +28,26 @@ public class FindingState : IState
 
     public void OnUpdate()
     {
-        
+        switch (manager.gameObject.name)
+        {
+
+            case "Samnites":
+                
+
+                break;
+            case "Retiarius":
+                
+
+                break;
+            case "Murmillo":
+
+                
+
+                break;
+            case "Threax":
+                
+
+                break;
+        }
     }
 }

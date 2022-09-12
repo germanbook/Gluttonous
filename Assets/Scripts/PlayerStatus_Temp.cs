@@ -34,8 +34,21 @@ public class PlayerStatus_Temp : MonoBehaviour
     //
     public bool isFinding;
 
+    // block
+    public bool isBlocking;
+
+    // Thraex sideattack
+    public bool isSideAttacking;
+
+    // Thraex dodge net
+    public bool isDodgeNet;
+    public bool hasDodgedNet;
 
 
+    public void Awake()
+    {
+        playerLifeBarState.enabled = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +57,10 @@ public class PlayerStatus_Temp : MonoBehaviour
         isAlive = true;
         isAttacking = false;
         isFinding = false;
+        isBlocking = false;
+        isSideAttacking = false;
+        isDodgeNet = false;
+        hasDodgedNet = false;
     }
 
     // Update is called once per frame
@@ -51,8 +68,19 @@ public class PlayerStatus_Temp : MonoBehaviour
     {
         // Update life bar value
         LifeBarValue();
-    }
 
+        //toggle on or off the gladiator state icons 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (playerLifeBarState.enabled == false)
+            {
+                playerLifeBarState.enabled = true;
+            } else
+            {
+                playerLifeBarState.enabled = false;
+            }
+        }
+    }
 
     // Get health value of this player/enemy object
     public float getHealthValue()

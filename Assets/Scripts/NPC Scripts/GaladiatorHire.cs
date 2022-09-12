@@ -28,10 +28,10 @@ public class GaladiatorHire : MonoBehaviour
         // gladiator store
         playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
-        threaxPrice = 30;
-        samnitesPrice = 40;
-        myrmiloPrice = 50;
-        retiariusPrice = 60;
+        threaxPrice = 50;
+        samnitesPrice = 100;
+        myrmiloPrice = 100;
+        retiariusPrice = 150;
 
     }
 
@@ -71,6 +71,8 @@ public class GaladiatorHire : MonoBehaviour
     // Check if player have enough balance to hiring a gladiator
     bool checkBalance(string gladiatorTag)
     {
+        Debug.Log("Currency:" + currency);
+
         switch (gladiatorTag)
         {
             case "D2_Threax":

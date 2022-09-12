@@ -12,6 +12,10 @@ public enum StateType
     Idle,
     Finding,
     Attacking,
-    Death
+    Death,
+    ThrowNet,
+    Block,
+    SideAttack,
+    DodgeNet
 
 }

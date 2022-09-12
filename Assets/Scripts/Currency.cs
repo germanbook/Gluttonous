@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Currency : MonoBehaviour
 {
+
     public static Currency instance;
     public int currencyValue;
     public Text currencyText;
@@ -16,7 +17,7 @@ public class Currency : MonoBehaviour
     }
 
     private void Start()
-    {
+    {       
         currencyValue = 100;
     }
 
