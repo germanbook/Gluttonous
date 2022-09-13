@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &88424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &69886656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,6 +1761,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &429961379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2009,7 +2011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &548543494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3343,7 +3345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1031284631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,6 +3715,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &1091141288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3923,6 +3926,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &1176316170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,7 +4036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1260056140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,7 +4129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260056139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 0.08, z: 0.292799}
+  m_LocalPosition: {x: -5.47, y: -0.22, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5419,6 +5423,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &1580201862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6050,6 +6055,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &1664300977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6183,7 +6189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698554089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.14, y: 0.11, z: 0.292799}
+  m_LocalPosition: {x: 6.94, y: -0.14, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6233,7 +6239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1744975205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6326,7 +6332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744975204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.39, y: -1.16, z: 0.292799}
+  m_LocalPosition: {x: -5.34, y: -2.13, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6881,7 +6887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1889978036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7709,6 +7715,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &2009520841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8170,6 +8177,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  isThowedBaitNet: 0
 --- !u!114 &2099845496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30133,6 +30141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: counterSamnites
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146116448330, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: currencyValue
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 5566055146785530805, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}

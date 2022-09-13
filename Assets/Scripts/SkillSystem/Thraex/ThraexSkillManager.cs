@@ -175,6 +175,7 @@ public class ThraexSkillManager : MonoBehaviour
 
     public void dodgeNetFinished()
     {
+        Debug.Log(">>>>>>>>>>>>>" + this.transform.parent.gameObject.name);
         this.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet = false;
         this.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
     }

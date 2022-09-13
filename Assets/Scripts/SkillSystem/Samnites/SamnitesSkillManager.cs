@@ -113,7 +113,7 @@ public class SamnitesSkillManager : MonoBehaviour
         if (attacker.gameObject.name != "Threax")
         {
             // 30% chace to block attack
-            if (Random.Range(1, 11) > 7)
+            if (Random.Range(1, 101) > 70)
             {
                 this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
                 Debug.Log("I'm S, block failed!");

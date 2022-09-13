@@ -18,6 +18,7 @@ public class GaladiatorHire : MonoBehaviour
 
     [SerializeField] GameObject hireSuccessDialogue;
     [SerializeField] GameObject hireFailDialogue;
+    [SerializeField] GameObject hireLimitation;
     [SerializeField] Text gladiatorCounter;
 
     private void Start()
@@ -79,10 +80,19 @@ public class GaladiatorHire : MonoBehaviour
 
                 if (currency >= threaxPrice)
                 {
-                    currency -= threaxPrice;
-                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex += 1;
-                    return true;
+                    if (playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex < 2)
+                    {
+                        currency -= threaxPrice;
+                        GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
+                        playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex += 1;
+                        return true;
+                    }
+                    else
+                    {
+                        hireLimitation.SetActive(true);
+                        return false;
+                    }
+                    
                 }
                 else
                 {
@@ -95,10 +105,20 @@ public class GaladiatorHire : MonoBehaviour
 
                 if (currency >= samnitesPrice)
                 {
-                    currency -= samnitesPrice;
-                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterSamnites += 1;
-                    return true;
+                    if (playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterSamnites < 2)
+                    {
+                        currency -= samnitesPrice;
+                        GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
+                        playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterSamnites += 1;
+                        return true;
+                    }
+                    else
+                    {
+                        hireLimitation.SetActive(true);
+                        return false;
+                    }
+
+                    
                 }
                 else
                 {
@@ -111,10 +131,20 @@ public class GaladiatorHire : MonoBehaviour
 
                 if (currency >= myrmiloPrice)
                 {
-                    currency -= myrmiloPrice;
-                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo += 1;
-                    return true;
+
+                    if (playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo < 2)
+                    {
+                        currency -= myrmiloPrice;
+                        GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
+                        playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo += 1;
+                        return true;
+                    }
+                    else
+                    {
+                        hireLimitation.SetActive(true);
+                        return false;
+                    }
+                    
                 }
                 else
                 {
@@ -128,10 +158,20 @@ public class GaladiatorHire : MonoBehaviour
 
                 if (currency >= retiariusPrice)
                 {
-                    currency -= retiariusPrice;
-                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius += 1;
-                    return true;
+                    if (playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius < 2)
+                    {
+                        currency -= retiariusPrice;
+                        GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue = currency;
+                        playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius += 1;
+                        return true;
+                    }
+                    else
+                    {
+                        hireLimitation.SetActive(true);
+                        return false;
+                    }
+
+                    
                 }
                 else
                 {

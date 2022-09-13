@@ -22,7 +22,8 @@ public class BlockState : IState
 
     public void OnExit()
     {
-
+        // Is blocking 
+        manager.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking = false;
     }
 
     public void OnUpdate()

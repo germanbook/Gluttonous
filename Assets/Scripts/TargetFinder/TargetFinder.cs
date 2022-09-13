@@ -181,7 +181,7 @@ public class TargetFinder : MonoBehaviour
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false
                 ||
                 tempDistance < minDistance
-                && enemy.gameObject.GetComponent<TargetFinder>().nearestEnemy == this.gameObject.transform
+                && GameObject.ReferenceEquals(enemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isAlive == true
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == false
                 && enemy.gameObject.GetComponent<PlayerStatus_Temp>().isSideAttacking == false
@@ -208,21 +208,29 @@ public class TargetFinder : MonoBehaviour
                         // Set bait
                         if (this.gameObject.tag == "Enemy")
                         {
-                            for (int i = 0; i < enemies.Length; i++)
+                            if (this.gameObject.GetComponent<PlayerStatus_Temp>().isThowedBaitNet == false)
                             {
-                                // find player threax as bait
-                                if (enemies[i].gameObject.name == "Threax"
-                                    && enemies[i].gameObject.tag == "Player")
+                                for (int i = 0; i < enemies.Length; i++)
                                 {
 
-                                    if (enemies[i].gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet == false)
+                                    // find player threax as bait
+                                    if (enemies[i].gameObject.name == "Threax"
+                                        && enemies[i].gameObject.tag == "Player")
                                     {
-                                        baitEnemy = enemies[i].gameObject.transform;
-                                        enemies[i].gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
+                                        if (enemies[i].gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet == false)
+                                        {
+                                            baitEnemy = enemies[i].gameObject.transform;
+                                            
+                                            
+                                        }
+                                        i = enemies.Length;
+                                        this.gameObject.GetComponent<PlayerStatus_Temp>().isThowedBaitNet = true;
                                     }
 
                                 }
                             }
+
+                            
                         }
 
                         if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false
@@ -410,6 +418,8 @@ public class TargetFinder : MonoBehaviour
             if (skillTimer >= this.gameObject.GetComponent<RetiariusSkillManager>().skillData.skillCooldown
                 && this.gameObject.GetComponent<PlayerPosition>().isNetted == false)
             {
+
+
                 if (GameObject.ReferenceEquals(nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject))
                 {
 
@@ -423,6 +433,23 @@ public class TargetFinder : MonoBehaviour
 
                         skillTimer = 0f;
 
+                    }
+                }
+                else
+                {
+                    if (baitEnemy != null)
+                    {
+                        distance = (baitEnemy.position - this.gameObject.transform.position).magnitude;
+
+                        if (distance < 5)
+                        {
+
+                            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.ThrowNet);
+
+
+                            skillTimer = 0f;
+
+                        }
                     }
                 }
 

@@ -44,6 +44,9 @@ public class PlayerStatus_Temp : MonoBehaviour
     public bool isDodgeNet;
     public bool hasDodgedNet;
 
+    // R bait net
+    public bool isThowedBaitNet;
+
 
     public void Awake()
     {
@@ -61,6 +64,7 @@ public class PlayerStatus_Temp : MonoBehaviour
         isSideAttacking = false;
         isDodgeNet = false;
         hasDodgedNet = false;
+        isThowedBaitNet = false;
     }
 
     // Update is called once per frame

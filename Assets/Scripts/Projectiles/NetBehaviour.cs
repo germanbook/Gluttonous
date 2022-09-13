@@ -17,9 +17,12 @@ public class NetBehaviour : MonoBehaviour
     float netEffectTimer;
     bool isNetTimerStart;
 
+    // Collision marker
+    bool isTriggered;
+
     private void Start()
     {
-
+        isTriggered = false;
         isNetTimerStart = false;
 
         if (this.transform.parent.gameObject.GetComponent<TargetFinder>().baitEnemy != null)
@@ -95,10 +98,11 @@ public class NetBehaviour : MonoBehaviour
 
                 if (GameObject.ReferenceEquals(this.transform.parent.gameObject, collision.gameObject) == false)
                 {
-                    Debug.Log("collision name: " + collision.gameObject.name);
+                    
 
-                    if (collision.gameObject.name == "Threax")
+                    if (collision.gameObject.name == "Threax" && isTriggered == false)
                     {
+                        Debug.Log(">>>>>>>>>>>>+++++++++++ net's collision name: " + collision.gameObject.name);
                         collision.gameObject.GetComponent<ThraexSkillManager>().dodgeNet();
                         if (collision.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet == false)
                         {
@@ -106,6 +110,8 @@ public class NetBehaviour : MonoBehaviour
                                 && GameObject.ReferenceEquals(collision.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject,
                                 this.transform.parent.gameObject.GetComponent<FSM_Mananger>().targetPlayer.gameObject))
                             {
+
+                                collision.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
 
                                 isNetTimerStart = true;
                                 target.gameObject.GetComponent<PlayerPosition>().isNetted = true;
@@ -119,6 +125,7 @@ public class NetBehaviour : MonoBehaviour
                             netEffectTimer = 2f;
                             target = this.gameObject.transform;
                         }
+                        isTriggered = true;
                     }
 
 
