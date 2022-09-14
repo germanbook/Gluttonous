@@ -9,7 +9,9 @@ public class DialogueManager : MonoBehaviour
     List<GameObject> dialogueBoxList = new List<GameObject>(); 
 
     //main dialogue gameObject
-    GameObject barkeepBranDialogue;
+    public GameObject barkeepBranDialogue;
+
+    GameObject playerGladiatorsStore;
     // dialogue box's
     GameObject introductoryDialogue_0;
     GameObject introductoryDialogue_1;
@@ -18,13 +20,11 @@ public class DialogueManager : MonoBehaviour
     GameObject hintsTipsQuestions_4;
 
     // bools to check if its been opened atleast once
-    bool firstTimeDialogue = true;
+    bool firstTimeDialogue;
 
     void Awake()
     {
-        //stores the dialogue tree into a variable to access 
-        barkeepBranDialogue = GameObject.Find("BarkeepBranDialogue"); ;
-
+        playerGladiatorsStore = GameObject.Find("PlayerGladiatorsStore");
         //initialised dialogue box's into variables automatically without using seralized fields
         introductoryDialogue_0 = barkeepBranDialogue.transform.Find("0_Introductory_Dialogue").gameObject;
         introductoryDialogue_1 = barkeepBranDialogue.transform.Find("1_Introductory_Dialogue").gameObject;
@@ -39,30 +39,24 @@ public class DialogueManager : MonoBehaviour
         dialogueBoxList.Add(advancedQuestions_3);
         dialogueBoxList.Add(hintsTipsQuestions_4);
 
+        
 
-        foreach (GameObject dialogueBox in dialogueBoxList)
-        {
-            dialogueBox.SetActive(false);
-        }
+    }
+    private void Start()
+    {
+        firstTimeDialogue = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().hasPlayerInteractedBefore;
 
-        // is this the first time the player has interacted with the npc
         if (firstTimeDialogue == true)
         {
             introductoryDialogue_0.SetActive(true);
-            introductoryDialogue_1.SetActive(false);
-            
+
+            firstTimeDialogue = false;
         }
-        else
+        else if (firstTimeDialogue == false)
         {
             introductoryDialogue_1.SetActive(true);
-            introductoryDialogue_0.SetActive(false);
         }
-        firstTimeDialogue = false;
-        
-
-        
     }
-
     // Update is called once per frame
     void Update()
     {

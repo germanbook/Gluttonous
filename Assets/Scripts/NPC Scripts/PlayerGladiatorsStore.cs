@@ -8,6 +8,7 @@ public class PlayerGladiatorsStore : MonoBehaviour
     public int counterThraex;
     public int counterMyrmilo;
     public int counterRetiarius;
+    public bool hasPlayerInteractedBefore;
 
     private void Start()
     {
@@ -15,5 +16,6 @@ public class PlayerGladiatorsStore : MonoBehaviour
         counterThraex = 0;
         counterMyrmilo = 0;
         counterRetiarius = 0;
+        hasPlayerInteractedBefore = false;
     }
 }

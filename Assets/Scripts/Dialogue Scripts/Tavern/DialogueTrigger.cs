@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
-    [Header("Dialogue")]
-    [SerializeField] private GameObject dialogue;
+
+    //main dialogue gameObject
+    GameObject barkeepBranDialogue;
 
     private bool playerInRange;
 
     private void Awake()
     {
+        barkeepBranDialogue = GameObject.Find("BarkeepBranDialogue");
+
         playerInRange = false;
         visualCue.SetActive(false);
-        dialogue.SetActive(false);
+        barkeepBranDialogue.SetActive(false);
+
+        
+
+
     }
 
     private void Update()
@@ -28,8 +33,7 @@ public class DialogueTrigger : MonoBehaviour
             // Click mouse key to show dialogue
             if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
             {
-                // show dialogue here
-                dialogue.SetActive(true);
+                barkeepBranDialogue.SetActive(true);
 
                 // Set dialogue status
                 GameManager.isDialogueShowing = true;
