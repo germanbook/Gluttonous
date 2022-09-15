@@ -100,10 +100,13 @@ public class NetBehaviour : MonoBehaviour
                 {
                     
 
-                    if (collision.gameObject.name == "Threax" && isTriggered == false)
+                    if (collision.gameObject.name == "Threax" && isTriggered == false
+                        && collision.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedBaitNet == false)
                     {
                         Debug.Log(">>>>>>>>>>>>+++++++++++ net's collision name: " + collision.gameObject.name);
                         collision.gameObject.GetComponent<ThraexSkillManager>().dodgeNet();
+                        collision.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedBaitNet = true;
+
                         if (collision.gameObject.GetComponent<PlayerStatus_Temp>().isDodgeNet == false)
                         {
                             if (GameObject.ReferenceEquals(collision.gameObject, target.gameObject)
@@ -112,6 +115,7 @@ public class NetBehaviour : MonoBehaviour
                             {
 
                                 collision.gameObject.GetComponent<PlayerStatus_Temp>().hasDodgedNet = true;
+
 
                                 isNetTimerStart = true;
                                 target.gameObject.GetComponent<PlayerPosition>().isNetted = true;

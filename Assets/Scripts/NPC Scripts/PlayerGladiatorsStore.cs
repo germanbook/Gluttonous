@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class PlayerGladiatorsStore : MonoBehaviour
 {
-    public int counterSamnites;
-    public int counterThraex;
-    public int counterMyrmilo;
-    public int counterRetiarius;
+    [HideInInspector] public int counterSamnites;
+    [HideInInspector] public int counterThraex;
+    [HideInInspector] public int counterMyrmilo;
+    [HideInInspector] public int counterRetiarius;
+
+    [SerializeField] GladiatorStoreData gladiatorStoreData;
 
     private void Start()
     {
-        counterSamnites = 0;
-        counterThraex = 0;
-        counterMyrmilo = 0;
-        counterRetiarius = 0;
+        counterSamnites = gladiatorStoreData.counterSamnites;
+        counterThraex = gladiatorStoreData.counterThraex;
+        counterMyrmilo = gladiatorStoreData.counterMyrmilo;
+        counterRetiarius = gladiatorStoreData.counterRetiarius;
+    }
+
+    public void SaveGladiatorStoreData()
+    {
+        gladiatorStoreData.counterSamnites = counterSamnites;
+        gladiatorStoreData.counterThraex = counterThraex;
+        gladiatorStoreData.counterMyrmilo = counterMyrmilo;
+        gladiatorStoreData.counterRetiarius = counterRetiarius;
     }
 }

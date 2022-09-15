@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 /// <summary>
 /// Finding State
@@ -19,6 +20,11 @@ public class FindingState : IState
         manager.GetComponent<PlayerStatus_Temp>().playerLifeBarState.sprite
             = manager.GetComponent<PlayerStatus_Temp>().findStateImage;
         manager.gameObject.GetComponent<PlayerStatus_Temp>().isFinding = true;
+
+        if (manager.gameObject.name == "Retiarius")
+        {
+            manager.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+        }
     }
 
     public void OnExit()

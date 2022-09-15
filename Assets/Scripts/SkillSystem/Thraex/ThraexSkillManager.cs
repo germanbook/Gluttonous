@@ -37,7 +37,6 @@ public class ThraexSkillManager : MonoBehaviour
     {
         if (this.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking && opponent != null)
         {
-            Debug.Log("skill manager timer: " + skillTimer);
             // Timer
             roundTimer += Time.deltaTime;
             attackTimer += Time.deltaTime;

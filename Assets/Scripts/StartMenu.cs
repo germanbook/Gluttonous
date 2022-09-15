@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    [SerializeField] PlayerGladiatorsStore playerGladiatorsStore;
+
     public void NewGameButton()
     {
         SceneManager.LoadScene(1);
@@ -18,6 +20,7 @@ public class StartMenu : MonoBehaviour
 
     public void ExitGameButton()
     {
+        playerGladiatorsStore.SaveGladiatorStoreData();
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }

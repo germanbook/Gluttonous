@@ -3,7 +3,10 @@ guid: f1d36208f49844d52921003a7bf1d405
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - targetPlayer: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - gladiatorStoreData: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

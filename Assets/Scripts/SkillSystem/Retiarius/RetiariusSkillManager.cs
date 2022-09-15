@@ -127,11 +127,15 @@ public class RetiariusSkillManager : MonoBehaviour
     public void SkillAttack(Transform nearestEnemy)
     {
         isThrowNet = false;
-        if (nearestEnemy.gameObject.activeSelf == true)
+        if (nearestEnemy.gameObject.activeSelf == true
+            && nearestEnemy.gameObject.tag == "Enemy"
+            ||
+            nearestEnemy.gameObject.activeSelf == true
+            && nearestEnemy.gameObject.tag == "Player")
         {
             // instantialize net object
             Instantiate(ProjectPrefab, LaunchOffset.position, transform.rotation).transform.SetParent(this.transform);
-            
+            this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
 
             if ((GameObject.ReferenceEquals(nearestEnemy.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
                 &&
@@ -141,6 +145,7 @@ public class RetiariusSkillManager : MonoBehaviour
                 && nearestEnemy.gameObject.name == "Retiarius" && (nearestEnemy.gameObject.transform.position - this.gameObject.transform.position).magnitude < 1.5)
                 )
             {
+                
                 this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
             }
         }

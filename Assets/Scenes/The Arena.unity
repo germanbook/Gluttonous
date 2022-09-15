@@ -234,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.01, y: -3.27, z: 0.292799}
+  m_LocalPosition: {x: -5.33, y: -3.5, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 69886658}
+  gladiatorStore: {fileID: 756139041}
 --- !u!50 &69886654
 Rigidbody2D:
   serializedVersion: 4
@@ -380,6 +381,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &69886656
 MonoBehaviour:
@@ -1715,6 +1717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 429961370}
+  gladiatorStore: {fileID: 756139041}
 --- !u!50 &429961377
 Rigidbody2D:
   serializedVersion: 4
@@ -1761,6 +1764,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &429961379
 MonoBehaviour:
@@ -2104,7 +2108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548543493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -2.98, z: 0.292799}
+  m_LocalPosition: {x: -5.5, y: -3.47, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2906,6 +2910,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &756139041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5566055145853688923, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5566055146835831924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98eaf656d4023428ab719df93d4df280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &765651039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7505862515009472043, guid: 5de64e1bc63bb4417b942615eba85e2c,
@@ -3345,7 +3361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1031284631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,7 +3454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031284630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.93, y: -3.43, z: 0.292799}
+  m_LocalPosition: {x: 6.93, y: -3.41, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3669,6 +3685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 1091141279}
+  gladiatorStore: {fileID: 756139041}
 --- !u!50 &1091141286
 Rigidbody2D:
   serializedVersion: 4
@@ -3715,6 +3732,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &1091141288
 MonoBehaviour:
@@ -3926,6 +3944,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &1176316170
 MonoBehaviour:
@@ -3941,6 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 1176316175}
+  gladiatorStore: {fileID: 756139041}
 --- !u!114 &1176316171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,7 +4149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260056139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.47, y: -0.22, z: 0.292799}
+  m_LocalPosition: {x: -5.37, y: -0.49, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5423,6 +5443,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &1580201862
 MonoBehaviour:
@@ -5438,6 +5459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 1580201867}
+  gladiatorStore: {fileID: 756139041}
 --- !u!114 &1580201863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6009,6 +6031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 1664300978}
+  gladiatorStore: {fileID: 756139041}
 --- !u!50 &1664300975
 Rigidbody2D:
   serializedVersion: 4
@@ -6055,6 +6078,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &1664300977
 MonoBehaviour:
@@ -6332,7 +6356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744975204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.34, y: -2.13, z: 0.292799}
+  m_LocalPosition: {x: -5.38, y: -2.09, z: 0.292799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7555,6 +7579,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
+        type: 3}
+      propertyPath: playerGladiatorsStore
+      value: 
+      objectReference: {fileID: 756139041}
     - target: {fileID: 4792490552165871737, guid: f76fed5cb63e04a85b696b549f0c6316,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7715,6 +7744,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &2009520841
 MonoBehaviour:
@@ -7730,6 +7760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 2009520846}
+  gladiatorStore: {fileID: 756139041}
 --- !u!114 &2009520842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7929,7 +7960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080661671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5195911, y: 1.9211365, z: 0.64494234}
+  m_LocalPosition: {x: -0.89, y: 7.54, z: 0.64494234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8131,6 +8162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlayer: {fileID: 2080661671}
   animator: {fileID: 2099845487}
+  gladiatorStore: {fileID: 756139041}
 --- !u!50 &2099845494
 Rigidbody2D:
   serializedVersion: 4
@@ -8177,6 +8209,7 @@ MonoBehaviour:
   isSideAttacking: 0
   isDodgeNet: 0
   hasDodgedNet: 0
+  hasDodgedBaitNet: 0
   isThowedBaitNet: 0
 --- !u!114 &2099845496
 MonoBehaviour:
@@ -30142,6 +30175,12 @@ PrefabInstance:
       propertyPath: counterSamnites
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5566055145853688923, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: gladiatorStoreData
+      value: 
+      objectReference: {fileID: 11400000, guid: 46710715d65154e85acd95bf883b7de6,
+        type: 2}
     - target: {fileID: 5566055146116448330, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
       propertyPath: currencyValue

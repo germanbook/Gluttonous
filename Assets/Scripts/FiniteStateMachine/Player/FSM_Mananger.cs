@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Pathfinding;
 using UnityEngine;
 
@@ -23,6 +24,9 @@ public class FSM_Mananger : MonoBehaviour
 
     //
     float distance;
+
+    // Gladiator store data
+    [SerializeField] PlayerGladiatorsStore gladiatorStore;
 
     // Dictionary mapping state to key and value
     private Dictionary<StateType, IState> states = new Dictionary<StateType, IState>();
@@ -57,6 +61,7 @@ public class FSM_Mananger : MonoBehaviour
         currentState.OnUpdate();
         if(this.gameObject.GetComponent<PlayerStatus_Temp>().getHealthValue() <= 0f)
         {
+
             TransitionState(StateType.Death);
         }
     }
@@ -84,6 +89,7 @@ public class FSM_Mananger : MonoBehaviour
         {
 
             if (collision.gameObject.tag != "Net"
+            //&& this.gameObject.GetComponent<PlayerPosition>().isNetted == false
             && this.gameObject.tag != collision.gameObject.tag
             && GameObject.ReferenceEquals(collision.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, this.gameObject)
             && GameObject.ReferenceEquals(this.gameObject.GetComponent<TargetFinder>().nearestEnemy.gameObject, collision.gameObject)
@@ -137,11 +143,42 @@ public class FSM_Mananger : MonoBehaviour
 
     public void removeCharactor()
     {
+        if (this.gameObject.tag == "Player")
+        {
+            GladiatorStoreCounterUpdate();
+        }
+
         this.gameObject.SetActive(false);
         this.transform.parent.gameObject.SetActive(false);
         
         this.gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = null;
         
+    }
+
+    // When player's gladiator dead, update store data
+    public void GladiatorStoreCounterUpdate()
+    {
+        switch (this.gameObject.name)
+        {
+            case "Samnites":
+                gladiatorStore.counterSamnites -= 1;
+
+                break;
+            case "Retiarius":
+                gladiatorStore.counterRetiarius -= 1;
+
+
+                break;
+            case "Murmillo":
+                gladiatorStore.counterMyrmilo -= 1;
+
+
+                break;
+            case "Threax":
+                gladiatorStore.counterThraex -= 1;
+
+                break;
+        }
     }
 
 

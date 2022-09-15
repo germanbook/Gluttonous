@@ -35,7 +35,19 @@ public class PlayerPosition : MonoBehaviour
         }
         else
         {
-            this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+            if (this.gameObject.name == "Retiarius")
+            {
+                if (this.gameObject.GetComponent<RetiariusSkillManager>().isThrowNet == false)
+                {
+                    this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+                }
+
+            }
+            else
+            {
+                this.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+            }
+            
             
         }
         

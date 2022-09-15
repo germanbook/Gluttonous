@@ -21,7 +21,7 @@ public class ThrowNetState : IState
         
         manager.animator.SetInteger("stateInt", 4);
         // Freeze location when enter attacking state
-        manager.gameObject.transform.parent.gameObject.GetComponent<AIPath>().maxSpeed = 0f;
+        manager.gameObject.transform.parent.gameObject.GetComponent<AIPath>().canMove = false;
 
 
     }

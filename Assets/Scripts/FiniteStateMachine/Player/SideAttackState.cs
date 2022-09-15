@@ -39,11 +39,7 @@ public class SideAttackState : IState
 
     public void OnUpdate()
     {
-        Debug.Log("Threax Side Attack >>> >>> update");
-        
-        
-
-        manager.gameObject.GetComponent<ThraexSkillManager>().GetOpponent(manager.targetPlayer);
+       manager.gameObject.GetComponent<ThraexSkillManager>().GetOpponent(manager.targetPlayer);
 
         // Get skill timer
         skillTimer = manager.gameObject.GetComponent<ThraexSkillManager>().skillTimer;

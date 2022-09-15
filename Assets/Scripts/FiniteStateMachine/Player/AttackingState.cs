@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 /// <summary>
@@ -31,6 +32,11 @@ public class AttackingState : IState
 
         // Is attacking 
         manager.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking = true;
+
+        if (manager.gameObject.name == "Retiarius")
+        {
+            manager.transform.parent.gameObject.GetComponent<AIPath>().canMove = true;
+        }
 
     }
 
