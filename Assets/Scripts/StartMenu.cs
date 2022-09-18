@@ -21,7 +21,7 @@ public class StartMenu : MonoBehaviour
     public void ExitGameButton()
     {
         playerGladiatorsStore.SaveGladiatorStoreData();
-        UnityEditor.EditorApplication.isPlaying = false;
+  //      UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }

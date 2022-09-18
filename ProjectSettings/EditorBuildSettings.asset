@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tavern.unity
     guid: de7b627f5198d6f43b3186dd2c811b41
+  - enabled: 1
+    path: Assets/Scenes/The Arena 1.unity
+    guid: 7aee046000c16044aaabf8f8a8c294dc
+  - enabled: 1
+    path: Assets/Scenes/The Arena 2.unity
+    guid: e7bea97df10b7074fae783eb9cb84c92
+  - enabled: 1
+    path: Assets/Scenes/The Arena 3.unity
+    guid: 62620211645982c4d919257a6d4cf713
+  - enabled: 1
+    path: Assets/Scenes/The Arena 4.unity
+    guid: 687df7c656b40b54d835484ae656240b
+  - enabled: 1
+    path: Assets/Scenes/The Arena 5.unity
+    guid: b7785e10ab8d9c448b52731768aa18bb
   m_configObjects: {}

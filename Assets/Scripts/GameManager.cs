@@ -38,6 +38,52 @@ public class GameManager : MonoBehaviour
             }
 
         }
+        // Z: Arena 1
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 3)
+            {
+                SceneManager.LoadScene(3);
+            }
+
+        }
+        // X: Arena 2
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                SceneManager.LoadScene(4);
+            }
+
+        }
+        // C: Arena 3
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 5)
+            {
+                SceneManager.LoadScene(5);
+            }
+
+        }
+        // V: Arena 4
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 6)
+            {
+                SceneManager.LoadScene(6);
+            }
+
+        }
+        // B: Arena 5
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 7)
+            {
+                SceneManager.LoadScene(7);
+            }
+
+        }
+
 
         // T: Tavern scene
         if (Input.GetKeyDown(KeyCode.T))
