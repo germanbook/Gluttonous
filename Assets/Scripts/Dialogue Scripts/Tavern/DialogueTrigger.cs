@@ -17,10 +17,6 @@ public class DialogueTrigger : MonoBehaviour
         playerInRange = false;
         visualCue.SetActive(false);
         barkeepBranDialogue.SetActive(false);
-
-        
-
-
     }
 
     private void Update()

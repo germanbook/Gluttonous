@@ -123,13 +123,20 @@ public class DialogueManager : MonoBehaviour
             dialogue.gameObject.SetActive(false);
         }
     }
-    //Method to check if the intro questions have been fully asked by the player, if they have, display the advanced questions buttons
+    //check if the intro questions have been fully asked by the player, if they have, display the advanced questions buttons
     void IntroQuestionsAnswered()
     {
         if (lanista_2_1 && gladiators_2_2 && ludus_2_3)
         {
             showAdvancedQuestionButton = true;
         } 
+    }
+    void AdvancedQuestionsAnswered()
+    {
+        if (arena_3_1 && variants_3_2)
+        {
+            showHintsTipsQuestionButton = true;
+        }
     }
     public void displayAdvancedQuestionButtons()
     {
@@ -146,6 +153,26 @@ public class DialogueManager : MonoBehaviour
         {
             advancedQuestionsButtons_3 = GameObject.FindGameObjectsWithTag("3_Advanced_Questions_ButtonTag");
             foreach (GameObject item in advancedQuestionsButtons_3)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+    public void displayHintsTipsQuestionButton()
+    {
+        if (showHintsTipsQuestionButton)
+        {
+            hintsTipsQuestionsButtons_4 = GameObject.FindGameObjectsWithTag("4_HintsTips_Questions_ButtonTag");
+            foreach (GameObject item in hintsTipsQuestionsButtons_4)
+            {
+                item.SetActive(true);
+            }
+
+        }
+        else if (showHintsTipsQuestionButton == false)
+        {
+            hintsTipsQuestionsButtons_4 = GameObject.FindGameObjectsWithTag("4_HintsTips_Questions_ButtonTag");
+            foreach (GameObject item in hintsTipsQuestionsButtons_4)
             {
                 item.SetActive(false);
             }
@@ -169,6 +196,7 @@ public class DialogueManager : MonoBehaviour
 
                 introductoryQuestions_2.SetActive(true);
                 displayAdvancedQuestionButtons();
+
                 break;
 
             case "2.1_Button":
@@ -176,8 +204,10 @@ public class DialogueManager : MonoBehaviour
                 CloseDialogueBox();
                 lanista_2_1 = true;
                 IntroQuestionsAnswered();
+                AdvancedQuestionsAnswered();
                 Lanista_2_1.SetActive(true);
                 displayAdvancedQuestionButtons();
+
 
                 break;
 
@@ -186,6 +216,7 @@ public class DialogueManager : MonoBehaviour
                 CloseDialogueBox();
                 gladiators_2_2 = true;
                 IntroQuestionsAnswered();
+                AdvancedQuestionsAnswered();
                 Gladiators_2_2.SetActive(true);
                 displayAdvancedQuestionButtons();
 
@@ -194,6 +225,7 @@ public class DialogueManager : MonoBehaviour
                 CloseDialogueBox();
                 ludus_2_3 = true;
                 IntroQuestionsAnswered();
+                AdvancedQuestionsAnswered();
 
                 Ludus_2_3.SetActive(true);
                 displayAdvancedQuestionButtons();
@@ -206,12 +238,12 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "3.1_Button":
                 CloseDialogueBox();
-
+                arena_3_1 = true;
                 Arena_3_1.SetActive(true);
                 break;
             case "3.2_Button":
                 CloseDialogueBox();
-
+                variants_3_2 = true;
                 Variants_3_2.SetActive(true);
 
                 break;
