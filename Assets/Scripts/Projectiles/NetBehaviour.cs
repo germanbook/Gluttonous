@@ -20,8 +20,11 @@ public class NetBehaviour : MonoBehaviour
     // Collision marker
     bool isTriggered;
 
+    public Animator animator;
+
     private void Start()
     {
+
         isTriggered = false;
         isNetTimerStart = false;
 
@@ -142,6 +145,7 @@ public class NetBehaviour : MonoBehaviour
     public void StartNetTimer()
     {
         isNetTimerStart = true;
+        animator.SetInteger("intState", 1);
     }
 
 
