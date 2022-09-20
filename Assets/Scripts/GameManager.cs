@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
     // Map Arena unlock
     bool isTheMapVisible;
-    public static bool isArenaTwoUnlock;
-    public static bool isArenaThreeUnlock;
+    [SerializeField]public static bool isArenaTwoUnlock;
+    [SerializeField]public static bool isArenaThreeUnlock;
 
     // Map panel
     [SerializeField] GameObject mapOne;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex != 2)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(4);
             }
 
         }
@@ -75,13 +75,49 @@ public class GameManager : MonoBehaviour
         {
             mapOne.SetActive(true);
             isTheMapVisible = true;
+
+            if (isArenaTwoUnlock == true)
+            {
+                mapTwo.SetActive(true);
+            }
+
+            if (isArenaThreeUnlock == true)
+            {
+                mapThree.SetActive(true);
+            }
+
         }
         else if (isTheMapVisible == true)
         {
             mapOne.SetActive(false);
             isTheMapVisible = false;
+            mapTwo.SetActive(false);
+            mapThree.SetActive(false);
         }
     }
+
+    public void OpenScene(string buttonName)
+    {
+        switch (buttonName)
+        {
+            case "Arena1Button":
+                SceneManager.LoadScene(1);
+                break;
+            case "Arena2Button":
+                SceneManager.LoadScene(2);
+                break;
+            case "Arena3Button":
+                SceneManager.LoadScene(3);
+                break;
+            case "PlayerLudus Button":
+                SceneManager.LoadScene(0);
+                break;
+            case "TavernMarket Button":
+                SceneManager.LoadScene(4);
+                break;
+        }
+    }
+
 
 
 }
