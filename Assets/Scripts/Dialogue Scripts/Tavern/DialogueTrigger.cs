@@ -34,7 +34,6 @@ public class DialogueTrigger : MonoBehaviour
             if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
             {
                 barkeepBranDialogue.SetActive(true);
-
                 // Set dialogue status
                 GameManager.isDialogueShowing = true;
             } 

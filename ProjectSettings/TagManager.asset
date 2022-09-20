@@ -10,6 +10,14 @@ TagManager:
   - GladiatorHireFailOK
   - GladiatorHireSucessOK
   - VendorDialogue
+  - D2_Myrmilo
+  - D1_02
+  - D2_Threax
+  - D1_01
+  - D2_Back
+  - D2_Samnites
+  - D2_Retiarius
+  - 3_Advanced_Questions_ButtonTag
   layers:
   - Default
   - TransparentFX
