@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using System.ComponentModel;
 
 /// <summary>
 /// Buttons for begin and reset combat
@@ -146,6 +147,43 @@ public class ButtonsController : MonoBehaviour
 
         }
             
+    }
+
+    public void ResetGladiators()
+    {
+        GameObject[] gladiators = GameObject.FindGameObjectsWithTag("Player");
+        for (int i=0; i< gladiators.Length; i++)
+        {
+            switch (gladiators[i].gameObject.name)
+            {
+                case "Samnites":
+
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites++;
+
+                    break;
+                case "Retiarius":
+
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius++;
+
+                    break;
+                case "Murmillo":
+
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo++;
+
+                    break;
+                case "Threax":
+
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+
+                    break;
+            }
+
+            Destroy(gladiators[i]);
+        }
+        gladiatorSelectorUI.SetActive(false);
+        GladiatorSelectorDialogue();
+
+
     }
 
 
