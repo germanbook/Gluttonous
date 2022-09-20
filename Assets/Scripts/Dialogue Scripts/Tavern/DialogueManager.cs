@@ -105,7 +105,7 @@ public class DialogueManager : MonoBehaviour
             introductoryDialogue_1.SetActive(true);
             
         }
-        doNotDisplayAdvanceddQuestionButtons();
+        displayAdvancedQuestionButtons();
         //adds dialogue buttons into array
 
     }
@@ -139,13 +139,10 @@ public class DialogueManager : MonoBehaviour
             foreach (GameObject item in advancedQuestionsButtons_3)
             {
                 item.SetActive(true);
-            }
+            } 
             
-        } 
-    }
-    public void doNotDisplayAdvanceddQuestionButtons()
-    {
-        if (showAdvancedQuestionButton == false)
+        }
+        else if (showAdvancedQuestionButton == false)
         {
             advancedQuestionsButtons_3 = GameObject.FindGameObjectsWithTag("3_Advanced_Questions_ButtonTag");
             foreach (GameObject item in advancedQuestionsButtons_3)
@@ -172,7 +169,6 @@ public class DialogueManager : MonoBehaviour
 
                 introductoryQuestions_2.SetActive(true);
                 displayAdvancedQuestionButtons();
-                doNotDisplayAdvanceddQuestionButtons();
                 break;
 
             case "2.1_Button":
@@ -182,7 +178,6 @@ public class DialogueManager : MonoBehaviour
                 IntroQuestionsAnswered();
                 Lanista_2_1.SetActive(true);
                 displayAdvancedQuestionButtons();
-                doNotDisplayAdvanceddQuestionButtons();
 
                 break;
 
@@ -193,7 +188,6 @@ public class DialogueManager : MonoBehaviour
                 IntroQuestionsAnswered();
                 Gladiators_2_2.SetActive(true);
                 displayAdvancedQuestionButtons();
-                doNotDisplayAdvanceddQuestionButtons();
 
                 break;
             case "2.3_Button":
@@ -203,7 +197,6 @@ public class DialogueManager : MonoBehaviour
 
                 Ludus_2_3.SetActive(true);
                 displayAdvancedQuestionButtons();
-                doNotDisplayAdvanceddQuestionButtons();
 
                 break;
             case "3_Advanced_Questions_Button":
