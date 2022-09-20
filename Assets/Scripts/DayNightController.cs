@@ -45,10 +45,10 @@ public class DayNightController : MonoBehaviour
     void Update()
     {
         Changetime();
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            MapOnMapOff();
-        }
+        //if(Input.GetKeyDown(KeyCode.M))
+        //{
+        //    MapOnMapOff();
+        //}
     }
 
     public void MapOnMapOff()

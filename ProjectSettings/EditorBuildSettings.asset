@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerLudus.unity
     guid: 01255705f23f0ca4183d74431416d100
   - enabled: 1
-    path: Assets/Scenes/The Arena.unity
+    path: Assets/Scenes/The Arena1.unity
     guid: 3450d5e365c35ff4db64973de767634e
   - enabled: 1
     path: Assets/Scenes/Tavern.unity

@@ -9,10 +9,24 @@ public class GameManager : MonoBehaviour
     // Indicate dialogue showing status
     public static bool isDialogueShowing;
 
+    // Map Arena unlock
+    bool isTheMapVisible;
+    public static bool isArenaTwoUnlock;
+    public static bool isArenaThreeUnlock;
+
+    // Map panel
+    [SerializeField] GameObject mapOne;
+    [SerializeField] GameObject mapTwo;
+    [SerializeField] GameObject mapThree;
+
     private void Start()
     {
         // Set to false by default
         isDialogueShowing = false;
+
+        isArenaTwoUnlock = false;
+        isArenaThreeUnlock = false;
+        isTheMapVisible = false;
 
     }
 
@@ -48,5 +62,26 @@ public class GameManager : MonoBehaviour
             }
 
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            MapOnMapOff();
+        }
     }
+
+    public void MapOnMapOff()
+    {
+        if (isTheMapVisible == false)
+        {
+            mapOne.SetActive(true);
+            isTheMapVisible = true;
+        }
+        else if (isTheMapVisible == true)
+        {
+            mapOne.SetActive(false);
+            isTheMapVisible = false;
+        }
+    }
+
+
 }

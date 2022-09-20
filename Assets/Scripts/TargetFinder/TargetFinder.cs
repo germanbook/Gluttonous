@@ -139,6 +139,16 @@ public class TargetFinder : MonoBehaviour
         if (isWon)
         {
             increaseGold();
+
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "The Arena1":
+                    GameManager.isArenaTwoUnlock = true;
+                    break;
+                case "The Arena2":
+                    GameManager.isArenaThreeUnlock = true;
+                    break;
+            }
         }
 
 
