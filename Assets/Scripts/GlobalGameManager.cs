@@ -5,6 +5,7 @@ using UnityEngine;
 public class GlobalGameManager : MonoBehaviour
 {
     public GameObject startMenu;
+    public static bool isDemoPlaying;
 
     // Start is called before the first frame update
     void Start()
@@ -28,4 +29,5 @@ public class GlobalGameManager : MonoBehaviour
             
         }
     }
+
 }

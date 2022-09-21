@@ -105,3 +105,9 @@ TagManager:
   - name: Buildings10
     uniqueID: 889349177
     locked: 0
+  - name: TitusDialogue
+    uniqueID: 4293447229
+    locked: 0
+  - name: Maps
+    uniqueID: 686527515
+    locked: 0

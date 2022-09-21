@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d2e7267df364767833bb82377c6874, type: 3}
   m_Name: Gladiator Store
   m_EditorClassIdentifier: 
-  counterSamnites: 3
-  counterThraex: 2
-  counterMyrmilo: 2
-  counterRetiarius: 1
+  counterSamnites: 0
+  counterThraex: 0
+  counterMyrmilo: 0
+  counterRetiarius: 0

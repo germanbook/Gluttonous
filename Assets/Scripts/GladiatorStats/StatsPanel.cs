@@ -11,21 +11,38 @@ public class StatsPanel : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == false)
+        //if (Input.GetMouseButtonDown(0) && statsPanelDisplayed == false)
+        //{
+        //    statsPanelDisplayed = true;
+        //    statsPanel.enabled = statsPanelDisplayed;
+        //}
+        //else
+        //{
+        //    statsPanelDisplayed = false;
+        //    statsPanel.enabled = statsPanelDisplayed;
+        //}
+
+        if (Input.GetMouseButtonDown(0))
         {
-            statsPanelDisplayed = true;
-            statsPanel.enabled = statsPanelDisplayed;
+            if (statsPanelDisplayed == false)
+            {
+                statsPanelDisplayed = true;
+                statsPanel.enabled = statsPanelDisplayed;
+            }
+            else
+            {
+                statsPanelDisplayed = false;
+                statsPanel.enabled = statsPanelDisplayed;
+            }
+
+            
         }
-        else
-        {
-            statsPanelDisplayed = false;
-            statsPanel.enabled = statsPanelDisplayed;
-        }
+
     }
     private void Start()
     {
         statsPanel = this.gameObject.GetComponentInChildren<Canvas>();
         statsPanel.enabled = statsPanelDisplayed;
-     
+
     }
 }

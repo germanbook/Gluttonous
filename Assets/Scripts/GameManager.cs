@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject mapTwo;
     [SerializeField] GameObject mapThree;
 
+    private GameObject playerGladiatorsStore;
+
+
     private void Start()
     {
         // Set to false by default
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
         isArenaTwoUnlock = false;
         isArenaThreeUnlock = false;
         isTheMapVisible = false;
+
+        playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
     }
 
@@ -71,6 +76,14 @@ public class GameManager : MonoBehaviour
 
     public void MapOnMapOff()
     {
+        TitusDialogue.isMapIconBlink = false;
+
+        if (GameObject.Find("CanvasDialogue5") != null)
+        {
+            GameObject.Find("CanvasDialogue5").SetActive(false);
+        }
+
+        
         if (isTheMapVisible == false)
         {
             mapOne.SetActive(true);
@@ -101,6 +114,12 @@ public class GameManager : MonoBehaviour
         switch (buttonName)
         {
             case "Arena1Button":
+                if (GlobalGameManager.isDemoPlaying == true)
+                {
+                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+                }
+                GlobalGameManager.isDemoPlaying = false;
+                
                 SceneManager.LoadScene(1);
                 break;
             case "Arena2Button":
@@ -110,14 +129,22 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(3);
                 break;
             case "PlayerLudus Button":
+                if (GlobalGameManager.isDemoPlaying == true)
+                {
+                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+                }
+                GlobalGameManager.isDemoPlaying = false;
                 SceneManager.LoadScene(0);
                 break;
             case "TavernMarket Button":
+                if (GlobalGameManager.isDemoPlaying == true)
+                {
+                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+                }
+                GlobalGameManager.isDemoPlaying = false;
                 SceneManager.LoadScene(4);
                 break;
         }
     }
-
-
 
 }
