@@ -27,11 +27,6 @@ public class DialogueManager : MonoBehaviour
     GameObject Retiarius_4_2;
     GameObject Murmillo_4_3;
 
-    // dialogue box list filled with each respective button
-
-    GameObject[] advancedQuestionsButtons_3;
-    GameObject[] hintsTipsQuestionsButtons_4;
-
     //bools to check if certain dialogue boxes have been opened/questions asked
     bool lanista_2_1 = false;
     bool gladiators_2_2 = false;
@@ -41,8 +36,8 @@ public class DialogueManager : MonoBehaviour
     bool arena_3_1 = false;
     bool variants_3_2 = false;
     bool showHintsTipsQuestionButton = false;
-    //bools to check if its been opened atleast once
-    bool firstTimeDialogue;
+    //to check if its been opened atleast once
+    bool firstTimeDialogueCheck;
 
     void Awake()
     {
@@ -51,7 +46,6 @@ public class DialogueManager : MonoBehaviour
         introductoryDialogue_0 = barkeepBranDialogue.transform.Find("0_Introductory_Dialogue").gameObject;
         introductoryDialogue_1 = barkeepBranDialogue.transform.Find("1_Introductory_Dialogue").gameObject;
         
-
         //Introductory Questions dialogue frames
         introductoryQuestions_2 = barkeepBranDialogue.transform.Find("2_Introductory_Questions").gameObject;
         Lanista_2_1 = barkeepBranDialogue.transform.Find("2.1_Lanista").gameObject;
@@ -83,31 +77,30 @@ public class DialogueManager : MonoBehaviour
         dialogueBoxList.Add(Samnite_4_1);
         dialogueBoxList.Add(Retiarius_4_2);
         dialogueBoxList.Add(Murmillo_4_3);
-
-        
-
-        
     }
-    private void Start()
+    private void OnEnable()
     {
         
-
-        firstTimeDialogue = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().hasPlayerInteractedBefore;
-        //not currently working, needs fix
-        if (firstTimeDialogue == true)
-        {
-            introductoryDialogue_0.SetActive(true);
-
-            firstTimeDialogue = false;
-        }
-        else if (firstTimeDialogue == false)
+        showAdvancedQuestionButton = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().introQuestionsAnsweredBefore;
+        showHintsTipsQuestionButton = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().advancedQuestionsAnsweredBefore;
+        StartIntroDialogue();
+    }
+    void StartIntroDialogue()
+    {
+        firstTimeDialogueCheck = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().hasPlayerInteractedBefore;
+   
+        if (firstTimeDialogueCheck == true)
         {
             introductoryDialogue_1.SetActive(true);
-            
+            displayAdvancedQuestionButtons();
+            displayHintsTipsQuestionButton();
         }
-        displayAdvancedQuestionButtons();
-        //adds dialogue buttons into array
-
+        else if (firstTimeDialogueCheck == false)
+        {
+            introductoryDialogue_0.SetActive(true);
+            
+            playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().hasPlayerInteractedBefore = true;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -128,75 +121,89 @@ public class DialogueManager : MonoBehaviour
     {
         if (lanista_2_1 && gladiators_2_2 && ludus_2_3)
         {
-            showAdvancedQuestionButton = true;
+            playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().introQuestionsAnsweredBefore = true;
+            showAdvancedQuestionButton = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().introQuestionsAnsweredBefore;
         } 
     }
+    //checks if the advanced questions have been answered, if they have display the hints questions
     void AdvancedQuestionsAnswered()
     {
         if (arena_3_1 && variants_3_2)
         {
-            showHintsTipsQuestionButton = true;
+            playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().advancedQuestionsAnsweredBefore = true;
+            showHintsTipsQuestionButton = playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().advancedQuestionsAnsweredBefore;
         }
     }
+    //displays the advanced questions buttons across all dialogue boxes if conditions are met.
     public void displayAdvancedQuestionButtons()
     {
         if (showAdvancedQuestionButton)
         {
-            advancedQuestionsButtons_3 = GameObject.FindGameObjectsWithTag("3_Advanced_Questions_ButtonTag");
-            foreach (GameObject item in advancedQuestionsButtons_3)
+            foreach (GameObject item in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
             {
-                item.SetActive(true);
+                if(item.name == "3_Advanced_Questions_Button")
+                {
+                    item.SetActive(true);
+                }
             } 
-            
         }
         else if (showAdvancedQuestionButton == false)
         {
-            advancedQuestionsButtons_3 = GameObject.FindGameObjectsWithTag("3_Advanced_Questions_ButtonTag");
-            foreach (GameObject item in advancedQuestionsButtons_3)
+            foreach (GameObject item in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
             {
-                item.SetActive(false);
+                if (item.name == "3_Advanced_Questions_Button")
+                {
+                    item.SetActive(false);
+
+                }
             }
         }
     }
+    //displays the hints & tips questions buttons across all dialogue boxes if conditions are met.
     public void displayHintsTipsQuestionButton()
     {
         if (showHintsTipsQuestionButton)
         {
-            hintsTipsQuestionsButtons_4 = GameObject.FindGameObjectsWithTag("4_HintsTips_Questions_ButtonTag");
-            foreach (GameObject item in hintsTipsQuestionsButtons_4)
+            foreach (GameObject item in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
             {
-                item.SetActive(true);
-            }
+                if (item.name == "4_Hints_Tips_Questions_Button")
+                {
+                    item.SetActive(true);
 
+                }
+            }
         }
         else if (showHintsTipsQuestionButton == false)
         {
-            hintsTipsQuestionsButtons_4 = GameObject.FindGameObjectsWithTag("4_HintsTips_Questions_ButtonTag");
-            foreach (GameObject item in hintsTipsQuestionsButtons_4)
+            foreach (GameObject item in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
             {
-                item.SetActive(false);
+                if (item.name == "4_Hints_Tips_Questions_Button")
+                {
+                    item.SetActive(false);
+
+                }
             }
         }
     }
-    // Option clicked, return the option's name
+    //Option clicked, return the option's name
     public void optionClicked(Button button)
     {
         switch (button.gameObject.name)
         {
             case "Exit_Dialogue_Button":
-                
-                // Sets all dialoguebox's in status to false;
-                GameManager.isDialogueShowing = false;
-                CloseDialogueBox();
 
+                // Sets all dialoguebox's in status to false;
+                CloseDialogueBox();
+                barkeepBranDialogue.SetActive(false);
+                GameManager.isDialogueShowing = false;
                 break;
 
             case "2_Introduction_Questions_Button":
                 CloseDialogueBox();
-
+                AdvancedQuestionsAnswered();
                 introductoryQuestions_2.SetActive(true);
                 displayAdvancedQuestionButtons();
-
+                displayHintsTipsQuestionButton();
                 break;
 
             case "2.1_Button":
@@ -207,7 +214,7 @@ public class DialogueManager : MonoBehaviour
                 AdvancedQuestionsAnswered();
                 Lanista_2_1.SetActive(true);
                 displayAdvancedQuestionButtons();
-
+                displayHintsTipsQuestionButton();
 
                 break;
 
@@ -219,6 +226,7 @@ public class DialogueManager : MonoBehaviour
                 AdvancedQuestionsAnswered();
                 Gladiators_2_2.SetActive(true);
                 displayAdvancedQuestionButtons();
+                displayHintsTipsQuestionButton();
 
                 break;
             case "2.3_Button":
@@ -229,22 +237,29 @@ public class DialogueManager : MonoBehaviour
 
                 Ludus_2_3.SetActive(true);
                 displayAdvancedQuestionButtons();
-
+                displayHintsTipsQuestionButton();
                 break;
             case "3_Advanced_Questions_Button":
                 CloseDialogueBox();
 
                 advancedQuestions_3.SetActive(true);
+                displayHintsTipsQuestionButton();
+
                 break;
             case "3.1_Button":
                 CloseDialogueBox();
                 arena_3_1 = true;
                 Arena_3_1.SetActive(true);
+                AdvancedQuestionsAnswered();
+                displayHintsTipsQuestionButton();
+
                 break;
             case "3.2_Button":
                 CloseDialogueBox();
                 variants_3_2 = true;
                 Variants_3_2.SetActive(true);
+                AdvancedQuestionsAnswered();
+                displayHintsTipsQuestionButton();
 
                 break;
             case "4_Hints_Tips_Questions_Button":
@@ -264,31 +279,32 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "4.3_Button":
                 CloseDialogueBox();
-
                 Murmillo_4_3.SetActive(true);
                 break;
             case "1_Back_Button":
                 CloseDialogueBox();
-
                 IntroQuestionsAnswered();
                 introductoryDialogue_1.SetActive(true);
                 displayAdvancedQuestionButtons();
-
+                displayHintsTipsQuestionButton();
 
                 break;
             case "2_Back_Button":
-                displayAdvancedQuestionButtons();
                 CloseDialogueBox();
                 IntroQuestionsAnswered();
+                AdvancedQuestionsAnswered();
                 introductoryQuestions_2.SetActive(true);
-                
+                displayAdvancedQuestionButtons();
+                displayHintsTipsQuestionButton();
 
                 break;
             case "3_Back_Button":
                 CloseDialogueBox();
                 IntroQuestionsAnswered();
-
+                AdvancedQuestionsAnswered();
                 advancedQuestions_3.SetActive(true);
+                displayHintsTipsQuestionButton();
+
                 break;
             case "4_Back_Button":
                 CloseDialogueBox();
@@ -296,8 +312,6 @@ public class DialogueManager : MonoBehaviour
                 displayAdvancedQuestionButtons();
                 hintsTipsQuestions_4.SetActive(true);
                 break;
-
-
         }
     }
 

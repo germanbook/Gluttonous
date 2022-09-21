@@ -9,6 +9,8 @@ public class PlayerGladiatorsStore : MonoBehaviour
     public int counterMyrmilo;
     public int counterRetiarius;
     public bool hasPlayerInteractedBefore;
+    public bool introQuestionsAnsweredBefore;
+    public bool advancedQuestionsAnsweredBefore;
 
     private void Start()
     {
@@ -17,5 +19,7 @@ public class PlayerGladiatorsStore : MonoBehaviour
         counterMyrmilo = 0;
         counterRetiarius = 0;
         hasPlayerInteractedBefore = false;
+        introQuestionsAnsweredBefore = false; 
+        advancedQuestionsAnsweredBefore = false;
     }
 }

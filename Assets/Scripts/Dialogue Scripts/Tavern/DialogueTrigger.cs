@@ -13,7 +13,6 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         barkeepBranDialogue = GameObject.Find("BarkeepBranDialogue");
-
         playerInRange = false;
         visualCue.SetActive(false);
         barkeepBranDialogue.SetActive(false);
