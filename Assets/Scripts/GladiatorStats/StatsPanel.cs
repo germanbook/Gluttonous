@@ -6,8 +6,11 @@ using Kryz.CharacterStats;
 
 public class StatsPanel : MonoBehaviour
 {
-    Canvas statsPanel;
+    public Canvas statsPanel;
     public bool statsPanelDisplayed = false;
+
+    // Panel displayed
+    public bool isPanelDisplayed;
 
     public void OnMouseDown()
     {
@@ -28,6 +31,7 @@ public class StatsPanel : MonoBehaviour
             {
                 statsPanelDisplayed = true;
                 statsPanel.enabled = statsPanelDisplayed;
+                isPanelDisplayed = true;
             }
             else
             {
@@ -43,6 +47,8 @@ public class StatsPanel : MonoBehaviour
     {
         statsPanel = this.gameObject.GetComponentInChildren<Canvas>();
         statsPanel.enabled = statsPanelDisplayed;
+
+        isPanelDisplayed = false;
 
     }
 }

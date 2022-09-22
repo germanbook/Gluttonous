@@ -16,12 +16,22 @@ public class TitusDialogue : MonoBehaviour
 
     [SerializeField] GameObject titusDialogue1Button;
     [SerializeField] GameObject titusDialogue2Button;
+    [SerializeField] GameObject titusDialogue3Button;
+
+    [SerializeField] GameObject demoGladiatorThreax;
+    [SerializeField] GameObject demoGladiatorSamnite;
 
     // Map Icon blink
     private GameObject mapIcon;
     private Color mapIconOriginalColor;
     public static bool isMapIconBlink;
     private float blinkTimer;
+
+
+    // Dialogue2 button delay
+    private bool isStart;
+    private float buttonTimer;
+
 
     private void Start()
     {
@@ -30,10 +40,32 @@ public class TitusDialogue : MonoBehaviour
         mapIconOriginalColor = mapIcon.GetComponent<Image>().color;
         isMapIconBlink = false;
         blinkTimer = 0f;
+
+        isStart = false;
+        buttonTimer = 0f;
+
     }
 
     void Update()
     {
+        // Dialogue3 button shows only after each of gladiator is interacted.
+        if (demoGladiatorThreax.gameObject.GetComponent<StatsPanel>().isPanelDisplayed
+            && demoGladiatorSamnite.gameObject.GetComponent<StatsPanel>().isPanelDisplayed)
+        {
+            titusDialogue3Button.gameObject.SetActive(true);
+        }
+
+        // Dialogue2 button delay 6s
+        if (isStart == true)
+        {
+            buttonTimer += Time.deltaTime;
+            if (buttonTimer >= 6)
+            {
+                titusDialogue2Button.SetActive(true);
+                isStart = false;
+            }
+        }
+
         if (dialogue1.gameObject.activeSelf == true)
         {
             if (sceneManager.gameObject.GetComponent<LudusSceneManager>().tutorialThreax.gameObject.transform.position.x
@@ -86,6 +118,7 @@ public class TitusDialogue : MonoBehaviour
 
                 // start fighting
                 LudusSceneManager.demoStartFight = true;
+                isStart = true;
 
                 break;
             case 2:
@@ -99,6 +132,10 @@ public class TitusDialogue : MonoBehaviour
                 dialogue4.SetActive(true);
                 dialogue3.SetActive(false);
 
+                // Close gladiators panel
+                demoGladiatorThreax.gameObject.GetComponent<StatsPanel>().statsPanel.enabled = false;
+                demoGladiatorSamnite.gameObject.GetComponent<StatsPanel>().statsPanel.enabled = false;
+
                 // Samnite leave
                 sceneManager.GetComponent<LudusSceneManager>().samnitesLeave = true;
 
@@ -108,7 +145,7 @@ public class TitusDialogue : MonoBehaviour
                 dialogue4.SetActive(false);
 
                 // Map blink
-                mapIcon.SetActive(true);
+                mapIcon.transform.localScale = new Vector3(1, 1, 1);
                 isMapIconBlink = true;
                 break;
             case 5:

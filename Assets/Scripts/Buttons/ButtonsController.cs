@@ -33,6 +33,10 @@ public class ButtonsController : MonoBehaviour
     // Gladiators position movement
     public static float GladiatorMovement = 0.4f;
 
+    // click Gladiator selector close titus dialogue
+    public GameObject dialogue1;
+    public GameObject dialogue2;
+
     private void Start()
     {
         gladiatorStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
@@ -52,6 +56,18 @@ public class ButtonsController : MonoBehaviour
 
     public void GladiatorSelectorDialogue()
     {
+        // Close Titus Dialogue1
+        if (dialogue1.gameObject.activeSelf == true)
+        {
+            dialogue1.gameObject.SetActive(false);
+        }
+
+        // Close Titus Dialogue2
+        if (dialogue2.gameObject.activeSelf == true)
+        {
+            dialogue2.gameObject.SetActive(false);
+        }
+
         gladiatorSelectorUI.SetActive(true);
 
         myrmiloCounter.text = Convert.ToString(gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo);
@@ -62,11 +78,40 @@ public class ButtonsController : MonoBehaviour
 
     public void GladiatorSelectorDialogueClose()
     {
+        // Reopen Titus Dialogue1 when it didn't closed
+        if (dialogue1.gameObject.activeSelf == false
+            && TitusDialogueArenaOne.isDialogue1Showed == false)
+        {
+            dialogue1.gameObject.SetActive(true);
+        }
+
+        if (TitusDialogueArenaOne.isDialogue1Showed == true)
+        {
+            // open dialogue2 when dialogue1 has showed
+            if (dialogue2.gameObject.activeSelf == false
+                && TitusDialogueArenaOne.isDialogue2Showed == false)
+            {
+
+                if (GameObject.FindGameObjectWithTag("Player") != null)
+                {
+                    Debug.Log("heresss...");
+                    dialogue2.gameObject.SetActive(true);
+
+                }
+
+
+                
+            }
+        }
+
+        
         gladiatorSelectorUI.SetActive(false);
     }
 
     public void GladiatorSelector(string gladiatorName)
     {
+
+
         switch (gladiatorName)
         {
             case ("Samnites"):

@@ -21,9 +21,19 @@ public class GameManager : MonoBehaviour
 
     private GameObject playerGladiatorsStore;
 
+    // Gladiator reset button
+    private GameObject gladiatorReset;
+
 
     private void Start()
     {
+        //if (SceneManager.GetActiveScene().name == "The Arena1"
+        //    || SceneManager.GetActiveScene().name == "The Arena2"
+        //    || SceneManager.GetActiveScene().name == "The Arena3")
+        //{
+        //    gladiatorReset = GameObject.Find("GameButtons");
+        //}
+
         // Set to false by default
         isDialogueShowing = false;
 
@@ -111,38 +121,87 @@ public class GameManager : MonoBehaviour
 
     public void OpenScene(string buttonName)
     {
+        // Check if current scene is Arena
+        // Reset gladiator store counter when leave arena
+
+        if (SceneManager.GetActiveScene().name == "The Arena1"
+            || SceneManager.GetActiveScene().name == "The Arena2"
+            || SceneManager.GetActiveScene().name == "The Arena3")
+        {
+            gladiatorReset = GameObject.Find("GameButtons");
+
+            gladiatorReset.gameObject.GetComponent<ButtonsController>().ResetGladiators();
+        }
+
+
         switch (buttonName)
         {
             case "Arena1Button":
-                if (GlobalGameManager.isDemoPlaying == true)
+                if (GlobalGameManager.isDemoPlaying == true &&
+                    GlobalGameManager.isDemoLudusFinished == false)
                 {
                     playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
                 }
-                GlobalGameManager.isDemoPlaying = false;
-                
+
+                if (GlobalGameManager.isDemoLudusFinished == true
+                    && GlobalGameManager.isArenaOneDemoBattleFinished == true)
+                {
+                    GlobalGameManager.isDemoPlaying = false;
+                }
+
                 SceneManager.LoadScene(1);
+                MapOnMapOff();
+                GlobalGameManager.isDemoLudusFinished = true;
                 break;
+
             case "Arena2Button":
-                SceneManager.LoadScene(2);
+
+                if (GlobalGameManager.isDemoPlaying == false)
+                {
+                    SceneManager.LoadScene(2);
+                    MapOnMapOff();
+                }
+                
                 break;
+
             case "Arena3Button":
-                SceneManager.LoadScene(3);
+
+                if (GlobalGameManager.isDemoPlaying == false)
+                {
+                    SceneManager.LoadScene(3);
+                    MapOnMapOff();
+                }
+                
                 break;
+
             case "PlayerLudus Button":
-                if (GlobalGameManager.isDemoPlaying == true)
+
+
+                if (GlobalGameManager.isDemoPlaying == false
+                    ||
+                    GlobalGameManager.isDemoLudusFinished == true
+                    && GlobalGameManager.isArenaOneDemoBattleFinished == true)
                 {
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+                    SceneManager.LoadScene(0);
+                    MapOnMapOff();
+                    GlobalGameManager.isDemoPlaying = false;
                 }
-                GlobalGameManager.isDemoPlaying = false;
-                SceneManager.LoadScene(0);
+                
                 break;
+
             case "TavernMarket Button":
-                if (GlobalGameManager.isDemoPlaying == true)
+
+
+                if (GlobalGameManager.isDemoPlaying == false
+                    ||
+                    GlobalGameManager.isDemoLudusFinished == true
+                    && GlobalGameManager.isArenaOneDemoBattleFinished == true)
                 {
-                    playerGladiatorsStore.GetComponent<PlayerGladiatorsStore>().counterThraex++;
+                    SceneManager.LoadScene(4);
+                    MapOnMapOff();
+                    GlobalGameManager.isDemoPlaying = false;
                 }
-                GlobalGameManager.isDemoPlaying = false;
-                SceneManager.LoadScene(4);
+                
                 break;
         }
     }

@@ -47,7 +47,7 @@ public class LudusSceneManager : MonoBehaviour
         if (GlobalGameManager.isDemoPlaying == true)
         {
             
-            mapButton.SetActive(false);
+            mapButton.transform.localScale = new Vector3(0, 0, 0);
         }
         else
         {
@@ -143,6 +143,7 @@ public class LudusSceneManager : MonoBehaviour
             if (dialogueCue.activeSelf == true)
             {
                 dialogue.SetActive(true);
+                dialogueCue.SetActive(false);
             }
 
         }
@@ -187,7 +188,10 @@ public class LudusSceneManager : MonoBehaviour
     {
         if (titus.gameObject.transform.position == gladiatorDestination.transform.position)
         {
-            dialogueCue.SetActive(true);
+            if (dialogue.gameObject.activeSelf == false)
+            {
+                dialogueCue.SetActive(true);
+            }
         }
     }
 
