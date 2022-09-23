@@ -2593,7 +2593,7 @@ PrefabInstance:
     - target: {fileID: 6472437492687049419, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8932825987460356744, guid: 5c246cec33e72b7438e0b083f0cc8fa0,
         type: 3}
@@ -8359,14 +8359,14 @@ MonoBehaviour:
       - m_Target: {fileID: 258047839}
         m_TargetAssemblyTypeName: ButtonsController, Assembly-CSharp
         m_MethodName: ResetGladiators
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1669135954
 MonoBehaviour:

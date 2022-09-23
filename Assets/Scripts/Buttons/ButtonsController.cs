@@ -51,6 +51,7 @@ public class ButtonsController : MonoBehaviour
 
     public void ResetCombat()
     {
+        ResetGladiators(true);
         SceneManager.LoadScene(1);
     }
 
@@ -94,7 +95,6 @@ public class ButtonsController : MonoBehaviour
 
                 if (GameObject.FindGameObjectWithTag("Player") != null)
                 {
-                    Debug.Log("heresss...");
                     dialogue2.gameObject.SetActive(true);
 
                 }
@@ -194,7 +194,7 @@ public class ButtonsController : MonoBehaviour
             
     }
 
-    public void ResetGladiators()
+    public void ResetGladiators(bool isResetCombat)
     {
         GameObject[] gladiators = GameObject.FindGameObjectsWithTag("Player");
         for (int i=0; i< gladiators.Length; i++)
@@ -226,7 +226,11 @@ public class ButtonsController : MonoBehaviour
             Destroy(gladiators[i]);
         }
         gladiatorSelectorUI.SetActive(false);
-        GladiatorSelectorDialogue();
+        if (!isResetCombat)
+        {
+            GladiatorSelectorDialogue();
+        }
+        
 
 
     }

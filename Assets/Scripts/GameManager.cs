@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         {
             gladiatorReset = GameObject.Find("GameButtons");
 
-            gladiatorReset.gameObject.GetComponent<ButtonsController>().ResetGladiators();
+            gladiatorReset.gameObject.GetComponent<ButtonsController>().ResetGladiators(true);
         }
 
 
