@@ -124,6 +124,9 @@ MonoBehaviour:
   counterThraex: 0
   counterMyrmilo: 0
   counterRetiarius: 0
+  hasPlayerInteractedBefore: 0
+  introQuestionsAnsweredBefore: 0
+  advancedQuestionsAnsweredBefore: 0
 --- !u!1 &5566055146116448335
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +500,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeMenuScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7866558526025187695, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365438406270150774, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8503024984749401162, guid: 66e61985548b61d4c9d27211f846d10b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -511,6 +524,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413305199720261, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413305894129400, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413306285857646, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413306399757213, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9011413306617492701, guid: 66e61985548b61d4c9d27211f846d10b,
         type: 3}
@@ -640,6 +673,21 @@ PrefabInstance:
     - target: {fileID: 9011413306617492705, guid: 66e61985548b61d4c9d27211f846d10b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413306635365794, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413306882857204, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011413306893118693, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
