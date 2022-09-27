@@ -11,12 +11,20 @@ public class PlayerGladiatorsStore : MonoBehaviour
 
     [SerializeField] GladiatorStoreData gladiatorStoreData;
 
+    public bool hasPlayerInteractedBefore;
+    public bool introQuestionsAnsweredBefore;
+    public bool advancedQuestionsAnsweredBefore;
+
     private void Start()
     {
         counterSamnites = gladiatorStoreData.counterSamnites;
         counterThraex = gladiatorStoreData.counterThraex;
         counterMyrmilo = gladiatorStoreData.counterMyrmilo;
         counterRetiarius = gladiatorStoreData.counterRetiarius;
+
+        hasPlayerInteractedBefore = false;
+        introQuestionsAnsweredBefore = false;
+        advancedQuestionsAnsweredBefore = false;
     }
 
     public void SaveGladiatorStoreData()

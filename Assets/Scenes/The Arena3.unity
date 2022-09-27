@@ -978,6 +978,8 @@ MonoBehaviour:
   samnite: {fileID: 1744975204}
   threax: {fileID: 1260056139}
   retiarius: {fileID: 548543493}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!114 &269745105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472437492226057648, guid: 3faba8f8ba20643a69d776c74b767570,
@@ -1248,7 +1250,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2009520838}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &351605465
 SpriteRenderer:
@@ -6587,6 +6589,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPause: 0
+  currency: {fileID: 0}
+  titus: {fileID: 0}
+  titusDialogue: {fileID: 0}
+  demoSamnite: {fileID: 0}
 --- !u!4 &1793272924
 Transform:
   m_ObjectHideFlags: 0
@@ -29995,6 +30001,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5566055145319242035, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055145744703630, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5566055145853688923, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
       propertyPath: counterThraex
@@ -30015,6 +30031,21 @@ PrefabInstance:
         type: 3}
       propertyPath: currencyValue
       value: 999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146250239467, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146396382488, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146618602452, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566055146785530805, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
@@ -30075,6 +30106,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GlobalObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146857592450, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566055146875699859, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe5ba0932d1b9c459011f1dbaf4daa6, type: 3}

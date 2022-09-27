@@ -115,6 +115,9 @@ public class DialogueManager : MonoBehaviour
         {
             dialogue.gameObject.SetActive(false);
         }
+
+        // Set it back to false
+        GameManager.isDialogueShowing = false;
     }
     //check if the intro questions have been fully asked by the player, if they have, display the advanced questions buttons
     void IntroQuestionsAnswered()
