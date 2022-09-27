@@ -9,12 +9,16 @@ public class GlobalGameManager : MonoBehaviour
     public static bool isDemoLudusFinished;
     public static bool isArenaOneDemoBattleFinished;
 
+    public static bool isNewGame;
+
+
     // Start is called before the first frame update
     void Start()
     {
         startMenu.SetActive(true);
         isArenaOneDemoBattleFinished = false;
         isDemoLudusFinished = false;
+        isNewGame = true;
     }
 
     // Update is called once per frame

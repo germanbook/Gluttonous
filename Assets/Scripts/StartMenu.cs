@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    
+
     [SerializeField] PlayerGladiatorsStore playerGladiatorsStore;
+
 
     public void NewGameButton()
     {

@@ -25,13 +25,13 @@ public class DialogueTrigger : MonoBehaviour
         {
             // Show the visual cue
             visualCue.SetActive(true);
-            // Click mouse key to show dialogue
-            if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
-            {
-                barkeepBranDialogue.SetActive(true);
-                // Set dialogue status
-                GameManager.isDialogueShowing = true;
-            } 
+            //// Click mouse key to show dialogue
+            //if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
+            //{
+            //    barkeepBranDialogue.SetActive(true);
+            //    // Set dialogue status
+            //    GameManager.isDialogueShowing = true;
+            //} 
         }
         else
         {
@@ -53,6 +53,19 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = false;
+        }
+    }
+
+    // Click mouse left key to show dialogue
+    public void DisplayDialogue()
+    {
+        if (visualCue.gameObject.activeSelf == true && GameManager.isDialogueShowing == false)
+        {
+            // show dialogue here
+            barkeepBranDialogue.SetActive(true);
+
+            // Set dialogue status
+            GameManager.isDialogueShowing = true;
         }
     }
 }

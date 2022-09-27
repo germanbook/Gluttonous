@@ -26,15 +26,15 @@ public class VendorNPCInitiator : MonoBehaviour
             // Show the visual cue
             VendorCue.SetActive(true);
             // Click mouse key to show dialogue
-            if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
-            {
+            //if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
+            //{
 
-                // show dialogue here
-                VendorDialogue1.SetActive(true);
+            //    // show dialogue here
+            //    VendorDialogue1.SetActive(true);
 
-                // Set dialogue status
-                GameManager.isDialogueShowing = true;
-            }
+            //    // Set dialogue status
+            //    GameManager.isDialogueShowing = true;
+            //}
         }
         else
         {
@@ -56,6 +56,19 @@ public class VendorNPCInitiator : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = false;
+        }
+    }
+
+    // Click mouse left key to show dialogue
+    public void DisplayDialogue()
+    {
+        if (VendorCue.gameObject.activeSelf == true && GameManager.isDialogueShowing == false)
+        {
+            // show dialogue here
+            VendorDialogue1.SetActive(true);
+
+            // Set dialogue status
+            GameManager.isDialogueShowing = true;
         }
     }
 }

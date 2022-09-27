@@ -46,6 +46,8 @@ public class LudusSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GlobalGameManager.isNewGame = false;
+
         currency = GameObject.Find("Currency");
 
 
