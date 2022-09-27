@@ -187,6 +187,6 @@ public class GaladiatorHire : MonoBehaviour
         hireSuccessDialogue.SetActive(false);
         hireFailDialogue.SetActive(false);
         hireLimitation.SetActive(false);
-        GameObject.FindGameObjectWithTag("VendorDialogue").GetComponent<VendorDialogue>().VendorDialogue2.SetActive(true);
+        GameObject.Find("VendorDialogue").GetComponent<VendorDialogue>().VendorDialogue2.SetActive(true);
     }
 }

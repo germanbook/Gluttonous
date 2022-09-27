@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 using System.ComponentModel;
+using Pathfinding;
 
 /// <summary>
 /// Buttons for begin and reset combat
@@ -223,7 +224,12 @@ public class ButtonsController : MonoBehaviour
                     break;
             }
 
-            Destroy(gladiators[i]);
+            gladiators[i].gameObject.SetActive(false);
+            gladiators[i].transform.parent.gameObject.SetActive(false);
+
+            gladiators[i].gameObject.transform.parent.gameObject.GetComponent<AIDestinationSetter>().target = null;
+
+            //Destroy(gladiators[i].gameObject.transform.parent.gameObject);
         }
         gladiatorSelectorUI.SetActive(false);
         if (!isResetCombat)

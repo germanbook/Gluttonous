@@ -69,6 +69,9 @@ public class TargetFinder : MonoBehaviour
         {
             if (nearestEnemy.gameObject.activeSelf == false)
             {
+                //
+                Destroy(nearestEnemy.gameObject.transform.parent.gameObject);
+                //
                 nearestEnemy = tempTarget;
                 FindTarget();
             }
