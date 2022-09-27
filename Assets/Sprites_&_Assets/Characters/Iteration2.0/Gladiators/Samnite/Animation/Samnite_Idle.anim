@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Murmillo_Death
+  m_Name: Samnite_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1763015271, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - time: 0.21666667
-      value: {fileID: 923232340, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - time: 0.45
-      value: {fileID: -320902525, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
+      value: {fileID: 972268385, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - time: 0.33333334
+      value: {fileID: -908369084, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
     - time: 0.6666667
-      value: {fileID: 1261434796, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - time: 0.8833333
-      value: {fileID: 1261434796, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
+      value: {fileID: -2005824785, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - time: 1
+      value: {fileID: 218243344, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - time: 1.3333334
+      value: {fileID: 972268385, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1763015271, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - {fileID: 923232340, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - {fileID: -320902525, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - {fileID: 1261434796, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
-    - {fileID: 1261434796, guid: 185b8c8101b53fd49a919ceffcc09cfa, type: 3}
+    - {fileID: 972268385, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - {fileID: -908369084, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - {fileID: -2005824785, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - {fileID: 218243344, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
+    - {fileID: 972268385, guid: e8f61c703b4713140ac940dcfcbb4518, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9
+    m_StopTime: 1.35
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77,11 +77,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.8833333
-    functionName: removeCharactor
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

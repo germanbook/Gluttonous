@@ -38,23 +38,25 @@ public class GladiatorStats : MonoBehaviour
     {
         if (isClicked)
         {
-            if (clickedObject.name == this.gameObject.name)
+            if (GlobalGameManager.isDemoPlaying == false)
             {
-                float step = speed * Time.deltaTime;
-                this.transform.position = Vector2.MoveTowards(this.transform.position, destinationPosition.transform.position, step);
-                
+                if (clickedObject.name == this.gameObject.name)
+                {
+                    float step = speed * Time.deltaTime;
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, destinationPosition.transform.position, step);
 
-            }
-            else
-            {
-                float step = speed * Time.deltaTime;
-                this.transform.position = Vector2.MoveTowards(this.transform.position, gladiatorInitialPosition, step);
-                this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = true;
-                this.gameObject.GetComponent<StatsPanel>().OnMouseDown();
-               
+
+                }
+                else
+                {
+                    float step = speed * Time.deltaTime;
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, gladiatorInitialPosition, step);
+                    this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = true;
+                    //this.gameObject.GetComponent<StatsPanel>().OnMouseDown();
+
+                }
             }
 
-            
 
             if (clickedObject.name != this.gameObject.name)
             {
@@ -65,8 +67,12 @@ public class GladiatorStats : MonoBehaviour
         // Standing
         if (transform.position.x == oldPosition)
         {
-            // idle
-            animator.SetInteger("stateInt", 0);
+            if (LudusSceneManager.demoStartFight == false)
+            {
+                // idle
+                animator.SetInteger("stateInt", 0);
+            }
+            
         }
 
             // Moving of right
@@ -92,7 +98,18 @@ public class GladiatorStats : MonoBehaviour
     {
         isClicked = true;
         clickedObject = this.gameObject;
-        this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = false;
+
+        //if (this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed == false)
+        //{
+        //    this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = true;
+        //    this.gameObject.GetComponent<StatsPanel>().enabled = true;
+        //}
+        //else
+        //{
+        //    this.gameObject.GetComponent<StatsPanel>().statsPanelDisplayed = false;
+        //    this.gameObject.GetComponent<StatsPanel>().enabled = false;
+        //}
+
 
     }
 

@@ -9,8 +9,9 @@ public class StartMenu : MonoBehaviour
 
     public void NewGameButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         this.gameObject.SetActive(false);
+        GlobalGameManager.isDemoPlaying = true;
     }
 
     public void LoadGameButton()

@@ -140,15 +140,22 @@ public class TargetFinder : MonoBehaviour
         {
             increaseGold();
 
-            switch (SceneManager.GetActiveScene().name)
+            GlobalGameManager.isArenaOneDemoBattleFinished = true;
+
+            if (GlobalGameManager.isDemoPlaying == false)
             {
-                case "The Arena1":
-                    GameManager.isArenaTwoUnlock = true;
-                    break;
-                case "The Arena2":
-                    GameManager.isArenaThreeUnlock = true;
-                    break;
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "The Arena1":
+                        GameManager.isArenaTwoUnlock = true;
+                        break;
+                    case "The Arena2":
+                        GameManager.isArenaThreeUnlock = true;
+                        break;
+                }
             }
+
+
         }
 
 
