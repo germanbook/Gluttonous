@@ -18,6 +18,7 @@ TagManager:
   - D2_Samnites
   - D2_Retiarius
   - Gladiator
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -87,4 +88,7 @@ TagManager:
     locked: 0
   - name: Buildings10
     uniqueID: 889349177
+    locked: 0
+  - name: Dialogue
+    uniqueID: 1572667263
     locked: 0
