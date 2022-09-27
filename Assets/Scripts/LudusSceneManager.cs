@@ -37,17 +37,25 @@ public class LudusSceneManager : MonoBehaviour
     public GameObject tutorialSamnites;
 
 
+    // Currency
+    public GameObject currency;
+
     // MapButton
     public GameObject mapButton;
 
     // Start is called before the first frame update
     void Start()
     {
+        currency = GameObject.Find("Currency");
+
+
         mapButton = GameObject.Find("MapButton");
         if (GlobalGameManager.isDemoPlaying == true)
         {
             
             mapButton.transform.localScale = new Vector3(0, 0, 0);
+            // Hide currency icon
+            currency.gameObject.transform.localScale = new Vector3(0, 0, 0);
         }
         else
         {
