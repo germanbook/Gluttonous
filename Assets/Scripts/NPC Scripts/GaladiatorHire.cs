@@ -29,10 +29,10 @@ public class GaladiatorHire : MonoBehaviour
         // gladiator store
         playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
-        threaxPrice = 50;
-        samnitesPrice = 100;
-        myrmiloPrice = 100;
-        retiariusPrice = 150;
+        threaxPrice = 30;
+        samnitesPrice = 50;
+        myrmiloPrice = 50;
+        retiariusPrice = 80;
 
     }
 

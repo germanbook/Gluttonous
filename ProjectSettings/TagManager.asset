@@ -4,37 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - D1_01
-  - D1_02
-  - D1_03
-  - D1_04
-  - D1_05
-  - D1_06
-  - D2_Back
-  - Button_Exit
-  - D3_Back
-  - D4_01
-  - D4_02
-  - D4_03
-  - D4_04
-  - D4_Back
-  - D4_SubOption_Back
-  - D5_Back
-  - D6_Back
-  - D2_Threax
-  - D2_Samnites
-  - D2_Myrmilo
-  - D2_Retiarius
-  - Gladiator
-  - Enemy
   - CurrencyValue
   - VendorNPC
   - PlayerGladiatorsStore
   - GladiatorHireFailOK
   - GladiatorHireSucessOK
   - VendorDialogue
-  - ArenaSceneManager
-  - Net
+  - D2_Myrmilo
+  - D1_02
+  - D2_Threax
+  - D1_01
+  - D2_Back
+  - D2_Samnites
+  - D2_Retiarius
+  - Gladiator
   layers:
   - Default
   - TransparentFX
@@ -43,8 +26,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Dialogue
-  - GladiatorSelector
+  - 
+  - 
   - 
   - 
   - 
@@ -104,10 +87,4 @@ TagManager:
     locked: 0
   - name: Buildings10
     uniqueID: 889349177
-    locked: 0
-  - name: TitusDialogue
-    uniqueID: 4293447229
-    locked: 0
-  - name: Maps
-    uniqueID: 686527515
     locked: 0
