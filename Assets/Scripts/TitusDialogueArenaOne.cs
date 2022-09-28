@@ -9,6 +9,7 @@ public class TitusDialogueArenaOne : MonoBehaviour
     [SerializeField] GameObject dialogue2;
     [SerializeField] GameObject dialogue3;
     [SerializeField] GameObject dialogue4;
+    [SerializeField] GameObject dialogue5;
 
     public GameObject sceneManager;
 
@@ -69,7 +70,11 @@ public class TitusDialogueArenaOne : MonoBehaviour
                 break;
             case 4:
                 dialogue4.SetActive(false);
+                dialogue5.SetActive(true);
+                break;
 
+            case 5:
+                dialogue5.SetActive(false);
                 break;
 
         }

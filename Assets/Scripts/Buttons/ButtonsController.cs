@@ -38,11 +38,30 @@ public class ButtonsController : MonoBehaviour
     public GameObject dialogue1;
     public GameObject dialogue2;
 
+    // Arena Reset Button
+    public GameObject combatResetButton;
+
     private void Start()
     {
         gladiatorStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
         
+    }
+
+    private void Update()
+    {
+        //toggle on or off the combat reset button
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (combatResetButton.activeSelf == false)
+            {
+                combatResetButton.SetActive(true);
+            }
+            else
+            {
+                combatResetButton.SetActive(false);
+            }
+        }
     }
 
     public void BeginCombat()

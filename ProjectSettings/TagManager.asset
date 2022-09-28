@@ -19,6 +19,11 @@ TagManager:
   - D2_Retiarius
   - Gladiator
   - Enemy
+  - ArenaSceneManager
+  - 4_HintsTips_Questions_ButtonTag
+  - 3_Advanced_Questions_ButtonTag
+  - Net
+  - CombatResetButton
   layers:
   - Default
   - TransparentFX
