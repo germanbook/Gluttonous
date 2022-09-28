@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && !GameManager.isDialogueShowing) {
             lastClickedPos = cam.ScreenToWorldPoint(Input.mousePosition);
             moving = true;
+            this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
         }
         
         if (moving && (Vector2)transform.position != lastClickedPos)
@@ -34,13 +36,14 @@ public class PlayerController : MonoBehaviour
         //Assigns camera to variable
         cam = Camera.main;
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "tavenWall" && collision.gameObject.tag == "Player")
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "tavenWall")
         {
-            
+            this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             lastClickedPos = this.gameObject.transform.position;
-
         }
     }
         
