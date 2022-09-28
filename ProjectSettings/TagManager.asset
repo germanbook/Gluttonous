@@ -19,11 +19,11 @@ TagManager:
   - D2_Retiarius
   - Gladiator
   - Enemy
-  - Net
   - ArenaSceneManager
   - 4_HintsTips_Questions_ButtonTag
   - 3_Advanced_Questions_ButtonTag
-  - tavenWall
+  - Net
+  - CombatResetButton
   layers:
   - Default
   - TransparentFX
@@ -32,7 +32,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Character
+  - 
   - 
   - 
   - 
