@@ -34,6 +34,15 @@ public class PlayerController : MonoBehaviour
         //Assigns camera to variable
         cam = Camera.main;
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "tavenWall" && collision.gameObject.tag == "Player")
+        {
+            
+            lastClickedPos = this.gameObject.transform.position;
 
+        }
+    }
+        
 
 }
