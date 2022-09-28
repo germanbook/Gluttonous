@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
 
     bool moving;
 
+    public Animator animator;
+    private float oldPosition;
+
     //Main camera assigned variable
     Camera cam;
     private void Update()
@@ -30,11 +33,42 @@ public class PlayerController : MonoBehaviour
         {
             moving = false;
         }
+
+        // Standing
+        if (transform.position.x == oldPosition)
+        {
+            if (LudusSceneManager.demoStartFight == false)
+            {
+                // idle
+                animator.SetInteger("state", 0);
+            }
+
+        }
+
+        // Moving of right
+        if (transform.position.x > oldPosition)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            animator.SetInteger("state", 1);
+        }
+
+        // Moving of lift
+        if (transform.position.x < oldPosition)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            animator.SetInteger("state", 1);
+        }
+
+        // update the old position with the new position
+        oldPosition = transform.position.x;
+
     }
     void Start()
     {
         //Assigns camera to variable
         cam = Camera.main;
+
+        oldPosition = this.gameObject.transform.position.x;
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
