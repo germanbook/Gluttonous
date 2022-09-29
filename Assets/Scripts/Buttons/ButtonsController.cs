@@ -67,6 +67,9 @@ public class ButtonsController : MonoBehaviour
     public void BeginCombat()
     {
         arenaSceneManager.GetComponent<ArenaSceneManager>().isPause = false;
+        // Arena bgm
+        arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Stop();
+        arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Play();
     }
 
     public void ResetCombat()

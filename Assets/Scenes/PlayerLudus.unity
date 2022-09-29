@@ -123,54 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &35478765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7594252981971675610, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &35478770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35478765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 35478771}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &35478771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35478765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1211898513}
 --- !u!1 &40689006
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,54 +258,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40689006}
   m_CullTransparentMesh: 1
---- !u!1 &100414912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1379684815027587924, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &100414917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100414912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 100414918}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &100414918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100414912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 931981872}
 --- !u!1 &105401160
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,54 +359,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &123861469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7898575548363910301, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &123861474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123861469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 123861475}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &123861475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123861469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1296850762}
 --- !u!1 &126501081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8932825987460356789, guid: 7b69fc7bdf8223747beb0c4c9b156c06,
@@ -985,150 +841,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175631628}
   m_CullTransparentMesh: 1
---- !u!1 &180534233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7527703222037699656, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &180534238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180534233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 180534239}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &180534239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180534233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 2039566037}
---- !u!1 &211538913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4145057074534216990, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &211538918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211538913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 211538919}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &211538919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211538913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 567989326}
---- !u!1 &282568555 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6289736719451630199, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &282568560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282568555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 282568561}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &282568561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282568555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 2026206890}
 --- !u!1001 &314058955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2119,24 +1831,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556393524}
   m_CullTransparentMesh: 1
---- !u!1 &564626315 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 564626315, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &567989326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4967931225527387840, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &642212258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642212258, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &677538170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,54 +3197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818597673}
   m_CullTransparentMesh: 1
---- !u!1 &853024672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7303290273758291340, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &853024678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853024672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 642212258}
---- !u!114 &853024679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853024672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 853024678}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &876434486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3558,40 +3204,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 642212258, guid: bbe5ba0932d1b9c459011f1dbaf4daa6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212837795885168879, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2590135621027520870, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566055145495432639, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566055145495432639, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566055145495432639, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5566055145495432639, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5566055146785530805, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
       propertyPath: m_RootOrder
@@ -3652,11 +3264,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalObjects
       objectReference: {fileID: 0}
-    - target: {fileID: 7170412125401430173, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe5ba0932d1b9c459011f1dbaf4daa6, type: 3}
 --- !u!1 &901587028
@@ -3697,12 +3304,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &931981872 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4067294414437637045, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &936410038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,6 +3314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936410040}
   - component: {fileID: 936410039}
+  - component: {fileID: 936410041}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3752,6 +3354,8 @@ MonoBehaviour:
   tutorialSamnites: {fileID: 126501081}
   currency: {fileID: 0}
   mapButton: {fileID: 0}
+  sounds:
+  - {fileID: 936410041}
 --- !u!4 &936410040
 Transform:
   m_ObjectHideFlags: 0
@@ -3767,6 +3371,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &936410041
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936410038}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d4fcf521ac67f4f6c91162423f90b753, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &993103209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,54 +3545,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993103209}
   m_CullTransparentMesh: 1
---- !u!1 &1030594794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1903732928010837119, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1030594799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030594794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1030594800}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1030594800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030594794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 564626315}
 --- !u!1 &1063083436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,12 +3942,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1195266050 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2309617718634291594, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197382645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,60 +4020,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197382645}
   m_CullTransparentMesh: 1
---- !u!1 &1211898513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7740618936546974953, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1215785716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2410196145984771995, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1215785721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215785716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1215785722}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1215785722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215785716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1752072255}
 --- !u!1 &1260837724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,12 +4121,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1296850762 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9190750449449415487, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1304066564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,54 +5027,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650276982}
   m_CullTransparentMesh: 1
---- !u!1 &1652536115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2671863047915255402, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1652536120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652536115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1652536121}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1652536121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652536115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 2113717030}
 --- !u!1 &1730259649
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,12 +5296,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737110251}
   m_CullTransparentMesh: 1
---- !u!1 &1752072255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8273702218575071068, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760630035
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,54 +5532,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880562307}
   m_CullTransparentMesh: 1
---- !u!1 &1902474407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5115761311161439516, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1902474412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902474407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1902474413}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1902474413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902474407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1195266050}
 --- !u!1 &1967501423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5153739129734942005, guid: dac59376f4af6294d876c97f7ff86c8b,
@@ -6316,18 +5800,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012591686}
   m_CullTransparentMesh: 1
---- !u!1 &2026206890 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 705309250640372997, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2039566037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1228981539730733131, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041306532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6708,12 +6180,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2113717030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1049029017709209043, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5153739129637081350
 PrefabInstance:
   m_ObjectHideFlags: 0

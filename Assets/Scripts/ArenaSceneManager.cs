@@ -15,9 +15,16 @@ public class ArenaSceneManager : MonoBehaviour
     public GameObject titusDialogue;
     public GameObject demoSamnite;
 
+    // sounds
+    // 0: entrance
+    // 1: combat
+    public AudioSource[] sounds;
+
     // Start is called before the first frame update
     void Start()
     {
+        sounds[0].Play();
+
         currency = GameObject.Find("Currency");
 
         // Demo playing

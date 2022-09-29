@@ -141,6 +141,7 @@ public class TargetFinder : MonoBehaviour
 
         if (isWon)
         {
+
             increaseGold();
 
             GlobalGameManager.isArenaOneDemoBattleFinished = true;
@@ -522,6 +523,8 @@ public class TargetFinder : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 50)
         {
             GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
+            arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Play();
+            arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Stop();
         }
         
     }

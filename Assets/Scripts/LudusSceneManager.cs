@@ -43,9 +43,16 @@ public class LudusSceneManager : MonoBehaviour
     // MapButton
     public GameObject mapButton;
 
+    // sounds
+    // 0: bgm
+    public AudioSource[] sounds;
+
     // Start is called before the first frame update
     void Start()
     {
+        // play bgm
+        sounds[0].Play();
+
         GlobalGameManager.isNewGame = false;
 
         currency = GameObject.Find("Currency");
