@@ -6,8 +6,8 @@ using UnityEngine;
 public class ThraexSkillManager : MonoBehaviour
 {
     public SkillData skillData;
-
-    GameObject opponent;
+    public float damageValue;
+    public GameObject opponent;
 
     // Attack and Skill timer
     public float attackTimer;
@@ -126,6 +126,7 @@ public class ThraexSkillManager : MonoBehaviour
     public void ReceiveAttackDamage(string attacker, float damage)
     {
         this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+        damageValue = damage;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

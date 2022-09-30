@@ -6,7 +6,8 @@ using UnityEngine;
 public class RetiariusSkillManager : MonoBehaviour
 {
     public SkillData skillData;
-    GameObject opponent;
+    public GameObject opponent;
+    public float damageValue;
 
     // Attack and Skill timer
     public float attackTimer;
@@ -161,6 +162,7 @@ public class RetiariusSkillManager : MonoBehaviour
     public void ReceiveAttackDamage(string attacker, float damage)
     {
         this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 1f);
+        damageValue = damage;
     }
 
 

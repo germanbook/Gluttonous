@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 21466850}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -351,6 +351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
   isThrowNet: 0
@@ -2517,6 +2519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
   isThrowNet: 0
@@ -6115,6 +6119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!58 &1176316173
@@ -6319,6 +6325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &1232032173
@@ -8387,6 +8395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!58 &1580201865
@@ -8673,7 +8683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABgIewnvNntfwIAAD8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsPH3Fiemux4/SQxBO3kwsXgRajMUiMJGI7Gf/3roRsqMsF8fbr7dsVX4QL3UJhpForzp4lA/J9QuyZfJsMxic40p0UW/4JF593zkxlnajzeaOGS8RDG6ZlA0bx4ofY1dY5QLATvJSqWbEdpFIbjXBJaw1oUtLYaIHQ14Qc8TVNbMgJT9GDPX3iKQkmZzwWIAyokWs4C+wT+oBwdpfYZx75uGh2v4iiYPEQr6bBg8vRiaKmTQvMNjSkChc+R+8lsFPvYJMXsq659jSJObVOhpS2usMm0YFxim07buEsRqACvquMpTAOfy1LDcarouhpyRXq1+clP2UvakP1vif2QevOUYgWjlWf9Pk/+zR05lLJ5ulSNwxsDVPxYv9GTwXVZqT6GF6OqDt9DrTe07yG9wrEi1wr2QmGRqM6G9ppiJbD57W1tIJiP+A91RuwawfBg+vMwiQKkjhc2BH5udmGzk6KY1rzJrf+s7se2NbSye/WBBQO6heyd0ukfV5ELaU/Gn7T3XjbvOGRK23Q5FsWlmsuO2VdycoJaFvrTCqVAAf7DloQtDanDaYxt/O8sY3K3lgeqb1Xvri3Xa7LTYiDB/8guDFt5OE6OV3JwzPo6rUzNRcwkLaGF9QplUL06zbW5BK27VRJi1HYruPs3z0jYR7TOIiThEYQsSKaUpaXc3af381jmgPMiVtELrBPWm96ol4enJoYkgtcusvvZrJWtHWrzxQ9rPlnI8cEuSjltlAA4rVPcWUOCqvgLWUrxlGhLRjDhRs4+cpILYs9sOxaM3Otro5G0WzIkpGWf0hjkYyk7geTEQtfN3uj4IPDwRa/JDuT819QSwMEFAAACAgAAGAh7P/2+XFtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJhknGisYGxpWWiUapRSrKRbmJKUpppilmSialxYlJqqqlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAGAh7Ce82e1/AgAAPwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGAh7P/2+XFtAAAAeAAAAAkAJAAAAAAAAAAAAAAAzAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAACEAwAAAAA=
+    dataString: UEsDBBQAAAgIAABoIewnvNntfwIAAD8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsPH3Fiemux4/SQxBO3kwsXgRajMUiMJGI7Gf/3roRsqMsF8fbr7dsVX4QL3UJhpForzp4lA/J9QuyZfJsMxic40p0UW/4JF593zkxlnajzeaOGS8RDG6ZlA0bx4ofY1dY5QLATvJSqWbEdpFIbjXBJaw1oUtLYaIHQ14Qc8TVNbMgJT9GDPX3iKQkmZzwWIAyokWs4C+wT+oBwdpfYZx75uGh2v4iiYPEQr6bBg8vRiaKmTQvMNjSkChc+R+8lsFPvYJMXsq659jSJObVOhpS2usMm0YFxim07buEsRqACvquMpTAOfy1LDcarouhpyRXq1+clP2UvakP1vif2QevOUYgWjlWf9Pk/+zR05lLJ5ulSNwxsDVPxYv9GTwXVZqT6GF6OqDt9DrTe07yG9wrEi1wr2QmGRqM6G9ppiJbD57W1tIJiP+A91RuwawfBg+vMwiQKkjhc2BH5udmGzk6KY1rzJrf+s7se2NbSye/WBBQO6heyd0ukfV5ELaU/Gn7T3XjbvOGRK23Q5FsWlmsuO2VdycoJaFvrTCqVAAf7DloQtDanDaYxt/O8sY3K3lgeqb1Xvri3Xa7LTYiDB/8guDFt5OE6OV3JwzPo6rUzNRcwkLaGF9QplUL06zbW5BK27VRJi1HYruPs3z0jYR7TOIiThEYQsSKaUpaXc3af381jmgPMiVtELrBPWm96ol4enJoYkgtcusvvZrJWtHWrzxQ9rPlnI8cEuSjltlAA4rVPcWUOCqvgLWUrxlGhLRjDhRs4+cpILYs9sOxaM3Otro5G0WzIkpGWf0hjkYyk7geTEQtfN3uj4IPDwRa/JDuT819QSwMEFAAACAgAAGgh7P/2+XFtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJhknGisYGxpWWiUapRSrKRbmJKUpppilmSialxYlJqqqlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAGgh7Ce82e1/AgAAPwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGgh7P/2+XFtAAAAeAAAAAkAJAAAAAAAAAAAAAAAzAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAACEAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -8878,6 +8888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &1664300972
@@ -11486,6 +11498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 24176cc8fe80a4a9f8b1ed5ac34a4aa6, type: 2}
+  damageValue: 0
+  opponent: {fileID: 0}
   attackTimer: 0
   skillTimer: 0
 --- !u!58 &2009520844
@@ -12030,6 +12044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
+  opponent: {fileID: 0}
+  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &2099845491

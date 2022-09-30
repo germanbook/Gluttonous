@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 public class SamnitesSkillManager : MonoBehaviour
 {
 
     public SkillData skillData;
-    GameObject opponent;
+    public GameObject opponent;
+    public float damageValue;
 
     // Attack and Skill timer
     public float attackTimer;
@@ -69,7 +72,7 @@ public class SamnitesSkillManager : MonoBehaviour
                 if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
                 {
                     opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject,skillData.attackDamage);
-
+                   
                 }
 
                 break;
@@ -109,14 +112,16 @@ public class SamnitesSkillManager : MonoBehaviour
     // parameters: attacker's name and attack damage
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
+        float mediumArmorDamage = damage * 0.7f;
         // Can't block Threax's side attack
         if (attacker.gameObject.name != "Threax")
         {
             // 30% chace to block attack
             if (Random.Range(1, 101) > 70)
             {
-                this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+                this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (mediumArmorDamage);
                 Debug.Log("I'm S, block failed!");
+                SpawnFloatingDamageText(mediumArmorDamage);
             }
             else
             {
@@ -125,19 +130,28 @@ public class SamnitesSkillManager : MonoBehaviour
                 {
                     Debug.Log("I'm S, Attack blocked!");
                     this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
-
+                    SpawnFloatingDamageText(0f);
                 }
                 else
                 {
-                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (mediumArmorDamage);
                     Debug.Log("I'm netted, cant block");
+                    SpawnFloatingDamageText(mediumArmorDamage);
                 }
 
             }
+        }else
+        {
+            SpawnFloatingDamageText(damage);
         }
+        
 
-        
-        
+    }
+    public void SpawnFloatingDamageText(float damageValue)
+    {
+        int floatingDamageNumber = (int)Math.Round(damageValue);
+        //creates a floatingdamageText popup with damage value from floatingDamageNumber ontop of opponents head
+        DamagePopup.Create(this.transform.position, floatingDamageNumber);
     }
 
     public void ReceiveSkillDamage(string attacker, float damage)

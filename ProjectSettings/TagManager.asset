@@ -24,6 +24,7 @@ TagManager:
   - 3_Advanced_Questions_ButtonTag
   - Net
   - CombatResetButton
+  - tavenWall
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - damage Text
   - 
   - 
   - 

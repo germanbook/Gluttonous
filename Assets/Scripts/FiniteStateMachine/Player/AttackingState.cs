@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using System;
 using static UnityEngine.GraphicsBuffer;
 /// <summary>
 /// Attacking State
 /// </summary>
 public class AttackingState : IState
 {
-    private FSM_Mananger manager;
+    public FSM_Mananger manager;
 
     // attacking timer
     float attackTimer;
@@ -52,7 +53,6 @@ public class AttackingState : IState
         
         switch (manager.gameObject.name)
         {
-            
             case "Samnites":
                 manager.gameObject.GetComponent<SamnitesSkillManager>().GetOpponent(manager.targetPlayer);
 
@@ -62,8 +62,9 @@ public class AttackingState : IState
                 if (attackTimer > manager.gameObject.GetComponent<SamnitesSkillManager>().skillData.attackCooldown)
                 {
                     Debug.Log("Samnites Attack");
+                   
                     manager.animator.Play("Samnite_Attack", -1, 0f);
-                    manager.gameObject.GetComponent<SamnitesSkillManager>().attackTimer = 0f;
+                    manager.gameObject.GetComponent<SamnitesSkillManager>().attackTimer = 0f; 
                 }
 
                 break;

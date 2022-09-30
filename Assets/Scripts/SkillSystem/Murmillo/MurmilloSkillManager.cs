@@ -7,8 +7,8 @@ public class MurmilloSkillManager : MonoBehaviour
 {
     public SkillData skillData;
 
-    GameObject opponent;
-
+    public GameObject opponent;
+    public float damageValue;
     // Attack and Skill timer
     public float attackTimer;
     public float skillTimer;
@@ -117,6 +117,7 @@ public class MurmilloSkillManager : MonoBehaviour
             {
                 this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
                 Debug.Log("I'm M, block failed!");
+                damageValue = damage;
             }
             else
             {
@@ -125,12 +126,14 @@ public class MurmilloSkillManager : MonoBehaviour
                 {
                     Debug.Log("I'm M, Attack blocked!");
                     this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
+                    damageValue = damage;
 
                 }
                 else
                 {
                     this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
                     Debug.Log("I'm netted, cant block");
+                    damageValue = damage;
                 }
 
             }
@@ -182,6 +185,7 @@ public class MurmilloSkillManager : MonoBehaviour
         {
             Debug.Log("Dameged by curved knife");
             this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+            damageValue = damage;
         }
     }
 
