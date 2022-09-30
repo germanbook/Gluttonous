@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     // Gladiator reset button
     private GameObject gladiatorReset;
 
-
     private void Start()
     {
         //if (SceneManager.GetActiveScene().name == "The Arena1"
@@ -51,16 +50,6 @@ public class GameManager : MonoBehaviour
         // L: Ludus scene
         if(Input.GetKeyDown(KeyCode.L))
         {
-            if (SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                SceneManager.LoadScene(0);
-            }
-
-        }
-
-        // A: Arena scene
-        if (Input.GetKeyDown(KeyCode.A))
-        {
             if (SceneManager.GetActiveScene().buildIndex != 1)
             {
                 SceneManager.LoadScene(1);
@@ -68,12 +57,22 @@ public class GameManager : MonoBehaviour
 
         }
 
-        // T: Tavern scene
-        if (Input.GetKeyDown(KeyCode.T))
+        // A: Arena scene
+        if (Input.GetKeyDown(KeyCode.A))
         {
             if (SceneManager.GetActiveScene().buildIndex != 2)
             {
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(2);
+            }
+
+        }
+
+        // T: Tavern scene
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 5)
+            {
+                SceneManager.LoadScene(5);
             }
 
         }
@@ -149,7 +148,7 @@ public class GameManager : MonoBehaviour
                     GlobalGameManager.isDemoPlaying = false;
                 }
 
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 MapOnMapOff();
                 GlobalGameManager.isDemoLudusFinished = true;
                 break;
@@ -158,7 +157,7 @@ public class GameManager : MonoBehaviour
 
                 if (GlobalGameManager.isDemoPlaying == false)
                 {
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(3);
                     MapOnMapOff();
                 }
                 
@@ -168,7 +167,7 @@ public class GameManager : MonoBehaviour
 
                 if (GlobalGameManager.isDemoPlaying == false)
                 {
-                    SceneManager.LoadScene(3);
+                    SceneManager.LoadScene(4);
                     MapOnMapOff();
                 }
                 
@@ -197,7 +196,7 @@ public class GameManager : MonoBehaviour
                     GlobalGameManager.isDemoLudusFinished == true
                     && GlobalGameManager.isArenaOneDemoBattleFinished == true)
                 {
-                    SceneManager.LoadScene(4);
+                    SceneManager.LoadScene(5);
                     MapOnMapOff();
                     GlobalGameManager.isDemoPlaying = false;
                 }
