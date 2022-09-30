@@ -10,7 +10,6 @@ public class SamnitesSkillManager : MonoBehaviour
 
     public SkillData skillData;
     public GameObject opponent;
-    public float damageValue;
 
     // Attack and Skill timer
     public float attackTimer;
@@ -112,7 +111,9 @@ public class SamnitesSkillManager : MonoBehaviour
     // parameters: attacker's name and attack damage
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
+        //damage modifier for samnite armor
         float mediumArmorDamage = damage * 0.7f;
+
         // Can't block Threax's side attack
         if (attacker.gameObject.name != "Threax")
         {
@@ -142,7 +143,7 @@ public class SamnitesSkillManager : MonoBehaviour
             }
         }else
         {
-            SpawnFloatingDamageText(damage);
+            SpawnFloatingDamageText(mediumArmorDamage);
         }
         
 
@@ -156,6 +157,10 @@ public class SamnitesSkillManager : MonoBehaviour
 
     public void ReceiveSkillDamage(string attacker, float damage)
     {
+
+        //damage modifier for samnite armor
+        float mediumArmorDamage = damage * 0.7f;
+
         // attacker is Retiarius
         // Neting attacking
         if (attacker == "Retiarius")
@@ -167,9 +172,11 @@ public class SamnitesSkillManager : MonoBehaviour
         if (attacker == "Threax")
         {
             Debug.Log("Dameged by curved knife");
-            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
+            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (mediumArmorDamage);
+            SpawnFloatingDamageText(mediumArmorDamage);
+
         }
-        
+
     }
 
     // calling by block animation

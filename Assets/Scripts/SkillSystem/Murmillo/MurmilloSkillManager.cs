@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 public class MurmilloSkillManager : MonoBehaviour
 {
     public SkillData skillData;
 
     public GameObject opponent;
-    public float damageValue;
     // Attack and Skill timer
     public float attackTimer;
     public float skillTimer;
@@ -105,19 +106,27 @@ public class MurmilloSkillManager : MonoBehaviour
                 break;
         }
     }
-
+    public void SpawnFloatingDamageText(float damageValue)
+    {
+        int floatingDamageNumber = (int)Math.Round(damageValue);
+        //creates a floatingdamageText popup with damage value from floatingDamageNumber ontop of opponents head
+        DamagePopup.Create(this.transform.position, floatingDamageNumber);
+    }
     public void ReceiveAttackDamage(GameObject attacker, float damage)
     {
-        Debug.Log("+++++++++++++++++++++++++++++++++++++");
+        //damage modifier for murmillo armor
+        float heavyArmorDamage = damage * 0.4f;
+
         // Can't block Threax's side attack
         if (attacker.gameObject.name != "Threax")
         {
             // 30% chace to block attack
             if (Random.Range(1, 11) > 7)
             {
-                this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+                this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (heavyArmorDamage);
                 Debug.Log("I'm M, block failed!");
-                damageValue = damage;
+                SpawnFloatingDamageText(heavyArmorDamage);
+
             }
             else
             {
@@ -126,18 +135,23 @@ public class MurmilloSkillManager : MonoBehaviour
                 {
                     Debug.Log("I'm M, Attack blocked!");
                     this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Block);
-                    damageValue = damage;
+                    SpawnFloatingDamageText(0f);
 
                 }
                 else
                 {
-                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
+                    this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (heavyArmorDamage);
                     Debug.Log("I'm netted, cant block");
-                    damageValue = damage;
+                    SpawnFloatingDamageText(heavyArmorDamage);
+
                 }
 
             }
             
+        }
+        else
+        {
+            SpawnFloatingDamageText(heavyArmorDamage);
         }
 
 
@@ -180,12 +194,13 @@ public class MurmilloSkillManager : MonoBehaviour
 
     public void ReceiveSkillDamage(string attacker, float damage)
     {
+        float heavyArmorDamage = damage * 0.4f;
         // Curved knife damage
         if (attacker == "Threax")
         {
             Debug.Log("Dameged by curved knife");
-            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.4f);
-            damageValue = damage;
+            this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (heavyArmorDamage);
+            SpawnFloatingDamageText(heavyArmorDamage);
         }
     }
 

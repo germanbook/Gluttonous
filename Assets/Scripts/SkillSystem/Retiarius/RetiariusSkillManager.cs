@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using System;
 
 public class RetiariusSkillManager : MonoBehaviour
 {
     public SkillData skillData;
     public GameObject opponent;
-    public float damageValue;
 
     // Attack and Skill timer
     public float attackTimer;
@@ -154,17 +154,22 @@ public class RetiariusSkillManager : MonoBehaviour
         {
             this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Idle);
         }
-
-        
-
     }
 
     public void ReceiveAttackDamage(string attacker, float damage)
     {
-        this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 1f);
-        damageValue = damage;
+        //damage modifier for retiarius armor
+        float lightArmorDamage = damage * 1f;
+        
+        this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (lightArmorDamage);
+        SpawnFloatingDamageText(lightArmorDamage);
     }
-
+    public void SpawnFloatingDamageText(float damageValue)
+    {
+        int floatingDamageNumber = (int)Math.Round(damageValue);
+        //creates a floatingdamageText popup with damage value from floatingDamageNumber ontop of opponents head
+        DamagePopup.Create(this.transform.position, floatingDamageNumber);
+    }
 
     // -----
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using System;
 
 public class ThraexSkillManager : MonoBehaviour
 {
     public SkillData skillData;
-    public float damageValue;
     public GameObject opponent;
 
     // Attack and Skill timer
@@ -125,8 +125,16 @@ public class ThraexSkillManager : MonoBehaviour
 
     public void ReceiveAttackDamage(string attacker, float damage)
     {
-        this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (damage * 0.7f);
-        damageValue = damage;
+        //damage modifier for threax armor
+        float mediumArmorDamage = damage * 0.7f;
+        this.gameObject.GetComponent<PlayerStatus_Temp>().healthValue -= (mediumArmorDamage);
+        SpawnFloatingDamageText(mediumArmorDamage);
+    }
+    public void SpawnFloatingDamageText(float damageValue)
+    {
+        int floatingDamageNumber = (int)Math.Round(damageValue);
+        //creates a floatingdamageText popup with damage value from floatingDamageNumber ontop of opponents head
+        DamagePopup.Create(this.transform.position, floatingDamageNumber);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
