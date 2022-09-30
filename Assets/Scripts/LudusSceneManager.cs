@@ -155,7 +155,7 @@ public class LudusSceneManager : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             if (dialogueCue.activeSelf == true)
             {

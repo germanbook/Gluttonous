@@ -45,7 +45,10 @@ public class TitusDialogue : MonoBehaviour
         buttonTimer = 0f;
 
     }
-
+    private void OnEnable()
+    {
+        dialogue0.SetActive(true);
+    }
     void Update()
     {
         // Dialogue3 button shows only after each of gladiator is interacted.
