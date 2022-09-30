@@ -352,7 +352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
   isThrowNet: 0
@@ -2520,7 +2519,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0fd58c630229d4d7690e40f883eae474, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
   isThrowNet: 0
@@ -2786,7 +2784,7 @@ PrefabInstance:
     - target: {fileID: 6472437492248365448, guid: 3faba8f8ba20643a69d776c74b767570,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 262.231
+      value: 262.117
       objectReference: {fileID: 0}
     - target: {fileID: 6472437492248365448, guid: 3faba8f8ba20643a69d776c74b767570,
         type: 3}
@@ -6120,7 +6118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!58 &1176316173
@@ -6326,7 +6323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &1232032173
@@ -6461,7 +6457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1260056140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8396,7 +8392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!58 &1580201865
@@ -8889,7 +8884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 032ef0107f17847e0bacc71a2777539d, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &1664300972
@@ -11498,7 +11492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 24176cc8fe80a4a9f8b1ed5ac34a4aa6, type: 2}
-  damageValue: 0
   opponent: {fileID: 0}
   attackTimer: 0
   skillTimer: 0
@@ -12045,7 +12038,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: c692ed375c338450f96025f892398e0e, type: 2}
   opponent: {fileID: 0}
-  damageValue: 0
   attackTimer: 0
   skillTimer: 0
 --- !u!114 &2099845491
