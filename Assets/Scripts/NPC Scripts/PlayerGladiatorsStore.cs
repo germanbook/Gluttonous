@@ -34,4 +34,20 @@ public class PlayerGladiatorsStore : MonoBehaviour
         gladiatorStoreData.counterMyrmilo = counterMyrmilo;
         gladiatorStoreData.counterRetiarius = counterRetiarius;
     }
+    //Utilises the SaveSystem class to save data
+    //This function is used by the SaveButton
+    public void SaveData()
+    {
+        SaveSystem.SaveData(this);
+    }
+    //
+    public void LoadPlayer()
+    {
+        SaveData data = SaveSystem.LoadData();
+
+        counterSamnites = data.MurmilloCount;
+        counterThraex = data.ThreaxCount;
+        counterMyrmilo = data.MurmilloCount;
+        counterRetiarius = data.RetiariusCount;
+    }
 }

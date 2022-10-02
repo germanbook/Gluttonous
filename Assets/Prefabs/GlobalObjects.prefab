@@ -1553,6 +1553,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: TavernMarket Button
       objectReference: {fileID: 0}
+    - target: {fileID: 850629255174560933, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741975070746630508, guid: 66e61985548b61d4c9d27211f846d10b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5859582814805876670, guid: 66e61985548b61d4c9d27211f846d10b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

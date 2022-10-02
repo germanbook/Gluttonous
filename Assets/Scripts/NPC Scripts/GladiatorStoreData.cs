@@ -14,5 +14,4 @@ public class GladiatorStoreData : ScriptableObject
     [SerializeField] public int counterThraex;
     [SerializeField] public int counterMyrmilo;
     [SerializeField] public int counterRetiarius;
-
 }
