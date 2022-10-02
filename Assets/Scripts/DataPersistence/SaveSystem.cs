@@ -4,8 +4,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem 
 {
-    //saves the data into a file
-    //erializes it into binary so users cant 
+    //Saves the data into a file
+    //Serializes it into binary so users cant change values manually
    public static void SaveData (PlayerGladiatorsStore data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -18,6 +18,7 @@ public static class SaveSystem
         formatter.Serialize(stream, newdata);
         stream.Close();
     }
+    //Loads data 
     public static SaveData LoadData()
     {
         string path = Application.persistentDataPath + "/GameData";

@@ -25,6 +25,7 @@ TagManager:
   - Net
   - CombatResetButton
   - tavenWall
+  - UICanvas
   layers:
   - Default
   - TransparentFX

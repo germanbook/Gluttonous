@@ -41,11 +41,19 @@ public class ButtonsController : MonoBehaviour
     // Arena Reset Button
     public GameObject combatResetButton;
 
+    //Main UICanvas 
+    public GameObject mainUICanvas;
+    // Save & Load Buttons
+    public GameObject saveButton;
+    public GameObject loadButton;
+
     private void Start()
     {
         gladiatorStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
-        
+        saveButton = GameObject.FindGameObjectWithTag("UICanvas");
+        saveButton = mainUICanvas.transform.Find("SaveButton").gameObject;
+        loadButton = mainUICanvas.transform.Find("LoadButton").gameObject;
     }
 
     private void Update()
@@ -60,6 +68,22 @@ public class ButtonsController : MonoBehaviour
             else
             {
                 combatResetButton.SetActive(false);
+            }
+            if(saveButton.activeSelf == false)
+            {
+                saveButton.SetActive(true);
+            }
+            else
+            {
+                saveButton.SetActive(false);
+            }
+            if (loadButton.activeSelf == false)
+            {
+                loadButton.SetActive(true);
+            }
+            else
+            {
+                loadButton.SetActive(false);
             }
         }
     }
