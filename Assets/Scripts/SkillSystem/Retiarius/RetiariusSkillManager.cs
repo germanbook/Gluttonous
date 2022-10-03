@@ -76,52 +76,56 @@ public class RetiariusSkillManager : MonoBehaviour
 
     void Attack()
     {
-        switch (opponent.gameObject.name)
+        if (opponent.gameObject != null)
         {
-            case "Samnites":
+            switch (opponent.gameObject.name)
+            {
+                case "Samnites":
 
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
-                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
-                {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                        || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
+                    {
+                        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
-                }
+                    }
 
-                break;
+                    break;
 
-            case "Retiarius":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
-                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
-                {
-                    opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                case "Retiarius":
 
-                }
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                        || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
+                    {
+                        opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
 
-                break;
+                    }
 
-            case "Murmillo":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
-                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
-                {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+                    break;
 
-                }
+                case "Murmillo":
 
-                break;
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                        || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
+                    {
+                        opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
-            case "Threax":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
-                    || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
-                {
-                    opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    }
 
-                }
+                    break;
 
-                break;
+                case "Threax":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true
+                        || opponent.gameObject.GetComponent<PlayerPosition>().isNetted == true)
+                    {
+                        opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+
+                    }
+
+                    break;
+            }
         }
+        
     }
 
     // Throw net

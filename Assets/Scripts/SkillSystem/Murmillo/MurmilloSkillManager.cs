@@ -63,48 +63,52 @@ public class MurmilloSkillManager : MonoBehaviour
 
     void Attack()
     {
-        switch (opponent.gameObject.name)
+        if (opponent.gameObject != null)
         {
-            case "Samnites":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+            switch (opponent.gameObject.name)
+            {
+                case "Samnites":
 
-                }
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
-                break;
+                    }
 
-            case "Retiarius":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    break;
 
-                }
+                case "Retiarius":
 
-                break;
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
 
-            case "Murmillo":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+                    }
 
-                }
+                    break;
 
-                break;
+                case "Murmillo":
 
-            case "Threax":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
 
-                }
+                    }
 
-                break;
+                    break;
+
+                case "Threax":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+
+                    }
+
+                    break;
+            }
         }
+        
     }
     public void SpawnFloatingDamageText(float damageValue)
     {

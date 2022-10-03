@@ -146,17 +146,27 @@ public class TargetFinder : MonoBehaviour
 
             GlobalGameManager.isArenaOneDemoBattleFinished = true;
 
-            if (GlobalGameManager.isDemoPlaying == false)
+            //if (GlobalGameManager.isDemoPlaying == false)
+            //{
+            //    switch (SceneManager.GetActiveScene().name)
+            //    {
+            //        case "The Arena1":
+            //            GameManager.isArenaTwoUnlock = true;
+            //            break;
+            //        case "The Arena2":
+            //            GameManager.isArenaThreeUnlock = true;
+            //            break;
+            //    }
+            //}
+
+            switch (SceneManager.GetActiveScene().name)
             {
-                switch (SceneManager.GetActiveScene().name)
-                {
-                    case "The Arena1":
-                        GameManager.isArenaTwoUnlock = true;
-                        break;
-                    case "The Arena2":
-                        GameManager.isArenaThreeUnlock = true;
-                        break;
-                }
+                case "The Arena1":
+                    GameManager.isArenaTwoUnlock = true;
+                    break;
+                case "The Arena2":
+                    GameManager.isArenaThreeUnlock = true;
+                    break;
             }
 
 

@@ -60,52 +60,52 @@ public class SamnitesSkillManager : MonoBehaviour
 
     void Attack()
     {
-        if (opponent.gameObject.name == "Retiarius")
+        if (opponent.gameObject != null)
         {
-            
+            switch (opponent.gameObject.name)
+            {
+                case "Samnites":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+
+                    }
+
+                    break;
+
+                case "Retiarius":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+
+                    }
+
+                    break;
+
+                case "Murmillo":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+
+                    }
+
+                    break;
+
+                case "Threax":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+
+                    }
+
+                    break;
+            }
         }
-        switch (opponent.gameObject.name)
-        {
-            case "Samnites":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveAttackDamage(this.gameObject,skillData.attackDamage);
-                   
-                }
-
-                break;
-
-            case "Retiarius":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
-
-                }
-
-                break;
-
-            case "Murmillo":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
-
-                }
-
-                break;
-
-            case "Threax":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
-
-                }
-
-                break;
-        }
+        
     }
 
     // parameters: attacker's name and attack damage

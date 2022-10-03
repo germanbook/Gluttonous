@@ -64,32 +64,37 @@ public class NetBehaviour : MonoBehaviour
     void Update()
     {
 
-        if (target.gameObject.activeSelf == true)
+        if (target.gameObject != null)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(target.position.x, target.position.y), Time.deltaTime * Speed);
-        }
-        
-
-        if (isNetTimerStart)
-        {
-            netTimer += Time.deltaTime;
-
-        }
-
-        if (netTimer >= (netEffectTimer-1))
-        {
-            if (target != this.gameObject.transform)
+            if (target.gameObject.activeSelf == true)
             {
-                target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+                this.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(target.position.x, target.position.y), Time.deltaTime * Speed);
             }
-            
-            Destroy(this.gameObject);
+
+
+            if (isNetTimerStart)
+            {
+                netTimer += Time.deltaTime;
+
+            }
+
+            if (netTimer >= (netEffectTimer - 1))
+            {
+                if (target != this.gameObject.transform)
+                {
+                    target.gameObject.GetComponent<PlayerPosition>().isNetted = false;
+                }
+
+                Destroy(this.gameObject);
+            }
+
+            if (target.gameObject.activeSelf == false)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
-        if (target.gameObject.activeSelf == false)
-        {
-            Destroy(this.gameObject);
-        }
+        
 
         
     }

@@ -52,75 +52,79 @@ public class ThraexSkillManager : MonoBehaviour
 
     void Attack()
     {
-        switch (opponent.gameObject.name)
+        if (opponent.gameObject != null)
         {
-            //case "Samnites":
-                
-            //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-            //    {
+            switch (opponent.gameObject.name)
+            {
+                //case "Samnites":
 
-            //        if (skillTimer > skillData.skillCooldown)
-            //        {
-            //            // perform side attack
-            //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+                //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                //    {
 
-            //            opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
+                //        if (skillTimer > skillData.skillCooldown)
+                //        {
+                //            // perform side attack
+                //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
 
-            //            skillTimer = 0f;
-            //        }
+                //            opponent.gameObject.GetComponent<SamnitesSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.skillDamage);
 
-            //    }
+                //            skillTimer = 0f;
+                //        }
 
-            //    break;
+                //    }
 
-            case "Retiarius":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                //    break;
 
-                }
+                case "Retiarius":
 
-                break;
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<RetiariusSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
 
-            //case "Murmillo":
-                
-            //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-            //    {
-            //        // if opponent is blocking
-            //        if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
-            //        {
+                    }
 
-            //            if (skillTimer > skillData.skillCooldown)
-            //            {
-            //                // perform side attack
-            //                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
+                    break;
 
-            //                opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
+                //case "Murmillo":
 
-            //                skillTimer = 0f;
-            //            }
+                //    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                //    {
+                //        // if opponent is blocking
+                //        if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isBlocking == true)
+                //        {
 
-            //        }
-            //        else
-            //        {
-            //            opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
-            //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
-            //        }
-            //    }
+                //            if (skillTimer > skillData.skillCooldown)
+                //            {
+                //                // perform side attack
+                //                this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.SideAttack);
 
-            //    break;
+                //                opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveSkillDamage(this.gameObject.name, skillData.attackDamage);
 
-            case "Threax":
-                
-                if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
-                {
-                    opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+                //                skillTimer = 0f;
+                //            }
 
-                }
+                //        }
+                //        else
+                //        {
+                //            opponent.gameObject.GetComponent<MurmilloSkillManager>().ReceiveAttackDamage(this.gameObject, skillData.attackDamage);
+                //            this.gameObject.GetComponent<FSM_Mananger>().TransitionState(StateType.Attacking);
+                //        }
+                //    }
 
-                break;
+                //    break;
+
+                case "Threax":
+
+                    if (opponent.gameObject.GetComponent<PlayerStatus_Temp>().isAttacking == true)
+                    {
+                        opponent.gameObject.GetComponent<ThraexSkillManager>().ReceiveAttackDamage(this.gameObject.name, skillData.attackDamage);
+
+                    }
+
+                    break;
+            }
         }
+        
     }
 
     public void ReceiveAttackDamage(string attacker, float damage)
