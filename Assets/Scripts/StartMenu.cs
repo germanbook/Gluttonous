@@ -16,10 +16,14 @@ public class StartMenu : MonoBehaviour
         this.gameObject.SetActive(false);
         GlobalGameManager.isDemoPlaying = true;
     }
-
+    public void SaveGameButton()
+    {
+        playerGladiatorsStore.SaveData();
+    }
     public void LoadGameButton()
     {
-        
+        this.gameObject.SetActive(false);
+        playerGladiatorsStore.LoadData();
     }
 
     public void ExitGameButton()

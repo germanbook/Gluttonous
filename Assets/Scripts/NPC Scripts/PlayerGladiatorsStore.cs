@@ -41,7 +41,7 @@ public class PlayerGladiatorsStore : MonoBehaviour
         SaveSystem.SaveData(this);
     }
     //
-    public void LoadPlayer()
+    public void LoadData()
     {
         SaveData data = SaveSystem.LoadData();
 
