@@ -155,15 +155,15 @@ public class LudusSceneManager : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (dialogueCue.activeSelf == true)
-            {
-                dialogue.SetActive(true);
-                dialogueCue.SetActive(false);
-            }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if (dialogueCue.activeSelf == true)
+        //    {
+        //        dialogue.SetActive(true);
+        //        dialogueCue.SetActive(false);
+        //    }
 
-        }
+        //}
 
         if (tutorialThreax.gameObject.transform.position.x == demoThreaxAttackDestination.gameObject.transform.position.x
             && tutorialThreax.gameObject.transform.position.y == demoThreaxAttackDestination.gameObject.transform.position.y)

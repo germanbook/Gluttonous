@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -436,18 +436,6 @@ MonoBehaviour:
   statsPanel: {fileID: 0}
   statsPanelDisplayed: 0
   isPanelDisplayed: 0
---- !u!114 &161660569 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 180534239, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &177804568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3541,45 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7098667619159668691}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &813840621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813840620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60c97bd3ace74b6492a684e9758ce32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1184145670}
+--- !u!61 &813840624
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813840620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &840680978
 GameObject:
   m_ObjectHideFlags: 0
@@ -8076,12 +8103,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1467517551 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 10239992679529338, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468452471
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,54 +8315,6 @@ MonoBehaviour:
   statsPanel: {fileID: 0}
   statsPanelDisplayed: 0
   isPanelDisplayed: 0
---- !u!1 &1610014942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8703917631442614770, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 876434486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1610014947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610014942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3f799d586ab491895735d995ebe1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1467517551}
---- !u!114 &1610014948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610014942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 161660569}
-          m_TargetAssemblyTypeName: MapButtonController, Assembly-CSharp
-          m_MethodName: OnPointerExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &1620788852
 PrefabInstance:
   m_ObjectHideFlags: 0

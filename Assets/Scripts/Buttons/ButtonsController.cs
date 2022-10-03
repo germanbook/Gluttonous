@@ -78,17 +78,21 @@ public class ButtonsController : MonoBehaviour
 
     public void GladiatorSelectorDialogue()
     {
-        // Close Titus Dialogue1
-        if (dialogue1.gameObject.activeSelf == true)
+        if (SceneManager.GetActiveScene().name == "The Arena1")
         {
-            dialogue1.gameObject.SetActive(false);
+            // Close Titus Dialogue1
+            if (dialogue1.gameObject.activeSelf == true)
+            {
+                dialogue1.gameObject.SetActive(false);
+            }
+
+            // Close Titus Dialogue2
+            if (dialogue2.gameObject.activeSelf == true)
+            {
+                dialogue2.gameObject.SetActive(false);
+            }
         }
 
-        // Close Titus Dialogue2
-        if (dialogue2.gameObject.activeSelf == true)
-        {
-            dialogue2.gameObject.SetActive(false);
-        }
 
         gladiatorSelectorUI.SetActive(true);
 
@@ -100,30 +104,35 @@ public class ButtonsController : MonoBehaviour
 
     public void GladiatorSelectorDialogueClose()
     {
-        // Reopen Titus Dialogue1 when it didn't closed
-        if (dialogue1.gameObject.activeSelf == false
-            && TitusDialogueArenaOne.isDialogue1Showed == false)
+        if (SceneManager.GetActiveScene().name == "The Arena1")
         {
-            dialogue1.gameObject.SetActive(true);
-        }
-
-        if (TitusDialogueArenaOne.isDialogue1Showed == true)
-        {
-            // open dialogue2 when dialogue1 has showed
-            if (dialogue2.gameObject.activeSelf == false
-                && TitusDialogueArenaOne.isDialogue2Showed == false)
+            // Reopen Titus Dialogue1 when it didn't closed
+            if (dialogue1.gameObject.activeSelf == false
+                && TitusDialogueArenaOne.isDialogue1Showed == false)
             {
+                dialogue1.gameObject.SetActive(true);
+            }
 
-                if (GameObject.FindGameObjectWithTag("Player") != null)
+            if (TitusDialogueArenaOne.isDialogue1Showed == true)
+            {
+                // open dialogue2 when dialogue1 has showed
+                if (dialogue2.gameObject.activeSelf == false
+                    && TitusDialogueArenaOne.isDialogue2Showed == false)
                 {
-                    dialogue2.gameObject.SetActive(true);
+
+                    if (GameObject.FindGameObjectWithTag("Player") != null)
+                    {
+                        dialogue2.gameObject.SetActive(true);
+
+                    }
+
+
 
                 }
-
-
-                
             }
         }
+
+        
 
         
         gladiatorSelectorUI.SetActive(false);
