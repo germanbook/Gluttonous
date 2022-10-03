@@ -63,9 +63,12 @@ public class NetBehaviour : MonoBehaviour
 
     void Update()
     {
-        
 
-        this.transform.position = Vector2.MoveTowards(this.transform.position,new Vector2(target.position.x,target.position.y),Time.deltaTime * Speed);
+        if (target.gameObject.activeSelf == true)
+        {
+            this.transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(target.position.x, target.position.y), Time.deltaTime * Speed);
+        }
+        
 
         if (isNetTimerStart)
         {
