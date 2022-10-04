@@ -261,6 +261,10 @@ MonoBehaviour:
   counterMyrmilo: 0
   counterRetiarius: 0
   currentScene: 0
+  arenaTwoUnlock: 0
+  arenaThreeUnlock: 0
+  ludusDemoExperienceFinished: 0
+  arenaDemoExperienceFinished: 0
   gladiatorStoreData: {fileID: 11400000, guid: 46710715d65154e85acd95bf883b7de6, type: 2}
   hasPlayerInteractedBefore: 0
   introQuestionsAnsweredBefore: 0
@@ -1074,6 +1078,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3472381974127406710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3472381975069364851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1211104261, guid: 66e61985548b61d4c9d27211f846d10b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3472381974127406710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4332425020883300550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 878127814414835376, guid: 66e61985548b61d4c9d27211f846d10b,
@@ -1477,6 +1487,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
         type: 3}
+      propertyPath: currency
+      value: 
+      objectReference: {fileID: 5566055146987538714}
+    - target: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 3472381975069364851}
+    - target: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
+        type: 3}
+      propertyPath: saveButton
+      value: 
+      objectReference: {fileID: 6034198746378799392}
+    - target: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
+        type: 3}
       propertyPath: playerGladiatorsStore
       value: 
       objectReference: {fileID: 5566055145853688923}
@@ -1618,6 +1643,12 @@ MonoBehaviour:
 --- !u!1 &1133993866987557707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4792490552165871732, guid: f76fed5cb63e04a85b696b549f0c6316,
+    type: 3}
+  m_PrefabInstance: {fileID: 5566055144967168831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6034198746378799392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2198704809664899615, guid: f76fed5cb63e04a85b696b549f0c6316,
     type: 3}
   m_PrefabInstance: {fileID: 5566055144967168831}
   m_PrefabAsset: {fileID: 0}
