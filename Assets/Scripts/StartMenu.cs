@@ -19,6 +19,9 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene(1);
         this.gameObject.SetActive(false);
         GlobalGameManager.isDemoPlaying = true;
+        saveButton.SetActive(true);
+        mapButton.SetActive(true);
+        currency.SetActive(true);
     }
     public void SaveGameButton()
     {
@@ -28,6 +31,9 @@ public class StartMenu : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         playerGladiatorsStore.LoadData();
+        saveButton.SetActive(true);
+        mapButton.SetActive(true);
+        currency.SetActive(true);
     }
 
     public void ExitGameButton()
