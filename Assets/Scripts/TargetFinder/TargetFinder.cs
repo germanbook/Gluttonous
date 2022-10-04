@@ -503,6 +503,7 @@ public class TargetFinder : MonoBehaviour
         }
         if (enemies.Length == 0)
         {
+            GameManager.isBattling = false;
 
             if (this.gameObject.GetComponent<PlayerStatus_Temp>().isAlive)
             {

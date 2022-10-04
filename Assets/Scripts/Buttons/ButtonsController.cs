@@ -41,6 +41,10 @@ public class ButtonsController : MonoBehaviour
     // Arena Reset Button
     public GameObject combatResetButton;
 
+    // Gladiators, start button
+    public GameObject gladiatorsButton;
+    public GameObject beginButton;
+
     private void Start()
     {
         gladiatorStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
@@ -60,6 +64,12 @@ public class ButtonsController : MonoBehaviour
                 combatResetButton.SetActive(false);
             }
         }
+
+        if (GameManager.isBattling == false)
+        {
+            gladiatorsButton.SetActive(true);
+            beginButton.SetActive(true);
+        }
     }
 
     public void BeginCombat()
@@ -68,6 +78,12 @@ public class ButtonsController : MonoBehaviour
         // Arena bgm
         arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Stop();
         arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Play();
+
+        // hidden buttons
+        gladiatorsButton.SetActive(false);
+        beginButton.SetActive(false);
+
+        GameManager.isBattling = true;
     }
 
     public void ResetCombat()

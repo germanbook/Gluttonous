@@ -970,6 +970,8 @@ MonoBehaviour:
   dialogue1: {fileID: 0}
   dialogue2: {fileID: 0}
   combatResetButton: {fileID: 901641981}
+  gladiatorsButton: {fileID: 913305331}
+  beginButton: {fileID: 580604127}
 --- !u!114 &269745105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472437492226057648, guid: 3faba8f8ba20643a69d776c74b767570,
@@ -6878,6 +6880,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5153739129734942002, guid: dac59376f4af6294d876c97f7ff86c8b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2c0fd1ecc5af9464194eb52e7e5547be, type: 2}
     - target: {fileID: 5153739129734942003, guid: dac59376f4af6294d876c97f7ff86c8b,
         type: 3}
       propertyPath: m_Sprite

@@ -15,7 +15,7 @@ public class PlayerLanistaStanding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAnimator.enabled = false;
+        playerAnimator.SetInteger("state", 0);
     }
 
     // Update is called once per frame

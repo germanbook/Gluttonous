@@ -9,6 +9,10 @@ public class StartMenu : MonoBehaviour
 
     [SerializeField] PlayerGladiatorsStore playerGladiatorsStore;
 
+    public GameObject saveButton;
+    public GameObject mapButton;
+    public GameObject currency;
+
 
     public void NewGameButton()
     {
@@ -31,5 +35,21 @@ public class StartMenu : MonoBehaviour
         //playerGladiatorsStore.SaveGladiatorStoreData();
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "StartMenu")
+        {
+            saveButton.SetActive(false);
+            mapButton.SetActive(false);
+            currency.SetActive(false);
+        }
+        else
+        {
+            saveButton.SetActive(true);
+            mapButton.SetActive(true);
+            currency.SetActive(true);
+        }
     }
 }

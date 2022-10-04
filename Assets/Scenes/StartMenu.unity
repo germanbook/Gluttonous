@@ -135,6 +135,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1133993866987557706, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: currency
+      value: 
+      objectReference: {fileID: 890302888}
+    - target: {fileID: 1133993866987557706, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: mapButton
+      value: 
+      objectReference: {fileID: 1743844149}
+    - target: {fileID: 1133993866987557706, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: saveButton
+      value: 
+      objectReference: {fileID: 1908077970}
     - target: {fileID: 3472381975069364849, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -347,3 +362,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97996be81c7cc4979b1c09bda27b2e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &890302888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5566055146987538714, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+    type: 3}
+  m_PrefabInstance: {fileID: 876434486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743844149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3472381975069364851, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+    type: 3}
+  m_PrefabInstance: {fileID: 876434486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1908077970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6034198746378799392, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+    type: 3}
+  m_PrefabInstance: {fileID: 876434486}
+  m_PrefabAsset: {fileID: 0}

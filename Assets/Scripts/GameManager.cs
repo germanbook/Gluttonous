@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     // Gladiator reset button
     private GameObject gladiatorReset;
 
+    public static bool isBattling;
+
     private void Start()
     {
         //if (SceneManager.GetActiveScene().name == "The Arena1"
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
         isArenaTwoUnlock = false;
         isArenaThreeUnlock = false;
         isTheMapVisible = false;
+
+        isBattling = false;
 
         playerGladiatorsStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
 
