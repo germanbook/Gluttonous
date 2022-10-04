@@ -148,6 +148,7 @@ public class TitusDialogue : MonoBehaviour
                 dialogue4.SetActive(false);
 
                 // Map blink
+                mapIcon.SetActive(true);
                 mapIcon.transform.localScale = new Vector3(1, 1, 1);
                 isMapIconBlink = true;
                 break;

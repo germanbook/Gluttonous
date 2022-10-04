@@ -58,7 +58,13 @@ public class LudusSceneManager : MonoBehaviour
         currency = GameObject.Find("Currency");
 
 
-        mapButton = GameObject.Find("MapButton");
+        foreach (GameObject map in Resources.FindObjectsOfTypeAll<GameObject>())
+        {
+            if (map.name == "MapButton")
+            {
+                mapButton = map;
+            }
+        }
         if (GlobalGameManager.isDemoPlaying == true)
         {
             
