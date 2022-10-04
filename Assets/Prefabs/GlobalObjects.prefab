@@ -260,6 +260,7 @@ MonoBehaviour:
   counterThraex: 0
   counterMyrmilo: 0
   counterRetiarius: 0
+  currentScene: 0
   gladiatorStoreData: {fileID: 11400000, guid: 46710715d65154e85acd95bf883b7de6, type: 2}
   hasPlayerInteractedBefore: 0
   introQuestionsAnsweredBefore: 0
@@ -1413,7 +1414,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1133993866987557707}
+      objectReference: {fileID: 1133993866987557706}
+    - target: {fileID: 806925558098236083, guid: f76fed5cb63e04a85b696b549f0c6316,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGameButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3807334638573801266, guid: f76fed5cb63e04a85b696b549f0c6316,
         type: 3}
       propertyPath: m_RootOrder
@@ -1597,6 +1603,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5566055144967168831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1133993866987557706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4792490552165871733, guid: f76fed5cb63e04a85b696b549f0c6316,
+    type: 3}
+  m_PrefabInstance: {fileID: 5566055144967168831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133993866987557707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6b78e2cd1e942e580806c41bb369b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1133993866987557707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4792490552165871732, guid: f76fed5cb63e04a85b696b549f0c6316,

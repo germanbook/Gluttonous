@@ -122,10 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5566055146785530827, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
-          type: 3}
+      - m_Target: {fileID: 4792490552165871733}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: SaveGameButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
