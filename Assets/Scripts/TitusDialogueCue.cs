@@ -22,6 +22,7 @@ public class TitusDialogueCue : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             dialogue.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -6,8 +6,12 @@ public class BarKeepCue : MonoBehaviour
 {
     public GameObject dialogueTrigger;
 
-    public void OnMouseDown()
+    void OnMouseOver()
     {
-        dialogueTrigger.GetComponent<DialogueTrigger>().DisplayDialogue();
+        if (Input.GetMouseButtonDown(0))
+        {
+            dialogueTrigger.GetComponent<DialogueTrigger>().DisplayDialogue();
+            DialogueTrigger.isDialogueShowing = true;
+        }
     }
 }

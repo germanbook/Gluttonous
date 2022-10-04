@@ -10,6 +10,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
 
+    //is dialogue currently showing
+    public static bool isDialogueShowing;
     private void Awake()
     {
         barkeepBranDialogue = GameObject.Find("BarkeepBranDialogue");
@@ -21,17 +23,11 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         // If player is in range
-        if (playerInRange)
+        if (playerInRange && isDialogueShowing == false)
         {
-            // Show the visual cue
+
             visualCue.SetActive(true);
-            //// Click mouse key to show dialogue
-            //if (Input.GetMouseButton(1) && GameManager.isDialogueShowing == false)
-            //{
-            //    barkeepBranDialogue.SetActive(true);
-            //    // Set dialogue status
-            //    GameManager.isDialogueShowing = true;
-            //} 
+            
         }
         else
         {
@@ -59,7 +55,7 @@ public class DialogueTrigger : MonoBehaviour
     // Click mouse left key to show dialogue
     public void DisplayDialogue()
     {
-        if (visualCue.gameObject.activeSelf == true && GameManager.isDialogueShowing == false)
+        if ( GameManager.isDialogueShowing == false)
         {
             // show dialogue here
             barkeepBranDialogue.SetActive(true);

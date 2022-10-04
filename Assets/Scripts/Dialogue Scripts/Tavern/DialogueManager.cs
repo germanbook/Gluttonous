@@ -199,6 +199,11 @@ public class DialogueManager : MonoBehaviour
                 CloseDialogueBox();
                 barkeepBranDialogue.SetActive(false);
                 GameManager.isDialogueShowing = false;
+                if(showHintsTipsQuestionButton == false)
+                {
+                    DialogueTrigger.isDialogueShowing = false;
+                }
+                
                 break;
 
             case "2_Introduction_Questions_Button":
