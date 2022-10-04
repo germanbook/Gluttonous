@@ -19,7 +19,7 @@ public class TitusDialogueCue : MonoBehaviour
 
     void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(0))
         {
             dialogue.SetActive(true);
         }
