@@ -28,7 +28,7 @@ public class SaveData
     public bool ArenaDemoExperienceFinished;
 
 
-    public SaveData (PlayerGladiatorsStore data)
+    public SaveData(PlayerGladiatorsStore data)
     {
         SamniteCount = data.counterSamnites;
         ThreaxCount = data.counterThraex;
@@ -48,4 +48,3 @@ public class SaveData
         ArenaDemoExperienceFinished = data.arenaDemoExperienceFinished;
     }
 }
-

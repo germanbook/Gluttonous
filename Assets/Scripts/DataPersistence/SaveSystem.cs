@@ -2,11 +2,11 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public static class SaveSystem 
+public static class SaveSystem
 {
     //Saves the data into a file
     //Serializes it into binary so users cant change values manually
-   public static void SaveData (PlayerGladiatorsStore data)
+    public static void SaveData(PlayerGladiatorsStore data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/GameData";
@@ -21,9 +21,12 @@ public static class SaveSystem
     //Loads data 
     public static SaveData LoadData()
     {
+
         string path = Application.persistentDataPath + "/GameData";
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
+
+
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
