@@ -401,6 +401,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549071601}
     m_Modifications:
+    - target: {fileID: 1669135953, guid: 5de64e1bc63bb4417b942615eba85e2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 258047839}
+    - target: {fileID: 1669135953, guid: 5de64e1bc63bb4417b942615eba85e2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetGladiators
+      objectReference: {fileID: 0}
     - target: {fileID: 7505862514842171380, guid: 5de64e1bc63bb4417b942615eba85e2c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -569,7 +577,7 @@ PrefabInstance:
     - target: {fileID: 7505862515009472042, guid: 5de64e1bc63bb4417b942615eba85e2c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -226
+      value: -97
       objectReference: {fileID: 0}
     - target: {fileID: 7505862515009472042, guid: 5de64e1bc63bb4417b942615eba85e2c,
         type: 3}
@@ -972,6 +980,7 @@ MonoBehaviour:
   combatResetButton: {fileID: 901641981}
   gladiatorsButton: {fileID: 913305331}
   beginButton: {fileID: 580604127}
+  chooseLimitation: {fileID: 389614663}
 --- !u!114 &269745105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472437492226057648, guid: 3faba8f8ba20643a69d776c74b767570,
@@ -1415,6 +1424,107 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3faba8f8ba20643a69d776c74b767570, type: 3}
+--- !u!1001 &389614661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1549071601}
+    m_Modifications:
+    - target: {fileID: 8533656156245038619, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -954.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -428.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311150, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_Name
+      value: GladiatorChooseLimitation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656157863311150, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533656158045330360, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 258047839}
+    - target: {fileID: 8533656158045330360, guid: b8b4a923ce96e42c98876c5b7b58f895,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseLimitationDialogueClose
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8b4a923ce96e42c98876c5b7b58f895, type: 3}
+--- !u!4 &389614662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8533656157863311149, guid: b8b4a923ce96e42c98876c5b7b58f895,
+    type: 3}
+  m_PrefabInstance: {fileID: 389614661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &389614663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8533656157863311150, guid: b8b4a923ce96e42c98876c5b7b58f895,
+    type: 3}
+  m_PrefabInstance: {fileID: 389614661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412096987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4848,6 +4958,7 @@ RectTransform:
   m_Children:
   - {fileID: 258047838}
   - {fileID: 765651040}
+  - {fileID: 389614662}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

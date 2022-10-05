@@ -45,6 +45,9 @@ public class ButtonsController : MonoBehaviour
     public GameObject gladiatorsButton;
     public GameObject beginButton;
 
+    // Gladiators choose limitation remainder dialogue
+    public GameObject chooseLimitation;
+
     private void Start()
     {
         gladiatorStore = GameObject.FindGameObjectWithTag("PlayerGladiatorsStore");
@@ -156,87 +159,59 @@ public class ButtonsController : MonoBehaviour
 
     public void GladiatorSelector(string gladiatorName)
     {
+        // Checking gladiators' number in arena
+        // Arena 1: 1
+        // Arena 2: 2
+        // Arena 3: 3
+        GameObject[] players;
+        // Find all players
+        players = GameObject.FindGameObjectsWithTag("Player");
 
-
-        switch (gladiatorName)
+        switch (SceneManager.GetActiveScene().name)
         {
-            case ("Samnites"):
+            case ("The Arena1"):
 
-                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites > 0)
+                if (players.Length < 1)
                 {
-                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites;
-
-                    tempGladiator = Instantiate(samnite, samnite.transform.position, Quaternion.identity);
-                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
-                    tempGladiator.transform.position = new Vector2(samnite.transform.position.x + GladiatorMovement, samnite.transform.position.y);
-                    samnite.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
-                    tempGladiator.SetActive(true);
-                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites--;
-
-                    gladiatorSelectorUI.SetActive(false);
-                    GladiatorSelectorDialogue();
-
+                    GladiatorSpawn(gladiatorName);
+                }
+                else
+                {
+                    chooseLimitation.SetActive(true);
                 }
 
                 break;
-            case ("Murmillo"):
 
-                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo > 0)
+            case ("The Arena2"):
+
+                if (players.Length < 2)
                 {
-                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo;
-
-                    tempGladiator = Instantiate(myrmilo, myrmilo.transform.position, Quaternion.identity);
-                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
-                    tempGladiator.transform.position = new Vector2(myrmilo.transform.position.x + GladiatorMovement, myrmilo.transform.position.y);
-                    myrmilo.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
-                    tempGladiator.SetActive(true);
-                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo--;
-
-                    gladiatorSelectorUI.SetActive(false);
-                    GladiatorSelectorDialogue();
+                    GladiatorSpawn(gladiatorName);
+                }
+                else
+                {
+                    chooseLimitation.SetActive(true);
                 }
 
                 break;
-            case ("Threax"):
 
+            case ("The Arena3"):
 
-                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex > 0)
+                if (players.Length < 3)
                 {
-                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex;
-                    
-                    tempGladiator = Instantiate(threax, threax.transform.position, Quaternion.identity);
-                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
-                    tempGladiator.transform.position = new Vector2(threax.transform.position.x + GladiatorMovement, threax.transform.position.y);
-                    threax.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
-                    tempGladiator.SetActive(true);
-                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex--;
-
-                    gladiatorSelectorUI.SetActive(false);
-                    GladiatorSelectorDialogue();
+                    GladiatorSpawn(gladiatorName);
                 }
-
-                break;
-            case ("Retiarius"):
-
-                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius > 0)
+                else
                 {
-                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius;
-                    int positionMovement = 10;
-                    positionMovement = positionMovement - tempCounter;
-                    tempGladiator = Instantiate(retiarius, retiarius.transform.position, Quaternion.identity);
-                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
-                    tempGladiator.transform.position = new Vector2(retiarius.transform.position.x + GladiatorMovement, retiarius.transform.position.y);
-                    retiarius.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
-                    tempGladiator.SetActive(true);
-                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius--;
-
-                    gladiatorSelectorUI.SetActive(false);
-                    GladiatorSelectorDialogue();
+                    chooseLimitation.SetActive(true);
                 }
 
                 break;
 
         }
+
+
+        
             
     }
 
@@ -284,6 +259,94 @@ public class ButtonsController : MonoBehaviour
         
 
 
+    }
+
+    void GladiatorSpawn(string gladiatorName)
+    {
+        switch (gladiatorName)
+        {
+            case ("Samnites"):
+
+                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites > 0)
+                {
+                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites;
+
+                    tempGladiator = Instantiate(samnite, samnite.transform.position, Quaternion.identity);
+                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
+                    tempGladiator.transform.position = new Vector2(samnite.transform.position.x + GladiatorMovement, samnite.transform.position.y);
+                    samnite.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
+                    tempGladiator.SetActive(true);
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterSamnites--;
+
+                    gladiatorSelectorUI.SetActive(false);
+                    GladiatorSelectorDialogue();
+
+                }
+
+                break;
+            case ("Murmillo"):
+
+                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo > 0)
+                {
+                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo;
+
+                    tempGladiator = Instantiate(myrmilo, myrmilo.transform.position, Quaternion.identity);
+                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
+                    tempGladiator.transform.position = new Vector2(myrmilo.transform.position.x + GladiatorMovement, myrmilo.transform.position.y);
+                    myrmilo.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
+                    tempGladiator.SetActive(true);
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterMyrmilo--;
+
+                    gladiatorSelectorUI.SetActive(false);
+                    GladiatorSelectorDialogue();
+                }
+
+                break;
+            case ("Threax"):
+
+
+                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex > 0)
+                {
+                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex;
+
+                    tempGladiator = Instantiate(threax, threax.transform.position, Quaternion.identity);
+                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
+                    tempGladiator.transform.position = new Vector2(threax.transform.position.x + GladiatorMovement, threax.transform.position.y);
+                    threax.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
+                    tempGladiator.SetActive(true);
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterThraex--;
+
+                    gladiatorSelectorUI.SetActive(false);
+                    GladiatorSelectorDialogue();
+                }
+
+                break;
+            case ("Retiarius"):
+
+                if (gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius > 0)
+                {
+                    int tempCounter = gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius;
+                    int positionMovement = 10;
+                    positionMovement = positionMovement - tempCounter;
+                    tempGladiator = Instantiate(retiarius, retiarius.transform.position, Quaternion.identity);
+                    tempGladiator.name = tempGladiator.name + Convert.ToString(tempCounter);
+                    tempGladiator.transform.position = new Vector2(retiarius.transform.position.x + GladiatorMovement, retiarius.transform.position.y);
+                    retiarius.transform.position = new Vector2(tempGladiator.transform.position.x + GladiatorMovement, tempGladiator.transform.position.y);
+                    tempGladiator.SetActive(true);
+                    gladiatorStore.GetComponent<PlayerGladiatorsStore>().counterRetiarius--;
+
+                    gladiatorSelectorUI.SetActive(false);
+                    GladiatorSelectorDialogue();
+                }
+
+                break;
+
+        }
+    }
+
+    public void ChooseLimitationDialogueClose()
+    {
+        chooseLimitation.SetActive(false);
     }
 
 
