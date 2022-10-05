@@ -25,12 +25,12 @@ public class StartMenu : MonoBehaviour
     }
     public void SaveGameButton()
     {
-        playerGladiatorsStore.SaveData();
+        playerGladiatorsStore.SaveButtonConfirmation();
     }
     public void LoadGameButton()
     {
+        playerGladiatorsStore.LoadButtonConfirmation();
         this.gameObject.SetActive(false);
-        playerGladiatorsStore.LoadData();
         saveButton.SetActive(true);
         mapButton.SetActive(true);
         currency.SetActive(true);

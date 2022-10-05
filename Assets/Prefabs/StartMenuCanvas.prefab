@@ -871,6 +871,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGladiatorsStore: {fileID: 0}
+  saveButton: {fileID: 0}
+  mapButton: {fileID: 0}
+  currency: {fileID: 0}
 --- !u!1 &4792490552190708852
 GameObject:
   m_ObjectHideFlags: 0

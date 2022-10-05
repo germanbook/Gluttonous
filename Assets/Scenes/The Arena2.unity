@@ -29069,6 +29069,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Threax
       objectReference: {fileID: 0}
+    - target: {fileID: 7313067799177704974, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7463673422216594029, guid: bbe5ba0932d1b9c459011f1dbaf4daa6,
         type: 3}
       propertyPath: m_text

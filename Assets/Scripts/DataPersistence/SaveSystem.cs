@@ -21,9 +21,12 @@ public static class SaveSystem
     //Loads data 
     public static SaveData LoadData()
     {
+        
         string path = Application.persistentDataPath + "/GameData";
         if(File.Exists(path))
         {
+
+            
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
