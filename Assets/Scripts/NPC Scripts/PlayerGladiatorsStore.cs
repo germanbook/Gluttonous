@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PlayerGladiatorsStore : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class PlayerGladiatorsStore : MonoBehaviour
 
     [SerializeField] GladiatorStoreData gladiatorStoreData;
 
+    //popup boxes for the save system
+    [SerializeField] public GameObject savePopUpBox;
+    [SerializeField] public GameObject saveConfirmPopUpBox;
+    [SerializeField] public GameObject loadConfirmPopUpBox;
+
+
     Scene scene;
 
     public bool hasPlayerInteractedBefore;
@@ -31,7 +38,7 @@ public class PlayerGladiatorsStore : MonoBehaviour
 
     private void Start()
     {
-        
+
         counterSamnites = gladiatorStoreData.counterSamnites;
         counterThraex = gladiatorStoreData.counterThraex;
         counterMyrmilo = gladiatorStoreData.counterMyrmilo;
@@ -68,10 +75,47 @@ public class PlayerGladiatorsStore : MonoBehaviour
 
         //saves the game data in this class 
         SaveSystem.SaveData(this);
+
+        savePopUpBox.SetActive(false);
+        saveConfirmPopUpBox.SetActive(true);
     }
-    
+    public void SaveButtonConfirmation()
+    {
+        string path = Application.persistentDataPath + "/GameData";
+        if (File.Exists(path))
+        {
+            Debug.Log("found a save file");
+            savePopUpBox.SetActive(true);
+        }
+    }
+    public void LoadButtonConfirmation()
+    {
+        string path = Application.persistentDataPath + "/GameData";
+        if (File.Exists(path))
+        {
+            Debug.Log("found a save file");
+            loadConfirmPopUpBox.SetActive(true);
+        }
+    }
+    public void ClosePopupButton()
+    {
+        if (savePopUpBox.activeSelf == true)
+        {
+            savePopUpBox.SetActive(false);
+        }
+        if (saveConfirmPopUpBox.activeSelf == true)
+        {
+            saveConfirmPopUpBox.SetActive(false);
+        }
+        if (loadConfirmPopUpBox.activeSelf == true)
+        {
+            loadConfirmPopUpBox.SetActive(false);
+        }
+    }
     public void LoadData()
     {
+        loadConfirmPopUpBox.SetActive(false);
+
         SaveData data = SaveSystem.LoadData();
 
         counterSamnites = data.MurmilloCount;
