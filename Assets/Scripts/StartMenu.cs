@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class StartMenu : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class StartMenu : MonoBehaviour
     public void ExitGameButton()
     {
         //playerGladiatorsStore.SaveGladiatorStoreData();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
