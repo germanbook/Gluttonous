@@ -895,6 +895,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1633782855466997163, guid: edb341a6306396b43ab5939ce4907888,
+        type: 3}
+      propertyPath: m_text
+      value: Save game found, are you sure you want to load?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edb341a6306396b43ab5939ce4907888, type: 3}
 --- !u!1 &1633782854491350752 stripped
@@ -2170,7 +2175,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Reward For Winning
 
-        50'
+        200'
       objectReference: {fileID: 0}
     - target: {fileID: 1803771581808785455, guid: 4652c6fed5a9947c181e56d3a0a235bf,
         type: 3}
@@ -2910,7 +2915,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Reward For Winning
 
-        50'
+        200'
       objectReference: {fileID: 0}
     - target: {fileID: 6781077082990212553, guid: 31706d46f74664b1ca5a5ad143425cfe,
         type: 3}
@@ -2922,7 +2927,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Reward For Winning
 
-        50'
+        200'
       objectReference: {fileID: 0}
     - target: {fileID: 7706362230445300003, guid: 31706d46f74664b1ca5a5ad143425cfe,
         type: 3}

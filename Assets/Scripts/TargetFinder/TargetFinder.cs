@@ -5,6 +5,7 @@ using System.Linq;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
@@ -531,13 +532,42 @@ public class TargetFinder : MonoBehaviour
 
     void increaseGold()
     {
-        if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 50)
+        switch (SceneManager.GetActiveScene().name)
         {
-            GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
-            arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Play();
-            arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Stop();
+            case ("The Arena1"):
+
+                if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 50)
+                {
+                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Play();
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Stop();
+                }
+                break;
+
+            case ("The Arena2"):
+
+                if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 200)
+                {
+                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Play();
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Stop();
+                }
+                break;
+
+            case ("The Arena3"):
+
+                if (GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue - originalCurrency < 200)
+                {
+                    GameObject.FindGameObjectWithTag("CurrencyValue").GetComponent<Currency>().currencyValue += 50;
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[0].Play();
+                    arenaSceneManager.GetComponent<ArenaSceneManager>().sounds[1].Stop();
+                }
+
+                break;
+
         }
-        
+
+  
     }
 
     // Throw net before they approached
