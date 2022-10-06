@@ -96,6 +96,30 @@ TagManager:
   - name: Buildings10
     uniqueID: 889349177
     locked: 0
+  - name: Buildings11
+    uniqueID: 3319044503
+    locked: 0
+  - name: Buildings12
+    uniqueID: 4257369663
+    locked: 0
+  - name: Buildings13
+    uniqueID: 2687415369
+    locked: 0
+  - name: Buildings14
+    uniqueID: 3823014811
+    locked: 0
+  - name: Buildings15
+    uniqueID: 211902767
+    locked: 0
+  - name: Buildings16
+    uniqueID: 855210629
+    locked: 0
+  - name: Buildings17
+    uniqueID: 2934730937
+    locked: 0
+  - name: Buildings18
+    uniqueID: 3997221823
+    locked: 0
   - name: Dialogue
     uniqueID: 1572667263
     locked: 0
